@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 
 # Microsoft Authentication Library for Node (MSAL Node)
 
-MSAL Node enables applications to authenticate users using [Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v2-overview) work and school accounts (AAD), Microsoft personal accounts (MSA) and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through [Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview#identity-providers) service. It also enables your app to get tokens to access [Microsoft Cloud](https://www.microsoft.com/enterprise) services such as [Microsoft Graph](https://graph.microsoft.io).
+MSAL Node enables applications to authenticate users using [Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v2-overview) work and school accounts, Microsoft personal accounts (MSA) and social identity providers like Facebook, Google, LinkedIn, and Microsoft accounts through [Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview#identity-providers) service. It also enables your app to get tokens to access [Microsoft Cloud](https://www.microsoft.com/enterprise) services such as [Microsoft Graph](https://graph.microsoft.io).
 
 ### Supported OAuth2.0 grant types
 
@@ -65,8 +65,7 @@ npm install @azure/msal-node
 
 ## Samples
 
-There are multiple [samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples) included in the repository that use MSAL Node to acquire tokens and can be used for testing purposes.
-AAD samples:
+There are multiple [samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples) on GitHub that use MSAL Node to acquire tokens. Developers can use these sample apps for learning and testing purposes.
 
 - [auth-code](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code): Express app using OAuth2.0 authorization code flow.
 - [auth-code-pkce](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-pkce): Express app using OAuth2.0 authorization code flow with PKCE.
@@ -78,7 +77,7 @@ AAD samples:
 - [username-password](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password): Web application using OAuth 2.0 resource owner password credentials (ROPC) flow to acquire a token for a web API.
 - [ElectronTestApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/ElectronTestApp): Electron desktop application using OAuth 2.0 auth code with PKCE flow to acquire a token for a web API such as Microsoft Graph.
 - [ExpressTestApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/ExpressTestApp): Express.js MVC web application using OAuth 2.0 auth code with PKCE flow to acquire a token for a web API such as Microsoft Graph.
-- [Hybrid Spa Sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/HybridSample): Sample demonstrating how to use `enableSpaAuthorizationCode` to perform SSO for applications that leverage server-side and client-side authentication using MSAL Browser and MSAL Node.
+- [Hybrid SPA sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/HybridSample): Sample demonstrating how to use `enableSpaAuthorizationCode` to perform SSO for applications that leverage server-side and client-side authentication using MSAL Browser and MSAL Node.
 
 B2C samples:
 
@@ -137,4 +136,4 @@ Generate code coverage by adding the flag --coverage. No additional setup needed
 
 ## Reporting security issues 
 
-If you find a security issue with our libraries or services please report it to [secure@microsoft.com](mailto:secure@microsoft.com) with as much detail as possible. Your submission may be eligible for a bounty through the [Microsoft Bounty](http://aka.ms/bugbounty) program. Please do not post security issues to GitHub Issues or any other public site. We will contact you shortly upon receiving the information. We encourage you to get notifications of when security incidents occur by visiting [this page](https://technet.microsoft.com/security/dd252948) and subscribing to Security Advisory Alerts.
+If you find a security issue with our libraries or services please report it to [secure@microsoft.com](mailto:secure@microsoft.com) with as much detail as possible. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Please do not post security issues to GitHub Issues or any other public site. We will contact you shortly upon receiving the information. We encourage you to get notifications of when security incidents occur by visiting [this page](https://technet.microsoft.com/security/dd252948) and subscribing to Security Advisory Alerts.
