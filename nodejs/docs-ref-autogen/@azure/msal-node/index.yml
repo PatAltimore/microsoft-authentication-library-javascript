@@ -102,3 +102,4 @@ enums:
   - '@azure/msal-node.ApiId'
   - '@azure/msal-node.HttpMethod'
   - '@azure/msal-node.HttpStatus'
+  - '@azure/msal-node.ProxyStatus'
