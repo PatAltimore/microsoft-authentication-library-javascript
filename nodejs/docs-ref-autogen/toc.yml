@@ -1,4 +1,4 @@
-- name: '@azure/msal'
+- name: 'msal'
   items:
     - name: Overview
       uid: '@azure/msal'
@@ -152,7 +152,7 @@
     - uid: '@azure/msal.XhrResponse'
       name: XhrResponse
       items: []
-- name: '@azure/msal-angular'
+- name: 'msal-angular'
   items:
     - name: Overview
       uid: '@azure/msal-angular'
@@ -201,7 +201,7 @@
     - uid: '@azure/msal-angular.ProtectedResourceScopes'
       name: ProtectedResourceScopes
       items: []
-- name: '@azure/msal-browser'
+- name: 'msal-browser'
   items:
     - name: Overview
       uid: '@azure/msal-browser'
@@ -520,7 +520,7 @@
     - uid: '@azure/msal-browser.XhrClient'
       name: XhrClient
       items: []
-- name: '@azure/msal-common'
+- name: 'msal-common'
   items:
     - name: Overview
       uid: '@azure/msal-common'
@@ -1010,7 +1010,7 @@
     - uid: '@azure/msal-common.ValidCredentialType'
       name: ValidCredentialType
       items: []
-- name: '@azure/msal-node'
+- name: 'msal-node'
   items:
     - name: Overview
       uid: '@azure/msal-node'
@@ -1164,7 +1164,7 @@
     - uid: '@azure/msal-node.UsernamePasswordRequest'
       name: UsernamePasswordRequest
       items: []
-- name: '@azure/msal-react'
+- name: 'msal-react'
   items:
     - name: Overview
       uid: '@azure/msal-react'
