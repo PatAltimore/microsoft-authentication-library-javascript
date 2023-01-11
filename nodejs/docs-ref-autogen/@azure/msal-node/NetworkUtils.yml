@@ -9,15 +9,27 @@ isPreview: false
 isDeprecated: false
 type: class
 methods:
-  - name: getNetworkClient()
-    uid: '@azure/msal-node.NetworkUtils.getNetworkClient'
+  - name: 'getNetworkResponse<T>(Record<string, string>, T, number)'
+    uid: '@azure/msal-node.NetworkUtils.getNetworkResponse'
     package: '@azure/msal-node'
-    summary: Returns best compatible network client object.
+    summary: ''
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'static function getNetworkClient(): INetworkModule'
+      content: >-
+        static function getNetworkResponse<T>(headers: Record<string, string>,
+        body: T, statusCode: number): NetworkResponse<T>
+      parameters:
+        - id: headers
+          type: 'Record&lt;string, string&gt;'
+          description: ''
+        - id: body
+          type: T
+          description: ''
+        - id: statusCode
+          type: number
+          description: ''
       return:
         description: ''
-        type: INetworkModule
+        type: NetworkResponse&lt;T&gt;
