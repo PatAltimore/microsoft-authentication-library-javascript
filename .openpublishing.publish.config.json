@@ -2,7 +2,7 @@
   "docsets_to_publish": [
     {
       "docset_name": "microsoft-authentication-library-js",
-      "build_source_folder": "nodejs",
+      "build_source_folder": "msal",
       "build_output_subfolder": "microsoft-authentication-library-js",
       "locale": "en-us",
       "monikers": [],
@@ -30,11 +30,11 @@
   "need_preview_pull_request": true,
   "JoinTOCPlugin": [
     {
-      "TopLevelTOC": "nodejs/docs-ref-toc/fxtoc.yml",
-      "ReferenceTOC": "nodejs/docs-ref-autogen/toc.yml",
+      "TopLevelTOC": "msal/docs-ref-toc/fxtoc.yml",
+      "ReferenceTOC": "msal/docs-ref-autogen/toc.yml",
       "ReferenceTOCUrl": "/javascript/api/microsoft-authentication-library-js/toc.json?view=msal-js-latest",
       "ConceptualTOCUrl": "/microsoft-authentication-library-js/toc.json",
-      "OutputFolder": "nodejs/overview",
+      "OutputFolder": "msal/overview",
       "HideEmptyNode": false,
       "ContainerPageMetadata": {
         "langs": [
