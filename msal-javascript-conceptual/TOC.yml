@@ -1,2 +1,21 @@
-- name: Index
-  href: index.md
+- name: Microsoft Authentication Libraries for JavaScript
+  href: overview.md
+  items:
+  - name: MSAL Browser
+    items:
+      - name: Initialize applications
+        href: browser/initialization.md
+  - name: MSAL Angular
+    items:
+      - name: Initialize MSAL
+        href: angular/initialization.md
+  - name: MSAL Node
+    items:
+      - name: Initialize public client applications
+        href: node/initialize-public-client-applications.md
+      - name: Initialize confidential client applications
+        href: node/initialize-confidential-client-applications.md
+  - name: MSAL React
+    items:
+      - name: Getting started with MSAL React
+        href: react/getting-started.md
