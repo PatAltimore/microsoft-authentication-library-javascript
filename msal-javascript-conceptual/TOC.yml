@@ -12,9 +12,9 @@
   - name: MSAL Node
     items:
       - name: Initialize public client applications
-        href: node/initialize-public-client-applications.md
+        href: node/initialize-public-client-application.md
       - name: Initialize confidential client applications
-        href: node/initialize-confidential-client-applications.md
+        href: node/initialize-confidential-client-application.md
   - name: MSAL React
     items:
       - name: Getting started with MSAL React
