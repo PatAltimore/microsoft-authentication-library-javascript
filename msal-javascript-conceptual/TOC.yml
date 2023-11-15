@@ -1,21 +1,73 @@
-- name: Microsoft Authentication Libraries for JavaScript
+- name: Library overview
   href: overview.md
   items:
   - name: MSAL Browser
     items:
-      - name: Initialize applications
-        href: browser/initialization.md
+      - name: Getting started
+        items: 
+          - name: Initialize applications
+            href: browser/initialization.md
+          - name: Configure your application
+            href: browser/configuration.md    
+      - name: Acquire tokens
+        items: 
+          - name: Sign in users
+            href: browser/login-user.md
+          - name: Acquire tokens
+            href: browser/acquire-token.md
+          - name: Manage token lifetimes
+            href: browser/token-lifetimes.md
+          - name: Sign out users
+            href: browser/logout.md
+      - name: Advanced topics
+        items: 
+          - name: Logging in MSAL.js
+            href: browser/logging.md
+          - name: Handle errors and exceptions
+            href: browser/errors.md
+          - name: Acquiring SSH certificates
+            href: browser/ssh-certificates.md
+          - name: Use MSAL from Microsoft-hosted CDN
+            href: browser/cdn-usage.md
+      - name: Migration guides
+        items: 
+          - name: Migrate apps from ADAL.js to MSAL.js
+            href: browser/migrate-adal-js-to-msal-js.md
+          - name: Migrate SPA from implicit to auth code flow
+            href: browser/logout.md
+          - name: Migrate from MSAL 1.x to MSAL 2.x
+            href: browser/v1-migration.md
+          - name: Migrate from MSAL 3.x to MSAL 3.x
+            href: browser/v2-migration.md           
   - name: MSAL Angular
     items:
       - name: Initialize MSAL
         href: angular/initialization.md
+      - name: Configure your application
+        href: angular/configuration.md  
   - name: MSAL Node
     items:
       - name: Initialize public client applications
         href: node/initialize-public-client-application.md
       - name: Initialize confidential client applications
         href: node/initialize-confidential-client-application.md
+      - name: Configure your application
+        href: node/configuration.md     
+      - name: Supported authorization code grants
+        href: node/request.md  
   - name: MSAL React
     items:
       - name: Getting started with MSAL React
         href: react/getting-started.md
+      - name: Class components
+        href: react/class-components.md
+      - name: Events
+        href: react/events.md
+      - name: Hooks
+        href: react/hooks.md
+      - name: Performance
+        href: react/performance.md
+      - name: Errors
+        href: react/errors.md
+      - name: Migrate from MSAL v1 to MSAL React and MSAL Browser
+        href: react/migration-guide.md

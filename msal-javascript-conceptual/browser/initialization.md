@@ -2,17 +2,6 @@
 
 Before you get started, please ensure you have completed all the [prerequisites](../README.md#prerequisites).
 
-In this document:
-- [Initialization of MSAL](#initialization-of-msal)
-  - [Initializing the PublicClientApplication object](#initializing-the-publicclientapplication-object)
-  - [(Optional) Configure Authority](#optional-configure-authority)
-  - [(Optional) Configure Redirect URI](#optional-configure-redirect-uri)
-  - [(Optional) Additional Configuration](#optional-additional-configuration)
-  - [Choosing an Interaction Type](#choosing-an-interaction-type)
-    - [Popup APIs](#popup-apis)
-    - [Redirect APIs](#redirect-apis)
-- [Next Steps](#next-steps)
-
 ## Initializing the PublicClientApplication object
 
 In order to use MSAL.js, you need to instantiate a `PublicClientApplication` object. You must provide the `client id` (`appId`) of your application.
