@@ -1,6 +1,7 @@
-- name: Library overview
-  href: overview.md
+- name: Microsoft Authentication Libraries for JavaScript
   items:
+  - name: Library overview
+    href: overview.md
   - name: MSAL Browser
     items:
       - name: Getting started
