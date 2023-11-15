@@ -44,8 +44,8 @@
       "breadcrumb_path": "/entra/msal/javascript/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/microsoft-authentication-library-for-python",
-      "feedback_product_url": "https://github.com/AzureAD/microsoft-authentication-library-for-python/issues",
+      "feedback_github_repo": "MicrosoftDocs/microsoft-authentication-library-javascript",
+      "feedback_product_url": "https://github.com/AzureAD/microsoft-authentication-library-for-js/issues",
       "recommendations": true,
       "recommendation_types": [
         "Training",
@@ -59,7 +59,7 @@
       },
       "ms.author": {
         "*.md": "dmwendia",
-        "*/**.md": "dmwendia",
+        "*/**.md": "dmwendia"
       },
       "ms.service": {
         "*.md": "active-directory",

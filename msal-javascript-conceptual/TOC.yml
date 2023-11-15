@@ -1,4 +1,4 @@
-- name: Microsoft Authentication Libraries for JavaScript
+- name: Microsoft Authentication Library for JavaScript
   items:
   - name: Library overview
     href: overview.md
