@@ -64,3 +64,5 @@ All of our libraries follow [semantic versioning](https://semver.org). We recomm
 ## Security reporting
 
 If you find a security issue with our libraries or services [please report it to the Microsoft Security Response Center (MSRC)](https://aka.ms/report-security-issue) with as much detail as possible. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Please do not post security issues to GitHub Issues or any other public site. We will contact you shortly upon receiving the information. If you'd like to get notifications of when security incidents occur, [subscribe to security advisory alerts](https://msrc-blog.microsoft.com/2022/08/09/security-update-guide-notification-system-news-create-your-profile-now/).
+
+

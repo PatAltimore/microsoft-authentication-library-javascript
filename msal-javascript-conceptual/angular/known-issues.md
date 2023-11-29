@@ -1,4 +1,15 @@
-# Known issues for MSAL Angular
+---
+title: Known issues in MSAL Angular
+description: Learn more about known issues in MSAL Angular
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+# Known issues in MSAL Angular
 
 ## 2.0.0
 * MSAL Guard's `CanLoad` does not interactively prompt for login. This will be addressed in a future release.

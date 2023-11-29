@@ -1,3 +1,14 @@
+---
+title: Using redirects in MSAL Angular
+description: Learn how to use redirects in MSAL Angular
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
 # Using redirects in MSAL Angular
 
 When using redirects with MSAL, it is **mandatory** to handle redirects with either the `MsalRedirectComponent` or `handleRedirectObservable`. While we recommend `MsalRedirectComponent` as the best approach, both approaches are detailed below.

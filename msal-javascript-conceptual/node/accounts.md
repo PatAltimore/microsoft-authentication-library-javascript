@@ -1,3 +1,16 @@
+---
+title: Overview
+description:  Overview of the Microsoft Authentication Libraries for JavaScript
+services: active-directory
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: dmwendia
+ms.reviewer: emilylauber
+---
+
 # Accounts in MSAL Node
 
 > This is the platform-specific Accounts documentation for `msal-node`. For the general documentation of the `AccountInfo` object structure, please visit the `msal-common` [Accounts document](../../msal-common/docs/Accounts.md).

@@ -1,4 +1,15 @@
-# MSAL Guard
+---
+title: Using MSAL Guard to protect routes
+description: Learn how to use MSAL Guard to protect routes in your Angular application
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+# Using MSAL Guard to protect routes
 
 MSAL Angular provides `MsalGuard`, a class you can use to protect routes and require authentication before accessing the protected route. This doc provides more information about configuring and considerations when using the `MsalGuard`.
 

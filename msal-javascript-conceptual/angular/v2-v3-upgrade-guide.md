@@ -1,3 +1,15 @@
+---
+title: Upgrading from MSAL Angular v2 to v3
+description: Learn how to upgrade applications using MSAL Angular v2 to V3
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # Upgrading from MSAL Angular v2 to v3
 
 MSAL Angular v3 brings our Angular wrapper up-to-date with the latest version of MSAL common, and with out-of-the-box support for Angular 15 and rxjs 7.

@@ -1,6 +1,16 @@
-# Performance
+---
+title: Configure MSAL to use your router for client-side navigation
+description: How to configure MSAL Angular to use your router's navigate function for client-side navigation
+author: Dickson-Mwendia
+manager: CelesteDG
 
-## How to configure `@azure/msal-angular` to use your router's navigate function for client-side navigation
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
+# How to configure `@azure/msal-angular` to use your router's navigate function for client-side navigation
 
 By default, when MSAL.js needs to navigate from one page in your application to another it will reassign `window.location`, causing a full frame redirect to the other page and causing your application to re-render. If you're using the Angular Router this may be undesireable since the Router enables "client-side" navigation and shows or hides only the parts of the page as necessary.
 
@@ -14,7 +24,7 @@ If your application is doing all of the things above you can override the method
 
 **NOTE**: Due to a security fix, the `MsalCustomNavigationClient` will not be using the Angular `Router` to navigate client-side when `navigateToLoginRequestUrl` is set to true and handling redirects. This is a known issue that will be addressed in a future release.
 
-### Example Implementation
+## Example Implementation
 
 The example below will show how to implement this when using the Angular `Router`. More information on the Angular Router can be found [here](https://angular.io/guide/router), and you can find a full sample app that implements this for [Angular here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/msal-lts/samples/msal-angular-v2-samples/angular10-sample-app).
 

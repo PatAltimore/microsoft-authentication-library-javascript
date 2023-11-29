@@ -1,3 +1,15 @@
+---
+title: Using the MSAL Interceptor
+description: Learn how to use the MSAL Interceptor
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # MSAL Interceptor
 
 MSAL Angular provides an `Interceptor` class that automatically acquires tokens for outgoing requests that use the Angular `http` client to known protected resources. This doc provides more information about the configuring and using the `MsalInterceptor`.

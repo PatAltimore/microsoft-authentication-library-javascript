@@ -5,12 +5,10 @@ services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
-ms.date: 01/10/2023
+ms.date: 11/29/2023
 ms.author: dmwendia
+ms.reviewer: emilylauber
 ---
 # Microsoft Authentication Library for JavaScript (MSAL.js)
 

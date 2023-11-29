@@ -1,4 +1,15 @@
-# Initialization of MSAL Angular
+---
+title: Initializing MSAL Angular
+description: Learn how to initialize MSAL in your Angular application
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+# Initializing MSAL Angular
 
 Before using `@azure/msal-angular`, [register an application in Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) to get your `clientId`.
 

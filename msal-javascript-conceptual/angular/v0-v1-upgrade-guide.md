@@ -1,4 +1,16 @@
-# Upgrading from MSAL Angular v0 to v1
+---
+title: Upgrading from MSAL Angular v0 to v1
+description: Learn how to upgrade applications using MSAL Angular v0 to V1
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
+# Migrating from MSAL Angular v0 to v1
 
 MSAL Angular v1 brings our Angular wrapper up-to-date with the latest version of MSAL core, and with out-of-the-box support for modern versions of Angular (6+) and rxjs (6).
 

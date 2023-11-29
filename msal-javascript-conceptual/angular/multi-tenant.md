@@ -1,3 +1,15 @@
+---
+title: Support for multi-tenant applications
+description: Learn more about support for multi-tenant applications in MSAL Angular
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # Multi-Tenant
 
 By default, there is multi-tenant support for your application since MSAL sets the tenant in the authority to 'common' if it is not specified in the config. This allows any Microsoft account to authenticate to your application. If you are not interested in multi-tenant behavior, you will need to set the `authority` config property when instantiating MSAL in the `app.module.ts` as shown below.

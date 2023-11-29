@@ -1,3 +1,14 @@
+---
+title: Logging in MSAL Angular
+description: Learn about logging in MSAL Angular
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
 # Logging in MSAL Angular
 
 The logger definition has the following properties:

@@ -1,3 +1,15 @@
+---
+title: Silent login with ssoSilent()
+description: Learn how to acquire tokens silently using the `ssoSilent()` API
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # Silent login with ssoSilent()
 
 If you already have a session that exists with the authentication server, you can use the `ssoSilent()` API to make a request for tokens without interaction.

@@ -1,4 +1,16 @@
-# MSAL Angular Errors
+---
+title: Errors in MSAL Angular
+description: Learn how to deal wth errors in MSAL Angular
+author: Dickson-Mwendia
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
+# Errors in MSAL Angular
 
 ***
 
