@@ -44,8 +44,38 @@
     items:
       - name: Initialize MSAL
         href: angular/initialization.md
+      - name: Common public APIs in MSAL Angular
+        href: angular/public-apis.md
       - name: Configure your application
-        href: angular/configuration.md  
+        href: angular/configuration.md
+      - name: Using MSAL Guard
+        href: angular/msal-guard.md
+      - name: Acquire tokens silently
+        href: angular/ssosilent.md
+      - name: Using your router for client-side navigation
+        href: angular/performance.md
+      - name: Using events in your application
+        href: angular/events.md
+      - name: Handling redirects
+        href: angular/redirects.md
+      - name: Using the MSAL Interceptor
+        href: angular/msal-interceptor.md
+      - name: Support for multi-tenant applications
+        href: angular/multi-tenant.md
+      - name: Logging
+        href: angular/logging.md
+      - name: Errors
+        href: angular/errors.md
+      - name: Angular Universal SSR with MSAL Angular
+        href: angular/universal-ssr.md
+      - name: Upgrading your MSAL Angular version
+        items:
+        - name: Upgrade from MSAL Angular 0.x to MSAL Angular 1.x
+          href: angular/v0-v1-upgrade-guide.md
+        - name: Upgrade from MSAL Angular 1.x to MSAL Angular 2.x
+          href: angular/v1-V2-upgrade-guide.md
+        - name: Upgrade from MSAL Angular 2.x to MSAL Angular 3.x
+          href: angular/v2-v3-upgrade-guide.md
   - name: MSAL Node
     items:
       - name: Initialize public client applications
