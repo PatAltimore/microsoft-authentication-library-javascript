@@ -139,4 +139,4 @@ export class MsalComponent {
 ```
 
 ## Next steps
-Learn more about [building a single-page application (SPA)](scenario-spa-overview.md) using MSAL.js.
+Learn more about [building a single-page application (SPA)](/entra/identity-platform/scenario-spa-overview) using MSAL.js.

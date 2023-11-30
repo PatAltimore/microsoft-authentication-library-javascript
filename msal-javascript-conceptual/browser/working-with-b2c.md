@@ -40,7 +40,7 @@ Follow the tutorial on how to:
 
 <!--End identity platform doc-->
 
-> :warning: Before you start here, make sure you understand [how to initialize an app object](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md) and [working with resources and scopes](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md). We also recommend general familiarity with **Azure AD B2C**. See the [B2C documentation](https://docs.microsoft.com/azure/active-directory-b2c/technical-overview) for more.
+> :warning: Before you start here, make sure you understand [how to initialize an app object](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md) and [working with resources and scopes](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md). We also recommend general familiarity with **Azure AD B2C**. See the [B2C documentation](/azure/active-directory-b2c/technical-overview) for more.
 
 **MSAL.js supports** authentication with **social** (Microsoft, Google, Facebook etc.), **enterprise** (ADFS, Salesforce etc.) and **local** (stored in the Azure AD B2C directory) identities using **Azure AD B2C** (*B2C* for short). When developing B2C apps with **MSAL.js**, there are a few important details to keep in mind.
 
@@ -123,7 +123,7 @@ The `login.microsoftonline.com` endpoints can still be used for any behind the s
 
 - To obtain **application permissions**, you'll need perform application authentication (using the **client credentials grant**).
 - To obtain **delegated permissions**, you'll need to perform user authentication with an admin account.
-- Management apps are typically registered as audience **type 1** or **type 2** (see [below](#b2c-and-account/audience-types)).
+- Management apps are typically registered as audience **type 1** or **type 2** (see [below](#b2c-and-accountaudience-types)).
 
 ## Other Topics
 
@@ -179,4 +179,4 @@ MSAL.js will only process tokens which it originally requested. If your flow req
 
 ### B2C and iframe usage
 
-**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](/entra/identity-platform/configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. For other considerations when using iframes, please refer to: [Using MSAL in iframed apps](/entra/identity-platform/iframe-usage.md)
+**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](/entra/identity-platform/configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. For other considerations when using iframes, please refer to: [Using MSAL in iframed apps](/entra/identity-platform/iframe-usage)
