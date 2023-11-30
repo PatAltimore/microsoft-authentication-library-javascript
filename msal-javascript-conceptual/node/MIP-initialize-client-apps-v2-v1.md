@@ -19,11 +19,11 @@ This article describes initializing the Microsoft Authentication Library for Jav
 
 The user-agent application is a form of public client application in which the client code is executed in a user-agent such as a web browser. Clients such as these don't store secrets because the browser context is openly accessible.
 
-To learn more about the client application types and application configuration options, see [Public and confidential client apps in MSAL](msal-client-applications.md).
+To learn more about the client application types and application configuration options, see [Public and confidential client apps in MSAL](/entra/identity-platform/msal-client-applications).
 
 ## Prerequisites
 
-Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-registration.md), establishing a trust relationship between your application and the Microsoft identity platform.
+Before initializing an application, you first need to [register it in the Microsoft Entra admin center](/entra/identity-platform/scenario-spa-app-registration), establishing a trust relationship between your application and the Microsoft identity platform.
 
 After registering your app, you'll need some or all of the following values that can be found in the Microsoft Entra admin center.
 

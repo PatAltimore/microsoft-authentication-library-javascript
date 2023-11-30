@@ -26,8 +26,8 @@ MSAL.js enables [single-page applications](/azure/active-directory-b2c/applicati
 
 - Users **can** authenticate with their social and local identities.
 - Users **can** be authorized to access Azure AD B2C protected resources (but not Microsoft Entra protected resources).
-- Users **cannot** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#types-of-permissions).
-- Users with administrator privileges **can** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](./permissions-consent-overview.md#types-of-permissions).
+- Users **cannot** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](/entra/identity-platform/permissions-consent-overview.md#types-of-permissions).
+- Users with administrator privileges **can** obtain tokens for Microsoft APIs (for example, MS Graph API) using [delegated permissions](/entra/identity-platform/permissions-consent-overview.md#types-of-permissions).
 
 For more information, see: [Working with Azure AD B2C](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/working-with-b2c.md)
 
@@ -119,7 +119,7 @@ When you use `login.microsoftonline.com` endpoint without providing any `policyI
 
 ### User Management Scenarios
 
-The `login.microsoftonline.com` endpoints can still be used for any behind the scenes, *non-interactive* work on managing users and attributes, even if they are specific to B2C. When creating an **application registration** for an app that'll use [client credentials grant](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) to manage B2C resources using **MS Graph API**, you need to select the **Graph API** scopes that your management app needs to get permission for (see the [documentation](https://docs.microsoft.com/azure/active-directory-b2c/manage-user-accounts-graph-api) for more). Things to keep in mind:
+The `login.microsoftonline.com` endpoints can still be used for any behind the scenes, *non-interactive* work on managing users and attributes, even if they are specific to B2C. When creating an **application registration** for an app that'll use [client credentials grant](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to manage B2C resources using **MS Graph API**, you need to select the **Graph API** scopes that your management app needs to get permission for (see the [documentation](/azure/active-directory-b2c/manage-user-accounts-graph-api) for more). Things to keep in mind:
 
 - To obtain **application permissions**, you'll need perform application authentication (using the **client credentials grant**).
 - To obtain **delegated permissions**, you'll need to perform user authentication with an admin account.
@@ -149,7 +149,7 @@ msal.loginRedirect({
 });
 ```
 
-Read more [here](https://docs.microsoft.com/azure/active-directory-b2c/authorization-code-flow#2-get-an-access-token)
+Read more [here](/azure/active-directory-b2c/authorization-code-flow#2-get-an-access-token)
 
 2. Expose your own custom scope on your app registration and request this scope:
 
@@ -179,4 +179,4 @@ MSAL.js will only process tokens which it originally requested. If your flow req
 
 ### B2C and iframe usage
 
-**Azure AD B2C** offers an [embedded sign-in experience](https://docs.microsoft.com/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](./configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. For other considerations when using iframes, please refer to: [Using MSAL in iframed apps](./iframe-usage.md)
+**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](/entra/identity-platform/configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. For other considerations when using iframes, please refer to: [Using MSAL in iframed apps](/entra/identity-platform/iframe-usage.md)

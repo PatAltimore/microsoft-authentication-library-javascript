@@ -147,9 +147,9 @@ However, some methods in ADAL Node are deprecated, while MSAL Node offers new me
 | ADAL                              | MSAL                            | Notes                             |
 |-----------------------------------|---------------------------------|-----------------------------------|
 | `acquireUserCode`                   | N/A                             | Merged with `acquireTokeByDeviceCode` (see above)|
-| N/A                               | `acquireTokenOnBehalfOf`          | A new method that abstracts [OBO flow](./v2-oauth2-on-behalf-of-flow.md) |
+| N/A                               | `acquireTokenOnBehalfOf`          | A new method that abstracts [OBO flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow.md) |
 | `acquireTokenWithClientCertificate` | N/A                             | No longer needed as certificates are assigned during initialization now (see [configuration options](#configure-msal)) |
-| N/A                               | `getAuthCodeUrl`                  | A new method that abstracts [authorize endpoint](./v2-protocols.md#endpoints) URL construction |
+| N/A                               | `getAuthCodeUrl`                  | A new method that abstracts [authorize endpoint](/entra/identity-platform/v2-protocols.md#endpoints) URL construction |
 
 ## Use scopes instead of resources
 
@@ -335,7 +335,7 @@ const cachePlugin = {
 };
 ```
 
-If you're developing [public client applications](./msal-client-applications.md) like desktop apps, the [Microsoft Authentication Extensions for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/extensions/msal-node-extensions) offers secure mechanisms for client applications to perform cross-platform token cache serialization and persistence. Supported platforms are Windows, Mac and Linux.
+If you're developing [public client applications](/entra/identity-platform/msal-client-applications) like desktop apps, the [Microsoft Authentication Extensions for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/extensions/msal-node-extensions) offers secure mechanisms for client applications to perform cross-platform token cache serialization and persistence. Supported platforms are Windows, Mac and Linux.
 
 > [!NOTE]
 > [Microsoft Authentication Extensions for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/extensions/msal-node-extensions) is **not** recommended for web applications, as it may lead to scale and performance issues. Instead, web apps are recommended to persist the cache in session.
@@ -382,7 +382,7 @@ For more information, please refer to the [ADAL Node to MSAL Node migration samp
 
 ## Handle errors and exceptions
 
-When using MSAL Node, the most common type of error you might face is the `interaction_required` error. This error is often resolved by initiating an interactive token acquisition prompt. For instance, when using `acquireTokenSilent`, if there are no cached refresh tokens, MSAL Node won't be able to acquire an access token silently. Similarly, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA). In such cases, handling `interaction_required` error by triggering `acquireTokenByCode` will prompt the user for MFA, allowing them to fullfil it.
+When using MSAL Node, the most common type of error you might face is the `interaction_required` error. This error is often resolved by initiating an interactive token acquisition prompt. For instance, when using `acquireTokenSilent`, if there are no cached refresh tokens, MSAL Node won't be able to acquire an access token silently. Similarly, the web API you're trying to access might have a [Conditional Access](/entra/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multi-factor authentication](/entra/identity/authentication/concept-mfa-howitworks.md) (MFA). In such cases, handling `interaction_required` error by triggering `acquireTokenByCode` will prompt the user for MFA, allowing them to fullfil it.
 
 Yet another common error you might face is `consent_required`, which occurs when permissions required for obtaining an access token for a protected resource aren't consented by the user. As in `interaction_required`, the solution for `consent_required` error is often initiating an interactive token acquisition prompt, using the `acquireTokenByCode` method.
 
