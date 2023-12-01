@@ -1,6 +1,6 @@
 ---
-title: "Migrate your Node.js application from ADAL to MSAL"
-description: How to update your existing Node.js application to use the Microsoft Authentication Library (MSAL) for authentication and authorization instead of the Active Directory Authentication Library (ADAL).
+title: Accounts in MSAL Node
+description: Learn how to use the different APIs in MSAL Node to access cached accounts.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
@@ -10,7 +10,7 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
-#Customer intent: As an application developer, I want to learn how to change the code in my Node.js application from using ADAL as its authentication library to MSAL.
+#Customer intent: As a developer, I want to learn how to use the different APIs in MSAL Node to access cached accounts.
 ---
 
 # Accounts in MSAL Node

@@ -1,6 +1,6 @@
 ---
-title: "Acquiring Device Bound Tokens"
-description: Learn how to acquire tokens from the native token broker.
+title: Using certificate credentials with MSAL Node
+description: Learn how to use certificate credentials with MSAL Node. Create, register and initialize certificates, and use them securely.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber

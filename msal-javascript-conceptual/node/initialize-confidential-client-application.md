@@ -1,6 +1,6 @@
 ---
-title: "Acquiring Device Bound Tokens"
-description: Learn how to acquire tokens from the native token broker.
+title: Initialize the confidential client application object in MSAL Node 
+description: Learn how to initialize MSAL Node.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
@@ -13,7 +13,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 #Customer intent: 
 ---
 
-# Initialization of MSAL
+# Initialize the confidential client application object in MSAL Node 
 
 Before you get started, please ensure you have completed all the [prerequisites](../README.md#prerequisites).
 

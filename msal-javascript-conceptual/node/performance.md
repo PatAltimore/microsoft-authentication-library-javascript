@@ -1,6 +1,6 @@
 ---
-title: "Acquiring Device Bound Tokens"
-description: Learn how to acquire tokens from the native token broker.
+title: Performance in MSAL Node
+description: Learn how to measure performance in MSAL Node.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber

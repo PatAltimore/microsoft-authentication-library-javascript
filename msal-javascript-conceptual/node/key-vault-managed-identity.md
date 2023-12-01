@@ -1,5 +1,5 @@
 ---
-title: "Acquiring Device Bound Tokens"
+title: Securing MSAL Node app credentials with Azure Key Vault and Azure Managed Identity
 description: Learn how to acquire tokens from the native token broker.
 author: EmLauber
 manager: CelesteDG

@@ -1,5 +1,5 @@
 ---
-title: "Acquiring Device Bound Tokens"
+title: Implement SNI Authentication with MSAL Node
 description: Learn how to acquire tokens from the native token broker.
 author: EmLauber
 manager: CelesteDG

@@ -1,6 +1,6 @@
 ---
-title: "Acquiring Device Bound Tokens"
-description: Learn how to acquire tokens from the native token broker.
+title: Enabling regional authorities
+description: Learn how to enable regional authorities in MSAL Node.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber

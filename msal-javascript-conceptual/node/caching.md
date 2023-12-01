@@ -1,6 +1,6 @@
 ---
-title: "Acquiring Device Bound Tokens"
-description: Learn how to acquire tokens from the native token broker.
+title: Token caching in MSAL Node
+description: Learn how to effectively cache tokens in MSAL Node, and use client secrets securely,
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
@@ -9,7 +9,7 @@ ms.date: 04/26/2021
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
-ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 #Customer intent: 
 ---
 

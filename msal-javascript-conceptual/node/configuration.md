@@ -1,5 +1,5 @@
 ---
-title: "Acquiring Device Bound Tokens"
+title: Configure MSAL Node
 description: Learn how to acquire tokens from the native token broker.
 author: EmLauber
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 #Customer intent: 
 ---
 
-# Configuration Options
+# Configure MSAL Node
 
 Before you start here, make sure you understand how to [initialize an app object](./initialize-public-client-application.md).
 
