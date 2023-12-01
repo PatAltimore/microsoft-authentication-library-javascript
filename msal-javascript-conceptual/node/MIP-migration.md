@@ -1,7 +1,7 @@
 ---
 title: "Migrate your Node.js application from ADAL to MSAL"
 description: How to update your existing Node.js application to use the Microsoft Authentication Library (MSAL) for authentication and authorization instead of the Active Directory Authentication Library (ADAL).
-author: cilwerner
+author: EmLauber
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref, devx-track-js
@@ -19,6 +19,13 @@ ms.topic: how-to
 ## Prerequisites
 
 - Node version 10, 12, 14, 16 or 18. See the [note on version support](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node#node-version-support)
+
+
+## Migrate applications from ADAL Node to MSAL Node
+
+For general remarks on differences between ADAL vs MSAL, as well as important dates and frequently asked questions, please refer to: [Migrate applications to the Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-migration)
+
+For specifics of migrating an app using ADAL Node to MSAL Node, including comparison between ADAL vs. MSAL public APIs, see the tutorial: [How to migrate a Node.js app from ADAL to MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-node-migration)
 
 ## Update app registration settings
 

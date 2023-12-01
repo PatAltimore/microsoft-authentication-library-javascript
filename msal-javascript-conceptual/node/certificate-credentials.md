@@ -1,3 +1,18 @@
+---
+title: "Acquiring Device Bound Tokens"
+description: Learn how to acquire tokens from the native token broker.
+author: EmLauber
+manager: CelesteDG
+ms.author: emilylauber
+
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: 
+---
+
 # Using certificate credentials with MSAL Node
 
 > :warning: Before you start here, make sure you understand [Initialize confidential client applications](./initialize-confidential-client-application.md).

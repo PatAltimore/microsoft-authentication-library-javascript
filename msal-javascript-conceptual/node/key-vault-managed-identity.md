@@ -1,3 +1,18 @@
+---
+title: "Acquiring Device Bound Tokens"
+description: Learn how to acquire tokens from the native token broker.
+author: EmLauber
+manager: CelesteDG
+ms.author: emilylauber
+
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: 
+---
+
 # Securing MSAL Node app credentials with Azure Key Vault and Azure Managed Identity
 
 > :warning: Before you start here, make sure you understand [Using certificate credentials with MSAL Node](./certificate-credentials.md).

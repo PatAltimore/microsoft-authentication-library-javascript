@@ -1,3 +1,18 @@
+---
+title: "Acquiring Device Bound Tokens"
+description: Learn how to acquire tokens from the native token broker.
+author: EmLauber
+manager: CelesteDG
+ms.author: emilylauber
+
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: 
+---
+
 # Performance
 
 Please refer to [msal-common/performance](../../msal-common/docs/performance.md) first, which outlines the techniques your application can use to improve the performance of token acquisition using MSAL. Read below for measuring performance in your apps and pitfalls to avoid.

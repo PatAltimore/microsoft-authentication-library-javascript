@@ -1,3 +1,18 @@
+---
+title: "Acquiring Device Bound Tokens"
+description: Learn how to acquire tokens from the native token broker.
+author: EmLauber
+manager: CelesteDG
+ms.author: emilylauber
+
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: 
+---
+
 # Acquiring Device Bound Tokens
 
 MSAL Node supports acquiring tokens from the native token broker. When using the native broker refresh tokens are bound to the device on which they are acquired on and are not accessible by `msal-node` or the application. This provides a higher level of security that cannot be achieved by `msal-node` alone.
@@ -6,7 +21,7 @@ MSAL Node supports acquiring tokens from the native token broker. When using the
 
 This feature is currently only supported on Windows.
 
-## Pre-requisites
+## Prerequisites
 
 - Install `@azure/msal-node-extensions` as a dependency
 - Register the broker's redirectUri on your app registration: `ms-appx-web://Microsoft.AAD.BrokerPlugin/<your-client-id>`, replacing `<your-client-id>` with your clientId.

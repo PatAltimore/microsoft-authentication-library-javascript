@@ -1,3 +1,18 @@
+---
+title: "Acquiring Device Bound Tokens"
+description: Learn how to acquire tokens from the native token broker.
+author: EmLauber
+manager: CelesteDG
+ms.author: emilylauber
+
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: 
+---
+
 # Enabling regional authorities
 
 To increase the reliability, availability and performance of Azure, regionalization aims to keep all trafic inside a geographical area. For example, if an app needs to fetch data from Key Vault in WestUs2, all the traffic this entails - including MSAL generated traffic - should stay in WestUs2.

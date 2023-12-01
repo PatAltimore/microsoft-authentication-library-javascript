@@ -1,14 +1,16 @@
 ---
-title: Overview
-description:  Overview of the Microsoft Authentication Libraries for JavaScript
-services: active-directory
-author: Dickson-Mwendia
+title: "Migrate your Node.js application from ADAL to MSAL"
+description: How to update your existing Node.js application to use the Microsoft Authentication Library (MSAL) for authentication and authorization instead of the Active Directory Authentication Library (ADAL).
+author: EmLauber
 manager: CelesteDG
+ms.author: emilylauber
 
-ms.topic: reference
-ms.date: 11/29/2023
-ms.author: dmwendia
-ms.reviewer: emilylauber
+ms.date: 04/26/2021
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+#Customer intent: As an application developer, I want to learn how to change the code in my Node.js application from using ADAL as its authentication library to MSAL.
 ---
 
 # Accounts in MSAL Node
@@ -102,7 +104,7 @@ async function getResource() {
         account: account,
         scopes: scopes,
     };
-    // Acquire Token Silently to be used in Resource API calll
+    // Acquire Token Silently to be used in Resource API call
     pca.acquireTokenSilent(silentRequest)
         .then((response) => {
             // Handle successful resource API response
