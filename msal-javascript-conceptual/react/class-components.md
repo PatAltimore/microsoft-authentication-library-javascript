@@ -1,12 +1,24 @@
-# Using @azure/msal-react with class components
+---
+title: Using MSAL React with class components
+description: Learn how to use MSAL React with class components. covering initialization, protecting components, accessing MSAL React context and logging in.
+author: EmLauber
+manager: CelesteDG
 
-`@azure/msal-react` does support both function components and class components. However, you will not be able to use `@azure/msal-react` hooks inside your class components so if you need access to authentication state inside your class component you will need to use `@azure/msal-browser` directly to obtain similar functionality.
+ms.topic: conceptual
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
 
-For a working example, see [react-router-sample](../../../samples/msal-react-samples/react-router-sample/README.md#optional-msal-react-and-class-components).
+# Using MSAL React with class components
+
+MSAL React supports both function components and class components. However, you will not be able to use `@azure/msal-react` hooks inside your class components so if you need access to authentication state inside your class component you will need to use `@azure/msal-browser` directly to obtain similar functionality.
+
+For a working example, see [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample).
 
 ## Initialization
 
-Just like when using function components you will need an `MsalProvider` component at the top level of the component tree that requires access to authentication state.
+Just like when using function components you will need an [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component at the top level of the component tree that requires access to authentication state.
 
 ```javascript
 import React from "react";
@@ -58,7 +70,7 @@ class App extends React.Component {
 
 ## Accessing MSAL React context in a class component
 
-Since you can't use the `useMsal` hook to access the [MSAL React context](https://azuread.github.io/microsoft-authentication-library-for-js/ref/interfaces/_azure_msal_react.imsalcontext.html) in a class component you have 2 other options. You can either use the raw context directly or you can use the `withMsal` higher order component to inject the context into your component's props.
+Since you can't use the `useMsal` hook to access the MSAL React context in a class component you have 2 other options. You can either use the raw context directly or you can use the `withMsal` higher order component to inject the context into your component's props. <!--IMsalContext?-->
 
 ### Accessing raw context
 
