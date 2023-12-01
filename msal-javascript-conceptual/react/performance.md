@@ -1,4 +1,16 @@
-# Performance
+---
+title: Performance in MSAL React
+description: Learn how to configure @azure/msal-react to use your router's navigate function for client-side navigation
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: conceptual
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
+# Performance in MSAL React
 
 ## How to configure `@azure/msal-react` to use your router's navigate function for client-side navigation
 

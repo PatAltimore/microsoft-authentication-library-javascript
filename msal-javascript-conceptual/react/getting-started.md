@@ -1,5 +1,5 @@
 ---
-title: Getting started with MSAL React
+title: Get started with MSAL React
 description: Get started with MSAL React. Learn how to initialize MSAL React, determine whether a user is authenticated, protect components, sign a user in and acquire an access token.
 author: EmLauber
 manager: CelesteDG
@@ -10,7 +10,7 @@ ms.author: emilylauber
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 ---
 
-# Getting Started
+# Get started with MSAL React
 
 1. [Initialization](#initialization)
 1. [Determining whether a user is authenticated](#determining-whether-a-user-is-authenticated)
