@@ -15,8 +15,6 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Accounts in MSAL Node
 
-> This is the platform-specific Accounts documentation for `msal-node`. For the general documentation of the `AccountInfo` object structure, please visit the `msal-common` [Accounts document](../../msal-common/docs/Accounts.md).
-
 ## Usage
 
 The `msal-node` library provides the following different APIs to access cached accounts:

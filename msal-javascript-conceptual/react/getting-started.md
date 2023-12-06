@@ -12,6 +12,8 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Get started with MSAL React
 
+This article
+
 1. [Initialization](#initialization)
 1. [Determining whether a user is authenticated](#determining-whether-a-user-is-authenticated)
 1. [Protecting Components](#protecting-components)
@@ -20,7 +22,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 ## Initialization
 
-`@azure/msal-react` is built on the [React context API](https://reactjs.org/docs/context.html) and all parts of your app that require authentication must be wrapped in the `MsalProvider` component. You will first need to [initialize](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/initialization.md) an instance of `PublicClientApplication` then pass this to `MsalProvider` as a prop.
+`@azure/msal-react` is built on the [React context API](https://reactjs.org/docs/context.html) and all parts of your app that require authentication must be wrapped in the [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component. You will first need to [initialize](../browser/initialization.md) an instance of [`PublicClientApplication`](/javascript/api/@azure/msal-browser/publicclientapplication) then pass this to `MsalProvider` as a prop.
 
 ```javascript
 import React from "react";

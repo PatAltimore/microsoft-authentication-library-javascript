@@ -1,6 +1,6 @@
 ---
 title: Using MSAL React with class components
-description: Learn how to use MSAL React with class components. covering initialization, protecting components, accessing MSAL React context and logging in.
+description: Learn how to use MSAL React with class components, covering initialization, protecting components, accessing MSAL React context and logging in.
 author: EmLauber
 manager: CelesteDG
 
@@ -12,13 +12,19 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Using MSAL React with class components
 
-MSAL React supports both function components and class components. However, you will not be able to use `@azure/msal-react` hooks inside your class components so if you need access to authentication state inside your class component you will need to use `@azure/msal-browser` directly to obtain similar functionality.
+MSAL React supports both function components and class components. This article provides guidance on using MSAL React with class components, enabling you to initialize, protect and access MSAL React context in your class components.
 
-For a working example, see [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample).
+It's important to note that you won't be able to use `@azure/msal-react` hooks inside your class components. If you need access to authentication state inside your class component, you'll need to use `@azure/msal-browser` directly to obtain similar functionality.
+
+## Prerequisites
+
+
 
 ## Initialization
 
-Just like when using function components you will need an [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component at the top level of the component tree that requires access to authentication state.
+Initialization with class components with MSAL React works very similarly to to function components. Similar to when using function components, you'll need an [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component at the top level of the component tree that requires access to authentication state.
+
+In the following snippet, the `MsalProvider` component is used to wrap the entire application, making the MSAL instance available to all child components. This enables child components to use MSAL for user authentication, acquiring tokens, and calling protected APIs.
 
 ```javascript
 import React from "react";
@@ -40,7 +46,13 @@ class App extends React.Component {
 
 ## Protecting Components
 
-Just like when using function components you can use the `AuthenticatedTemplate`, `UnauthenticatedTemplate` and `MsalAuthenticationTemplate` to conditionally render your components.
+In MSAL React, you can protect your components and conditionally render then based on the authentication state of the user. This works similarly to using function components. The main examples are: 
+
+* [`AuthenticatedTemplate`](/javascript/api/@azure/msal-react/#@azure-msal-react-authenticatedtemplate) - This component will only render its children if the user is authenticated. If the user is not authenticated, it will not render anything.
+* [`UnauthenticatedTemplate`](/javascript/api/@azure/msal-react/#@azure-msal-react-unauthenticatedtemplate) - This component will only render its children if the user is not authenticated. If the user is authenticated, it will not render anything.
+* [`MsalAuthenticationTemplate`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalauthenticationtemplate) - This component attempts to authenticate the user before rendering its children. You can specify the interaction type (redirect or popup) as a prop. If the user is not authenticated, it will initiate the authentication process.
+
+The following snippet shows how to use `AuthenticatedTemplate`, `UnauthenticatedTemplate`, and `MsalAuthenticationTemplate` to protect your React components. Note how `MSAL Provider` wraps around the child components.
 
 ```javascript
 import React from "react";
@@ -70,9 +82,11 @@ class App extends React.Component {
 
 ## Accessing MSAL React context in a class component
 
-Since you can't use the `useMsal` hook to access the MSAL React context in a class component you have 2 other options. You can either use the raw context directly or you can use the `withMsal` higher order component to inject the context into your component's props. <!--IMsalContext?-->
+The `useMsal` hook can't be used to access the MSAL React context in a class component. This is because hooks can only be used in function components where you can use features without an instance. Because class components have instances, you have 2 other options. You can either use the raw context directly or you can use the `withMsal` higher order component to inject the context into your component's props. <!--IMsalContext?-->
 
 ### Accessing raw context
+
+The following snippet shows how to use the `MsalContext` to access the raw context in a class component.
 
 ```javascript
 import React from "react";
@@ -103,9 +117,11 @@ class YourClassComponent extends React.Component {
 }
 ```
 
-For a working example, see [ProfileRawContext.jsx](../../../samples/msal-react-samples/react-router-sample) in [react-router-sample](../../../samples/msal-react-samples/react-router-sample/src/pages/ProfileRawContext.jsx).
+For a working example, refer to [*ProfileRawContext.jsx*](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample/src/pages/ProfileRawContext.jsx) in our [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample).
 
 ### Accessing via withMsal HOC
+
+The alternative is to use the `withMsal` higher order component to inject the context into your component's props. The following snippet shows how to use the `withMsal` HOC to access the MSAL React context in a class component.
 
 ```javascript
 import React from "react";
@@ -136,17 +152,20 @@ class App extends React.Component {
 }
 ```
 
-For a working example, see [ProfileWithMsal.jsx](../../../samples/msal-react-samples/react-router-sample) in [react-router-sample](../../../samples/msal-react-samples/react-router-sample/src/pages/ProfileWithMsal.jsx).
+For a working example, refer to [*ProfileWithMsal.jsx*](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample/src/pages/ProfileWithMsal.jsx) in [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample).
 
 ## Logging in using a class component
 
-Regardless of which approach you take to get the `MSAL React` context the usage will be the same. Once you have the context object you can invoke [any of the APIs](https://azuread.github.io/microsoft-authentication-library-for-js/ref/interfaces/_azure_msal_browser.ipublicclientapplication.html) on `PublicClientApplication`, inspect the accounts signed in, or determine if authentication is currently in progress.
+Regardless of which approach you take to get the `MSAL React` context, the usage will be the same. Once you have the context object you can invoke [any of the APIs](/javascript/api/@azure/msal-browser/publicclientapplication) on `PublicClientApplication`, inspect the accounts signed in, or determine if authentication is currently in progress.
 
 The following examples will show how to login using the `withMsal` HOC approach but you can quickly adapt to the other approach if needed.
 
-**Note**: By now you should be aware that an `MsalProvider` component must be rendered at any level above any component that uses context, the examples below will assume there is a provider and will not demonstrate this.
+> [!NOTE]
+> It's important to remember that an `MsalProvider` component must be rendered at any level above any component that uses context. The following examples assume there is a provider and won't demonstrate this.
 
 ### Logging in as a result of clicking a button
+
+The following snippet defines a React class component `LoginButton` that uses the `withMsal` higher-order component. It renders a button that either triggers a login popup if the user is not authenticated, or logs out the user if they are authenticated.
 
 ```javascript
 import React from "react";
@@ -168,6 +187,8 @@ export default YourWrappedComponent = withMsal(LoginButton);
 ```
 
 ### Logging in on page load
+
+The following snippet defines a React class component `ProtectedComponent` that uses the `withMsal` higher-order component. It attempts to authenticate the user upon mounting and updating, and displays whether the user is authenticated or if authentication is in progress on the loading page.
 
 ```javascript
 import React from "react";
@@ -204,3 +225,7 @@ class ProtectedComponent extends React.Component {
 
 export default YourWrappedComponent = withMsal(ProtectedComponent);
 ```
+
+## See also
+
+- Check out our [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample).

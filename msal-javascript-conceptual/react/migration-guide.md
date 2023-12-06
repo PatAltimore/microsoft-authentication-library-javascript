@@ -28,9 +28,9 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 ## Updating your app registration
 
-The first change you should be aware of is that the `msal` v1 library implements the [Implicit Flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-implicit-grant-flow). `@azure/msal-react`, on the other hand, is a wrapper around `@azure/msal-browser` v2 which implements the [Auth Code Flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow)
+The first change you should be aware of is that the `msal` v1 library implements the [Implicit Flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow). `@azure/msal-react`, on the other hand, is a wrapper around `@azure/msal-browser` v2 which implements the [Auth Code Flow with PKCE](/entra/identity-platform/v2-oauth2-auth-code-flow)
 
-When moving from msal.js v1 to v2 you will need to create a new app registration or update an existing one to use the new `redirectUri` type "SPA". You can find more detailed instructions on how to do this [here](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-app-registration#redirect-uri-msaljs-20-with-auth-code-flow).
+When moving from msal.js v1 to v2 you will need to create a new app registration or update an existing one to use the new `redirectUri` type "SPA". You can find more detailed instructions on how to do this [here](/entra/identity-platform/scenario-spa-app-registration#redirect-uri-msaljs-20-with-auth-code-flow).
 
 ## Installation
 

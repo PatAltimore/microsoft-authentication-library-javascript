@@ -1,5 +1,5 @@
 ---
-title: Handle errors and exceptions in MSAL.js
+title: Handle errors and exceptions in MSAL Node
 description: Learn how to handle use MSAL React with class components. covering initialization, protecting components, accessing MSAL React context and logging in.
 author: EmLauber
 manager: CelesteDG
@@ -10,31 +10,19 @@ ms.author: emilylauber
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 ---
 
-# Handle errors and exceptions in MSAL.js
+# Handle errors and exceptions in MSAL Node
 
-***
-
-**[BrowserConfigurationAuthErrors](#Browserconfigurationautherrors)**
-
-1. [stubbed_public_client_application_called](#stubbed_public_client_application_called)
-
-**[BrowserAuthErrors](#browserautherrors)**
-
-1. [interaction_in_progress](#interaction_in_progress)
-
-**[Additional Errors](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/errors.md)**
-
-***
+This article covers how to handle some of the errors and exceptions that can be thrown by MSAL React. We'll cover BrowserConfigurationAuthErrors, and BrowserAuthErrors and provide some troubleshooting steps to help you resolve them.
 
 ## BrowserConfigurationAuthErrors
 
-### stubbed_public_client_application_called
+BrowserConfigurationAuthErrors are used to represent errors that occur due to incorrect configuration of the MSAL authentication parameters, and can occur when initializing a `PublicClientApplication` or `ConfidentialClientApplication` instance. If the configuration object passed to the constructor does not meet the library's requirements, you don't provide a valid client ID or authority, or if you provide an invalid redirect URI, you might encounter this type of error
 
-**Error Message**: Stub instance of Public Client Application was called. If using `@azure/msal-react`, please ensure context is not used without a provider.
+### `stubbed_public_client_application_called`
 
-When using `@azure/msal-react` this error is thrown when you try to use an msal component or hook without an `MsalProvider` higher up in the component tree. All hooks and components make use of the [React Context API](https://reactjs.org/docs/context.html) and require a provider.
+This error means that a method has been called on a `PublicClientApplication` instance that has been stubbed out or incorrectly initialized, when you try to use an msal component or hook without an `MsalProvider` higher up in the component tree. All hooks and components make use of the [React Context API](https://reactjs.org/docs/context.html) and require a provider. You may get a message similar to `Stub instance of PublicClientApplication was called. If using @azure/msal-react, please ensure context is not used without a provider`.
 
-❌ The following example will throw this error because the `useMsal` hook is used outside the context of `MsalProvider`:
+The following snippet will throw this error because the `useMsal` hook is used outside the context of `MsalProvider`.
 
 ```javascript
 import { useMsal, MsalProvider } from "@azure/msal-react";
@@ -53,7 +41,7 @@ function App() {
 }
 ```
 
-✔️ To resolve the error you should refactor the code above so that the `useMsal` hook is called in a component underneath `MsalProvider`:
+To resolve the error you should refactor the preceding snippet so that the `useMsal` hook is called in a component underneath `MsalProvider`. The correct implementation is shown in the following snippet.
 
 ```javascript
 import { useMsal, MsalProvider } from "@azure/msal-react";
@@ -78,18 +66,18 @@ function App() {
 
 ## BrowserAuthErrors
 
-### Interaction_in_progress
+BrowserAuthErrors are used to represent errors that occur during the authentication process in a browser environment. Such occurrences can be when a user tries to initiate a new login request while a previous request is still being processed. To resolve these errors, you should ensure that each interaction has completed before starting a new one.
 
-**Error Message**: Interaction is currently in progress. Please ensure that this interaction has been completed before calling an interactive API.
+### `Interaction_in_progress`
 
-This error is thrown when an interactive API (`loginPopup`, `loginRedirect`, `acquireTokenPopup`, `acquireTokenRedirect`) is invoked while another interactive API is still in progress. The login and acquireToken APIs are async so you will need to ensure that the resulting promises have resolved before invoking another one.
+This error is thrown when an interactive API (`loginPopup`, `loginRedirect`, `acquireTokenPopup`, `acquireTokenRedirect`) is invoked while another interactive API is still in progress. The login and acquireToken APIs are async so you will need to ensure that the resulting promises have resolved before invoking another one. You may get an error message similar to `Interaction is currently in progress. Please ensure that this interaction has been completed before calling an interactive API.`
 
 In `@azure/msal-react` there are 2 scenarios when this can happen:
 
-1. Your application is calling one of the above APIs outside of the context where you do not have access to the `inProgress` state. For more about context see the [FAQ](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/FAQ.md#what-can-i-do-outside-of-msal-react-context)
-1. Your application is calling one of the above APIs without first checking if interaction is already in progress elsewhere.
+1. Your application is calling one of the APIs outside of the context where you do not have access to the `inProgress` state. For more about context see the [FAQ](./faq.md#what-can-i-do-outside-of-msal-react-context)
+1. Your application is calling one of the APIs without first checking if interaction is already in progress elsewhere.
 
-❌ The following example will throw this error when another component has already invoked an interactive API that is in progress:
+The following snippet throws the error when another component has already invoked an interactive API that is in progress:
 
 ```javascript
 import { useMsal, useIsAuthenticated } from "@azure/msal-react";
@@ -108,7 +96,7 @@ export function exampleComponent() {
 }
 ```
 
-✔️ To fix the previous example, check that no other interaction is in progress before invoking `loginPopup`:
+To fix the previous snippet, check that no other interaction is in progress before invoking `loginPopup`:
 
 ```javascript
 import { useMsal, useIsAuthenticated } from "@azure/msal-react";
@@ -129,7 +117,7 @@ export function exampleComponent() {
 
 #### Troubleshooting Steps
 
-- [Enable verbose logging](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md#using-the-config-object) and trace the order of events. Verify that an interactive API is not invoked before another has resolved. If using the redirect flow make sure `handleRedirectPromise` has resolved (done in the `MsalProvider`).
+- [Enable verbose logging](../browser/configuration.md#using-the-config-object) and trace the order of events. Verify that an interactive API is not invoked before another has resolved. If using the redirect flow make sure `handleRedirectPromise` has resolved (done in the `MsalProvider`).
 
 If you are unable to figure out why this error is being thrown please [open an issue](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/new/choose) and be prepared to share the following information:
 
@@ -137,3 +125,7 @@ If you are unable to figure out why this error is being thrown please [open an i
 - A sample app and/or code snippets that we can use to reproduce the issue
 - Refresh the page. Does the error go away?
 - Open your application in a new tab. Does the error go away?
+
+## See also
+
+There are additional errors that can be thrown by MSAL.js. You can refer to the [full list of errors](../browser/errors.md) covered in MSAL Browser.
