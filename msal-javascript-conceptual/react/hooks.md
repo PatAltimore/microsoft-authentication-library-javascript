@@ -10,7 +10,7 @@ ms.author: emilylauber
 ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 ---
 
-# Hooks
+# Hooks in MSAL React
 
 Hooks in MSAL React are functions that let you use MSAL features and React state and lifecycle methods inside functional components. The main hooks are `useAccount`, `useIsAuthenticated`, `useMsal`, and `useMsalAuthentication`. This article will walk you through how to use each of these hooks.
 

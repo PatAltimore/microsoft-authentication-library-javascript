@@ -26,13 +26,13 @@ If your application is doing all of the things above you can override the method
 
 **Note:** We recommend `MsalProvider` is rendered above your `Route` components and your `navigateInternal` function returns `false`. When `navigateInternal` returns false the tokens will be processed immediately after navigation. If `MsalProvider` is re-rendered as a result of navigation, your `navigateInternal` function should return `true` so that tokens are processed as a part of the re-render.
 
-### Example Implementation
+## Example Implementation
 
 Each router has their own method for doing client-side navigation and depending on how they expose the method you may need to refactor your application to support this feature. The example below will show how to implement this for `react-router-dom`. You can find a full sample apps that implement this for [react-router-dom](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample), [Next.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/nextjs-sample) and [Gatsby](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/gatsby-sample).
 
-> :information_source: Samples mentioned above make use of `react-router-dom` v6. If you would like to use `react-router-dom` v5 instead, please refer to: [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/cf3dc599adc36d1c4460bcf7d8185c9beb5283f3/samples/msal-react-samples/react-router-sample/src/App.js).
+These samples mentioned above make use of `react-router-dom` v6. If you would like to use `react-router-dom` v5 instead, please refer to: [react-router-sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/samples/msal-react-samples/react-router-sample/src/App.js).
 
-#### INavigationClient Implementation
+### INavigationClient Implementation
 
 ```javascript
 import { NavigationClient } from "@azure/msal-browser";
@@ -62,7 +62,7 @@ class CustomNavigationClient extends NavigationClient{
 }
 ```
 
-#### Providing your custom NavigationClient to `@azure/msal-browser`
+### Providing your custom NavigationClient to `@azure/msal-browser`
 
 ```javascript
 import { MsalProvider } from "@azure/msal-react";
