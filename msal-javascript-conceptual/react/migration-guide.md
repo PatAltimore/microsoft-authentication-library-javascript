@@ -1,55 +1,49 @@
 ---
-title: Migration Guide from msal v1 to MSAL React and MSAL Browser
+title: Migration Guide from MSAL v1 to MSAL React and MSAL Browser
 description: Learn how to migrate from msal.js v1 to MSAL React and MSAL Browser. This guide covers updating your app registration, installation, initialization, protecting components, acquiring an access token, acquiring an id token, updating redux store integration and reacting to events.
 author: EmLauber
 manager: CelesteDG
 
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/29/2023
 ms.author: emilylauber
 ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 ---
 
-# Migration Guide from msal v1 to @azure/msal-react and @azure/msal-browser
+# Migration Guide from MSAL v1 to @azure/msal-react and @azure/msal-browser
 
-***
+This article provides an overview on migrating from MSAL v1 to `@azure/msal-react` and `@azure/msal-browser`. We recommend migration for improved performance and better security with the authorization code flow with PKCE and conditional access. Additionally, there's better single page application support. 
 
-1. [Updating your app registration](#updating-your-app-registration)
-1. [Installation](#installation)
-1. [Upgrading from react-aad-msal](#upgrading-from-react-aad-msal)
-    1. [Breaking Changes](#breaking-changes)
-    1. [Initialization](#initialization)
-    1. [Protecting your components](#protecting-your-components)
-    1. [Acquiring an access token](#acquiring-an-access-token)
-    1. [Acquiring an id token](#acquiring-an-id-token)
-    1. [Updating redux store integration / reacting to events](#updating-redux-store-integration--reacting-to-events)
+## Prerequisites
 
-***
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/)
+- An existing application registered in your Microsoft Entra tenant.
 
 ## Updating your app registration
 
-The first change you should be aware of is that the `msal` v1 library implements the [Implicit Flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow). `@azure/msal-react`, on the other hand, is a wrapper around `@azure/msal-browser` v2 which implements the [Auth Code Flow with PKCE](/entra/identity-platform/v2-oauth2-auth-code-flow)
+The `@azure/msal-react` library, is a wrapper around `@azure/msal-browser` which implements the [Auth Code Flow with PKCE](/entra/identity-platform/v2-oauth2-auth-code-flow). This is a significant update from the MSAL v1 library which implements the [Implicit Flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow).
 
-When moving from msal.js v1 to v2 you will need to create a new app registration or update an existing one to use the new `redirectUri` type "SPA". You can find more detailed instructions on how to do this [here](/entra/identity-platform/scenario-spa-app-registration#redirect-uri-msaljs-20-with-auth-code-flow).
+You'll need to create a new app registration or update an existing one to use the new `redirectUri` type "SPA". Refer to [Single-page application: App registration](/entra/identity-platform/scenario-spa-app-registration#redirect-uri-msaljs-20-with-auth-code-flow) for more information.
 
-## Installation
+## Installing `@azure/msal-react` and `@azure/msal-browser`
 
-Both `@azure/msal-react` and its peer dependency `@azure/msal-browser` can be installed from npm:
-`npm install @azure/msal-react @azure/msal-browser`
+Both `@azure/msal-react` and its peer dependency `@azure/msal-browser` can be installed from npm. Its important to uninstall your old MSAL package. Open a terminal and run the following commands.
 
-You should also uninstall the old `msal` package:
-`npm uninstall msal`
+```console
+npm uninstall msal
+npm install @azure/msal-react @azure/msal-browser
+```
 
 ## Upgrading from react-aad-msal
 
-If your app currently uses [react-aad-msal](https://www.npmjs.com/package/react-aad-msal) for authentication and you are looking to migrate to `@azure/msal-react` this document will outline the differences between the two libraries and some of the changes you need to make. Since `react-aad-msal` is a 3rd party library and MSAL React was built from the ground up there may be some edge cases that are not covered or not supported by MSAL React. If you find something that was possible with `react-aad-msal` but is not possible with `@azure/msal-react`, please feel free to [open an issue](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/new/choose).
-
-### Breaking Changes
+If your app currently uses [React AAD MSAL](https://www.npmjs.com/package/react-aad-msal) for authentication and you are looking to migrate to `@azure/msal-react` this section will outline the differences between the two libraries and some of the changes you need to make. React AAD MSAL is a 3rd party library and MSAL React was built from the ground up there may be some edge cases that are not covered or not supported by MSAL React. 
 
 The following are features supported in `react-aad-msal` which are not supported in `@azure/msal-react`:
 
 - Verifying IdToken expiration before rendering protected components & automatic refresh of expired IdTokens
 - Out of the box support for redux store (alternative below)
+
+For other cases possible with `react-aad-msal` but no lonter possible with `@azure/msal-react`, open an issue in the [microsoft-authentication-library-for-js](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/new/choose) GitHub repo.
 
 ### Initialization
 
@@ -61,7 +55,7 @@ import { MsalAuthProvider } from "react-aad-msal";
 const authProvider = new MsalAuthProvider(config, authenticationParameters, options);
 ```
 
-In `@azure/msal-react` you initialize your msal instance using `PublicClientApplication` exported from `@azure/msal-browser` which is then passed down to the `MsalProvider` component exported from `@azure/msal-react`. The config options are largely similar between `msal` and `@azure/msal-browser` but see [here](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_browser.html#configuration) for the most up to date config options.
+In `@azure/msal-react` you initialize your msal instance using `PublicClientApplication` exported from `@azure/msal-browser` which is then passed down to the `MsalProvider` component exported from `@azure/msal-react`. The config options are largely similar between `msal` and `@azure/msal-browser`, however you can refer to the [Configuration type](/javascript/api/@azure/msal-browser/configuration) for the most up to date config options.
 
 The `authenticationParameters` and `options` parameters used in `react-aad-msal` are not used in `@azure/msal-react`, though similar functionality can be achieved on individual components. This will be explained later on in this document.
 
@@ -86,7 +80,7 @@ General notes about the `MsalProvider` component:
 
 - All components that need access to authentication state or hooks/components exposed by `@azure/msal-react` must have an `MsalProvider` higher up in the component tree, therefore it is recommended that `MsalProvider` be rendered as close to the root as possible.
 - Your app should not render more than 1 `MsalProvider` component on any given page.
-- We do not recommend initializing `PublicClientApplication` inside a component due to the possiblity of re-renders
+- We don't recommend initializing `PublicClientApplication` inside a component due to the possiblity of re-renders
 
 ### Protecting your components
 
@@ -135,7 +129,7 @@ function App() {
 }
 ```
 
-Additionally, if you prefer to take a hooks based approach `@azure/msal-react` provides several hooks you can use to achieve similar results. These are just some basic examples, you can read more about the MSAL React hooks [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/hooks.md)
+Additionally, if you prefer to take a hooks based approach `@azure/msal-react` provides several hooks you can use to achieve similar results. These are just some basic examples, and you can refer to [MSAL React hooks](./hooks.md) for more information.
 
 ```javascript
 import { PublicClientApplication, InteractionType } from "@azure/msal-browser";
@@ -212,9 +206,10 @@ function useAccessToken() {
 
 If you need to obtain an access token outside the context of `MsalProvider` you can use the `PublicClientApplication` instance directly and call `getAllAccounts()` to get the account object.
 
-⚠️**IMPORTANT**: Only attempt silent token acquisition outside the context of `MsalProvider`. You should not call an interactive method (redirect or popup) outside the context of `MsalProvider`.
+> [!IMPORTANT]
+> Only attempt silent token acquisition outside the context of `MsalProvider`. You should not call an interactive method (redirect or popup) outside the context of `MsalProvider`.
 
-**Note:** The example below shows initialization of `PublicClientApplication` for demonstration purposes. `PublicClientApplication` should only be initialized once per page load and you should use the same instance here that you provide to `MsalProvider`.
+The example below shows initialization of `PublicClientApplication` for demonstration purposes. `PublicClientApplication` should only be initialized once per page load and you should use the same instance here that you provide to `MsalProvider`.
 
 ```javascript
 import { PublicClientApplication } from "@azure/msal-browser";
@@ -243,7 +238,7 @@ async function getAccessToken() {
 }
 ```
 
-### Acquiring an id token
+### Acquiring an ID token
 
 `react-aad-msal` exposed a `getIdToken` function to get or renew an idToken.
 
@@ -293,9 +288,10 @@ function useIdToken() {
 
 If you need to obtain an id token outside the context of `MsalProvider` you can use the `PublicClientApplication` instance directly and call `getAllAccounts()` to get the account object.
 
-⚠️**IMPORTANT**: Only attempt silent token acquisition outside the context of `MsalProvider`. You should not call an interactive method (redirect or popup) outside the context of `MsalProvider`.
+> [!IMPORTANT]
+> Only attempt silent token acquisition outside the context of `MsalProvider`. You should not call an interactive method (redirect or popup) outside the context of `MsalProvider`.
 
-**Note:** The example below shows initialization of `PublicClientApplication` for demonstration purposes. `PublicClientApplication` should only be initialized once per page load and you should use the same instance here that you provide to `MsalProvider`.
+The example below shows initialization of `PublicClientApplication` for demonstration purposes. `PublicClientApplication` should only be initialized once per page load and you should use the same instance here that you provide to `MsalProvider`.
 
 ```javascript
 import { PublicClientApplication } from "@azure/msal-browser";
@@ -327,7 +323,7 @@ async function getIdToken() {
 ### Updating redux store integration / reacting to events
 
 `react-aad-msal` provided out of the box integration with a redux store by dispatching actions when events such as login or logout occurred.
-`@azure/msal-react` does not provide this feature, however, similar functionality can be achieved using the [event api](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/events.md) exposed by `@azure/msal-browser`.
+`@azure/msal-react` does not provide this feature, however, similar functionality can be achieved using the [event api](../browser/events.md) exposed by `@azure/msal-browser`.
 
 You can register an event callback that will be called each time an event is broadcast (e.g. `LOGIN_SUCCESS`). Your callback function can inspect the event and do something with the payload. If you would like to continue using your existing redux store you can register an event callback that dispatches actions to your store.
 
@@ -344,10 +340,8 @@ const callbackId = msalInstance.addEventCallback((message: EventMessage) => {
 });
 ```
 
-The payloads may differ between `msal` v1 and `@azure/msal-browser` so you may need to make some adjustments if your application relies on specific fields or the object shape. Our typedocs contain the most up to date list of [event types](https://azuread.github.io/microsoft-authentication-library-for-js/ref/enums/_azure_msal_browser.eventtype.html) and [payload types](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_browser.html#eventpayload) and you can find the mapping between the two in the [event doc](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/events.md).
+The payloads may differ between `msal` v1 and `@azure/msal-browser` so you may need to make some adjustments if your application relies on specific fields or the object shape. Our typedocs contain the most up to date list of [event types](/javascript/api/@azure/msal-browser/eventtype) and [payload types](/javascript/api/@azure/msal-browser/eventpayload) and you can find the mapping between the two in the [event doc](../browser/events.md).
 
-### Additional Resources
+## See also
 
-1. [Msal-React Docs](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react/docs)
-1. [Msal-Browser Docs](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser/docs)
-1. [Typedocs](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_react.html)
+- [MSAL React Type Aliases](/javascript/api/@azure/msal-react/#typeAliases)
