@@ -15,11 +15,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Acquiring Device Bound Tokens
 
-MSAL Node supports acquiring tokens from the native token broker. When using the native broker refresh tokens are bound to the device on which they are acquired on and are not accessible by `msal-node` or the application. This provides a higher level of security that cannot be achieved by `msal-node` alone.
-
-## Supported Environment
-
-This feature is currently only supported on Windows.
+MSAL Node supports acquiring tokens from the native token broker. When using the native broker refresh tokens are bound to the device on which they are acquired on and are not accessible by `msal-node` or the application. This provides a higher level of security that cannot be achieved by `msal-node` alone. This feature is currently only supported on Windows.
 
 ## Prerequisites
 
@@ -48,7 +44,7 @@ const pca = new PublicClientApplication(msalConfig);
 
 Please note that `msal-node` will _not_ fallback to the non-brokered flow in the event of a failure. In order to avoid unexpected failures in the future, only enable the broker flow in environments which support it (refer to the [Supported Environment](#supported-environment) section above).
 
-A working sample can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-cli-brokered-app)
+A working sample can be found in the [auth-code-cli-brokered-app sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-cli-brokered-app)
 
 ## Window Parenting
 

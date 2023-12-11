@@ -15,24 +15,28 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Securing MSAL Node app credentials with Azure Key Vault and Azure Managed Identity
 
-> :warning: Before you start here, make sure you understand [Using certificate credentials with MSAL Node](./certificate-credentials.md).
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/download/)
+- A good understanding of [using certificate credentials with MSAL Node](./certificate-credentials.md).
 
 ## Using Azure Key Vault
 
-Sensitive information should not be stored in source code. This section covers creating a key vault and accessing credentials from it using Azure SDKs. For an implementation, see the code sample: [auth-code-key-vault](../../../samples/msal-node-samples/auth-code-key-vault).
+Sensitive information should not be stored in source code. This section covers creating a key vault and accessing credentials from it using Azure SDKs. For an implementation, see the code sample: [auth-code-key-vault](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/master/samples/msal-node-samples/auth-code-key-vault).
 
 ### Create a key vault and import certificates
 
 First, create a key vault. To do so, follow the guide: [Quickstart: Create a key vault using the Azure portal](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal#create-a-vault)
 
-> :information_source: In addition to certificates, **Azure Key Vault** can also be used for storing secrets and other sensitive information such as database connection strings and etc.
+In addition to certificates, **Azure Key Vault** can also be used for storing secrets and other sensitive information such as database connection strings and etc.
 
 Now you can import your certificate to Key Vault. **Azure Key Vault** expects certificates in either:
 
 * *.pem* file format contains one or more X509 certificate files.
 * *.pfx* file format is an archive file format for storing several cryptographic objects in a single file i.e. server certificate (issued for your domain), a matching private key, and may optionally include an intermediate CA.
 
-> :bulb: If you don't have any certificates at hand, you can use Azure Key Vault to generate one for you. It will have the additional benefits of assigning a partner Certificate Authority and automating certificate rotation. For more information, see [Quickstart: Generate a certificate with Azure Key Vault using the Azure portal](https://docs.microsoft.com/azure/key-vault/certificates/quick-create-portal)
+If you don't have any certificates at hand, you can use Azure Key Vault to generate one for you. It will have the additional benefits of assigning a partner Certificate Authority and automating certificate rotation. For more information, see [Quickstart: Generate a certificate with Azure Key Vault using the Azure portal](/azure/key-vault/certificates/quick-create-portal)
 
 We will combine our public and private key into a single *.pem* file, and upload this file to Key Vault. For conversion, we will use **OpenSSL**. Type the following in a terminal:
 
@@ -58,13 +62,13 @@ This should give you `example.pem`. Next, **upload** this to Key Vault.
    * **Password** : If you are uploading a password protected (i.e. *pass phrase*) certificate file, provide that password here. Otherwise, leave it blank. Once the certificate file is successfully imported, key vault will remove that password.
 1. Click **Create**.
 
-For alternative ways of importing, see: [Tutorial: Import a certificate in Azure Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/tutorial-import-certificate).
+For alternative ways of importing, see: [Tutorial: Import a certificate in Azure Key Vault](/azure/key-vault/certificates/tutorial-import-certificate).
 
 > :information_source: When you generate/import a certificate to Azure Key Vault Certificates, a corresponding private key is created automatically under Azure Key Vault Secrets. Later on, you can retrieve your private key from the **Secrets** blade.
 
 ### Get certificate from your vault in Node.js
 
-Using [Azure Key Vault JavaScript SDK](https://docs.microsoft.com/javascript/api/overview/azure/keyvault-certificates-readme?view=azure-node-latest), we can fetch the certificate we've uploaded in the previous step. During development, Azure **Key Vault JavaScript SDK** grabs the required access token from the local environment using VS Code's context, via [@azure/identity](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package. To do this, you'll need to be signed in to Azure.
+Using [Azure Key Vault JavaScript SDK](/javascript/api/overview/azure/keyvault-certificates-readme?view=azure-node-latest), we can fetch the certificate we've uploaded in the previous step. During development, Azure **Key Vault JavaScript SDK** grabs the required access token from the local environment using VS Code's context, via [@azure/identity](/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package. To do this, you'll need to be signed in to Azure.
 
 First, [download and install](https://docs.microsoft.com/cli/azure/install-azure-cli) **Azure CLI**. This should add **Azure CLI** to system path. Re-launch VS Code and **Azure CLI** should be available in VS Code [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). Then, type the following to sign-in:
 
@@ -72,7 +76,7 @@ First, [download and install](https://docs.microsoft.com/cli/azure/install-azure
 az login --tenant YOUR_TENANT_ID
 ```
 
-Once authenticated, [@azure/identity](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package can access the Azure Key Vault as shown below:
+Once authenticated, [@azure/identity](/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package can access the Azure Key Vault as shown below:
 
 ```JavaScript
 
@@ -102,9 +106,9 @@ main();
 
 For an implementation, see the code sample: [auth-code-key-vault](../../../samples/msal-node-samples/auth-code-key-vault).
 
-> :information_source: Converting `PKCS12/PFX` to `PEM`
->
-> In most circumstances, Azure Key Vault can export certificates and private keys in `pem` format (see: [Export stored certificates](https://docs.microsoft.com/azure/key-vault/certificates/how-to-export-certificate?tabs=azure-cli#export-stored-certificates)), if **Content Type** was chosen as `pem` during certificate generation (see: [Create a certificate in Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/tutorial-rotate-certificates#create-a-certificate-in-key-vault)). If for some reason this is not the case, OpenSSL can be used for conversions. Please refer to [Certificates: converting pfx to pem](./certificate-credentials.md#optional-converting-pfx-to-pem).
+### Converting `PKCS12/PFX` to `PEM`
+
+In most circumstances, Azure Key Vault can export certificates and private keys in `pem` format (see: [Export stored certificates](/azure/key-vault/certificates/how-to-export-certificate?tabs=azure-cli#export-stored-certificates)), if **Content Type** was chosen as `pem` during certificate generation (see: [Create a certificate in Key Vault](/azure/key-vault/certificates/tutorial-rotate-certificates#create-a-certificate-in-key-vault)). If for some reason this is not the case, OpenSSL can be used for conversions. Please refer to [Certificates: converting pfx to pem](./certificate-credentials.md#optional-converting-pfx-to-pem).
 
 ## Using Azure Managed Identity
 
@@ -161,7 +165,7 @@ For more information, see [Use Key Vault from App Service with Azure Managed Ide
 
 Finally, you need to add environment variables to the App Service where you deployed your web app.
 
-1. In the [Azure portal](https://portal.azure.com) , search for and select **App Service**, and then select your app.
+1. In the [Azure portal](https://portal.azure.com), search for and select **App Service**, and then select your app.
 1. Select **Configuration** blade on the left, then select **New Application Settings**.
 1. Add the following variables (name-value):
     1. **REDIRECT_URI**: the redirect URI you've registered on Azure AD, e.g. `https://msal-node-webapp1.azurewebsites.net/redirect`
@@ -170,7 +174,7 @@ Finally, you need to add environment variables to the App Service where you depl
 
 Wait for a few minutes for your changes on **App Service** to take effect. You should then be able to visit your published website and sign-in accordingly.
 
-## More Information
+## See also
 
 * [Azure Key Vault Developer's Guide](https://docs.microsoft.com/azure/key-vault/general/developers-guide)
 * [What are managed identities for Azure resources?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)

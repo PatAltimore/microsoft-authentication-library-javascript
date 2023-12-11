@@ -15,16 +15,20 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Using certificate credentials with MSAL Node
 
-> :warning: Before you start here, make sure you understand [Initialize confidential client applications](./initialize-confidential-client-application.md).
+You can build confidential client applications with MSAL Node (web apps, daemon apps etc). A **client credential** is mandatory for confidential clients.
+
+## Prerequisites
+
+* A good understanding of [Initialize confidential client applications](./initialize-confidential-client-application.md).
 
 You can build confidential client applications with MSAL Node (web apps, daemon apps etc). A **client credential** is mandatory for confidential clients. Client credential can be:
 
-* `managed identity`: this is a certificatless scenario, where trust is established via the Azure infrastructure. No secret / certificate management is required. MSAL does not yet implement this feature, but you may use Azure Identity SDK instead. See https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/
+* `managed identity`: this is a certificate-less scenario, where trust is established via the Azure infrastructure. No secret / certificate management is required. MSAL does not yet implement this feature, but you may use Azure Identity SDK instead. See [Managed identities for Azure resources documentation](/entra/identity/managed-identities-azure-resources/)
 * `clientSecret`: a secret string generated during the app registration, or updated post registration for an existing application. This is not recommended for production.
-* `clientCertificate`: a certificate set during the app registration. The certificate needs to have the private key, because it will be used for signing [an assertion](https://learn.microsoft.com/azure/active-directory/develop/certificate-credentials) that MSAL generates. The `thumbprint` is a *X.509 SHA-1* thumbprint of the certificate (x5t), and the `privateKey` is the PEM encoded private key.
-* `clientAssertion`: instead of letting MSAL create an [assertion](https://learn.microsoft.com/azure/active-directory/develop/certificate-credentials), the app developer takes control. Useful for adding extra claims to the assertion or for using KeyVault for signing, instead of a local certificate. The certificate used to sign the assertion still needs to be set during app registration.
+* `clientCertificate`: a certificate set during the app registration. The certificate needs to have the private key, because it will be used for signing [an assertion](/entra/identity-platform/certificate-credentials) that MSAL generates. The `thumbprint` is a *X.509 SHA-1* thumbprint of the certificate (x5t), and the `privateKey` is the PEM encoded private key.
+* `clientAssertion`: instead of letting MSAL create an [assertion](/entra/identity-platform/certificate-credentials#using-a-client-assertion), the app developer takes control. Useful for adding extra claims to the assertion or for using KeyVault for signing, instead of a local certificate. The certificate used to sign the assertion still needs to be set during app registration.
 
-Note: 1p apps may be required to also send `x5c`. This is the *X.509* certificate chain used in [subject name/issuer auth scenarios](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/sni.md).
+Note: 1p apps may be required to also send `x5c`. This is the *X.509* certificate chain used in [subject name/issuer auth scenarios](./sni.md).
 
 ## Using secrets and certificates securely
 
@@ -32,17 +36,17 @@ Secrets should never be hardcoded. The dotenv npm package can be used to store s
 
 Certificates can also be read-in from files via NodeJS's fs module. However, they should never be stored in the project's directory. Production apps should fetch certificates from [Azure KeyVault](https://azure.microsoft.com/products/key-vault), or other secure key vaults.
 
-Please see [certificates and secrets](https://learn.microsoft.com/azure/active-directory/develop/security-best-practices-for-app-registration#certificates-and-secrets) for more information.
+Please see [certificates and secrets](/entra/identity-platform/security-best-practices-for-app-registration#certificates-and-secrets) for more information.
 
-See the MSAL sample: [auth-code-with-certs](../../../samples/msal-node-samples/auth-code-with-certs)
+See the MSAL sample: [auth-code-with-certs](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-with-certs)
 
 ### Registering certificates
 
 If you do not have a certificate, you can create a self-signed certificate [using PowerShell](https://learn.microsoft.com/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2022-ps) or using [Azure KeyVault](https://azure.microsoft.com/products/key-vault#layout-container-uida0cf).
 
-You need to upload your certificate to **Azure AD**.
+You need to upload your certificate to **Microsoft Entra ID**.
 
-1. Navigate to [Azure portal](https://portal.azure.com) and select your Azure AD app registration.
+1. Navigate to [Azure portal](https://portal.azure.com) and select your Microsoft Entra app registration.
 2. Select **Certificates & secrets** blade on the left.
 3. Click on **Upload** certificate and select the certificate file to upload (e.g. *example.crt*).
 4. Click **Add**. Once the certificate is uploaded, the *thumbprint*, *start date*, and *expiration* values are displayed.
@@ -174,7 +178,7 @@ You'll also need to add your self-signed certificates to the *credential manager
 
 ### Common issues
 
-In some cases, you may receive an error from Azure AD when trying to authenticate using certificates, such as the `AADSTS700027: Client assertion contains an invalid signature` error, indicating that the certificates and/or private keys that you use to initialize MSAL Node are malformed. A common reason for this is that the certificate / private key string that you are supplying to MSAL Node contains unexpected characters, such as *return carriages* (`\r`) or *newlines* (`\n`):
+In some cases, you may receive an error from Microsoft Entra ID when trying to authenticate using certificates, such as the `AADSTS700027: Client assertion contains an invalid signature` error, indicating that the certificates and/or private keys that you use to initialize MSAL Node are malformed. A common reason for this is that the certificate / private key string that you are supplying to MSAL Node contains unexpected characters, such as *return carriages* (`\r`) or *newlines* (`\n`):
 
 ```text
 -----BEGIN CERTIFICATE-----\nMIIDDzCCAfegAwIBAgIJAMkyzQVK88NHMA0GCSqGSIb3DQEBBQUAMIGCMQswCQYDVQQGEwJTRTESMBAGA1UECBMJU3RvY2tob2xtMQ4wDAYDVQQHEwVLaXN0YTEQMA4G0fbkqbKulrchGbNgkankZtEVg4PGjobZq7B+njvcVa7SsWF/WLq5AUbw==\r\n-----END CERTIFICATE-----
@@ -220,8 +224,8 @@ const config = {
 const cca = new msal.ConfidentialClientApplication(config);
 ```
 
-## More Information
+## See also
 
-* [Microsoft identity platform application authentication certificate credentials](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials)
-* [Create a self-signed public certificate to authenticate your application](https://docs.microsoft.com/azure/active-directory/develop/howto-create-self-signed-certificate)
+* [Microsoft identity platform application authentication certificate credentials](/entra/identity-platform/certificate-credentials)
+* [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
 * [Various SSL/TLS Certificate File Types/Extensions](https://docs.microsoft.com/archive/blogs/kaushal/various-ssltls-certificate-file-typesextensions)

@@ -15,6 +15,12 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Accounts in MSAL Node
 
+This article shows you how to use the `msal-node` library to access cached accounts in your Node.js application. The APIs, `getAllAccounts()`, `getAccountByHomeId()`, and `getAccountByLocalId()` are covered 
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/download/)
+
 ## Usage
 
 The `msal-node` library provides the following different APIs to access cached accounts:
@@ -25,7 +31,7 @@ The `msal-node` library provides the following different APIs to access cached a
 
 The following are usage examples for each API:
 
-### getAllAccounts
+### `getAllAccounts`
 
 For a multiple accounts scenario:
 
@@ -57,7 +63,7 @@ function callAcquireTokenSilent()
 });
 ```
 
-### getAccountByHomeId and getAccountByLocalId
+### `getAccountByHomeId` and `getAccountByLocalId`
 
 For a single account scenario, the `homeAccountId` or `localAccountId` must be obtained from the initial `AuthResponse` object received from a non-silent authorization flow, such as the `Auth Code` flow.
 
@@ -113,7 +119,8 @@ async function getResource() {
 }
 ```
 
-## Notes
+For a multiple accounts scenario, please should modify the [sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/samples/msal-node-samples/silent-flow/index.js) (in `/graphCall` route) to list all cached accounts and choose a specific account. You may also need to customize the related view templates and `handlebars` template params.
 
-* The current msal-node silent-flow [sample](../../../samples/msal-node-samples/silent-flow) has a working single account scenario that uses `getAccountByHomeId()`.
-* If you have a multiple accounts scenario, please modify the [sample](../../../samples/msal-node-samples/silent-flow/index.js) (in `/graphCall` route) to list all cached accounts and choose a specific account. You may also need to customize the related view templates and `handlebars` template params.
+## See also
+
+* The current msal-node silent-flow [sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/silent-flow) has a working single account scenario that uses `getAccountByHomeId()`.

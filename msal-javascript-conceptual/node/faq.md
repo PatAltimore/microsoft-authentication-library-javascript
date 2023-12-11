@@ -15,19 +15,21 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Frequently asked questions about MSAL Node
 
+
+
 ## General
 
 ### When is MSAL Node used?
 
-MSAL Node supports server based authentication for public/confidential apps. This is more applicable for server based authentication scenarios/Web APIs that need authentication. A full list of supported scenarios can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node#scenarios-supported) and supported flows are listed [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node#oauth20-grant-types-supported)
+MSAL Node supports server based authentication for public/confidential apps. This is more applicable for server based authentication scenarios/Web APIs that need authentication. A full list of supported scenarios can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/master/lib/msal-node#scenarios-supported) and supported flows are listed [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/master/lib/msal-node#oauth20-grant-types-supported)
 
 ### What is the status of ADAL Node? Is a migration guide available?
 
-ADAL Node is currently in maintanence and we advise all users to move to MSAL Node as possible. MSAL Node is designed to completely replace ADAL node. For those looking to migrate from ADAL to MSAL we have provided a [Migration Document](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/migration.md) to help in the migration. Please note that all apps may not have a smooth migration as this is complete overhaul of the old functionality.
+ADAL Node is currently in maintanence and we advise all users to move to MSAL Node. MSAL Node is designed to completely replace ADAL node. For those looking to migrate from ADAL to MSAL we have provided a [Migration Document](./migration.md) to help in the migration. Please note that all apps may not have a smooth migration as this is complete overhaul of the old functionality.
 
 ### What are the services supported?
 
-MSAL Node supports AAD, MSA, ADFS and B2C. Our samples demonstrate the usage [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/standalone-samples). MSAL Node also supports [single and multi tenanted apps](https://docs.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps).
+MSAL Node supports Microsoft Entra ID, MSA, ADFS and B2C. Our samples demonstrate the usage [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/standalone-samples). MSAL Node also supports [single and multi tenanted apps](/entra/identity-platform/single-and-multi-tenant-apps).
 
 Note: ADFS is currently supported, a standalone sample is not yet published. Please checkout this space for an update soon.
 
@@ -35,18 +37,18 @@ Note: ADFS is currently supported, a standalone sample is not yet published. Ple
 
 Please find this in the [MSAL basics](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node#msal-basics)
 
-## What does authority string default to if I provide "authority" and "azureCloudOptions"?
+### What does authority string default to if I provide "authority" and "azureCloudOptions"?
 
 If the developer provides `azureCloudOptions`, MSAL.js will overwrite any value provided in the `authority`. MSAL.js will also give preference to the parameters provided in a `request` over `configuration`. Please note that if `azureCloudOptions` are set in the configuration, they will take precedence over `authority` in the `request`. If the developer needs to overwrite this, they need to set `azureCloudOptions` in the `request`.
 
 ### What will be the token lifetimes?
 
-* AAD: Please find the latest reference for AAD [here](https://docs.microsoft.com/azure/active-directory/develop/active-directory-configurable-token-lifetimes). Please note that few of the configurable features for specific token types are retired recently.
-* B2C: Please find the B2C token lifetime guidance [here](https://docs.microsoft.com/azure/active-directory-b2c/tokens-overview#configuration)
+* Microsoft Entra: Please find the latest reference for Microsoft Entra [here](/entra/identity-platform/configurable-token-lifetimes). Please note that few of the configurable features for specific token types are retired recently.
+* B2C: Please find the B2C token lifetime guidance [here](/azure/active-directory-b2c/tokens-overview#configuration)
 
 ### How do I get the Refresh Token?
 
-MSAL Node does not expose refresh tokens for security reasons. Instead, we manage the refresh token through the cache and update it as required to fetch the corresponding Id Token and Access Token for the developer. Use the appropriate `acquireToken*` API to obtain access tokens, and MSAL will ensure they are renewed if necessary. If you have a refresh token acquired by other means, you can use the [acquireTokenByRefreshToken](https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.confidentialclientapplication.html#acquiretokenbyrefreshtoken) API (see also: [Refresh Token sample](../../../samples/msal-node-samples/refresh-token/README.md)). More details on AAD tokens can be found [here](https://learn.microsoft.com/azure/active-directory/develop/security-tokens)
+MSAL Node does not expose refresh tokens for security reasons. Instead, we manage the refresh token through the cache and update it as required to fetch the corresponding Id Token and Access Token for the developer. Use the appropriate `acquireToken*` API to obtain access tokens, and MSAL will ensure they are renewed if necessary. If you have a refresh token acquired by other means, you can use the [acquireTokenByRefreshToken](/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenbyrefreshtoken) API (see also: [Refresh Token sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/refresh-token)). More details on Microsoft Entra tokens can be found [here](/entra/identity-platform/security-tokens)
 
 ### Is Electron supported?
 
@@ -54,7 +56,7 @@ Yes. Please refer to [MSAL Node samples](https://github.com/AzureAD/microsoft-au
 
 ### Is interactive flow supported?
 
-Currently No. Authentication for MSAL Node using authorization code grant is a two legged flow, as detailed [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/request.md). There are plans to provide a single API to achieve this, and invoke the browser on the user's behalf. However it is currently not supported.
+Currently No. Authentication for MSAL Node using authorization code grant is a two legged flow, as detailed [here](./request.md). There are plans to provide a single API to achieve this, and invoke the browser on the user's behalf. However it is currently not supported.
 
 ### Are SPAs supported by MSAL Node?
 
@@ -66,7 +68,7 @@ MSAL Node extensions is a support library for MSAL Node which offers secure mech
 
 ### Can the cache plugin provided in MSAL Node extensions be used in Electron applications?
 
-Yes, it can. In case you run into node version related issues, refer to this [note](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/extensions/docs/msal-node-extensions.md#note-for-electron-developers) that provides the steps to troubleshoot.
+Yes, it can. In case you run into node version related issues, refer to this [note](./extensions.md#note-for-electron-developers) that provides the steps to troubleshoot.
 
 ### What versions of Node.js are supported? How do I bypass the installation error if I want to use an active development Node.js version?
 
@@ -78,11 +80,11 @@ If you want to work around this, please note:
 
 ### How do I implement self-service sign-up with MSAL Node?
 
-MSAL Node supports self-service sign-up in the auth code flow. Please see our docs [here](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_node.html#authorizationurlrequest) for supported prompt values in the request and their expected outcomes, and [here](http://aka.ms/s3u) for an overview of self-service sign-up and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
+MSAL Node supports self-service sign-up in the auth code flow. Please see our docs [here](/javascript/api/@azure/msal-node/authorizationurlrequest) for supported prompt values in the request and their expected outcomes, and [here](http://aka.ms/s3u) for an overview of self-service sign-up and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
 
 ### Why doesn't my app function correctly when it's running behind a proxy?
 
-Developers can provide a `proxyUrl` string in the system config options as detailed [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md#system-config-options). Developers can also implement their own NetworkManager by instantiating an [INetworkModule](https://azuread.github.io/microsoft-authentication-library-for-js/ref/interfaces/_azure_msal_common.inetworkmodule.html) and building proxy support in it.
+Developers can provide a `proxyUrl` string in the system config options as detailed [here](./configuration.md#system-config-options). Developers can also implement their own NetworkManager by instantiating an [INetworkModule](https://azuread.github.io/microsoft-authentication-library-for-js/ref/interfaces/_azure_msal_common.inetworkmodule.html) and building proxy support in it.
 
 ### How do I implement a custom http(s) agent in MSAL Node?
 
