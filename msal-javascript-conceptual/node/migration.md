@@ -142,7 +142,7 @@ Most of the public methods in ADAL Node have equivalents in MSAL Node:
 
 | ADAL                                | MSAL                              | Notes                             |
 |-------------------------------------|-----------------------------------|-----------------------------------|
-| `acquireToken`                      | `acquireTokenSilent`              | Renamed and now expects an [account](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_common.html#accountinfo) object |
+| `acquireToken`                      | `acquireTokenSilent`              | Renamed and now expects an [account](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokensilent) object |
 | `acquireTokenWithAuthorizationCode` | `acquireTokenByCode`              |                                   |
 | `acquireTokenWithClientCredentials` | `acquireTokenByClientCredential` |                                   |
 | `acquireTokenWithRefreshToken`      | `acquireTokenByRefreshToken`      | Useful for migrating valid [refresh tokens](#remove-logic-around-refresh-tokens)              |
