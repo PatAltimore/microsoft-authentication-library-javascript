@@ -5,7 +5,7 @@ author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
 
-ms.date: 04/26/2021
+ms.date: 10/26/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
