@@ -42,7 +42,7 @@ See the MSAL sample: [auth-code-with-certs](https://github.com/AzureAD/microsoft
 
 ### Registering certificates
 
-If you do not have a certificate, you can create a self-signed certificate [using PowerShell](/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2022-ps) or using [Azure KeyVault](https://azure.microsoft.com/products/key-vault#layout-container-uida0cf).
+If you do not have a certificate, you can create a self-signed certificate [using PowerShell](/powershell/module/pki/new-selfsignedcertificate) or using [Azure KeyVault](https://azure.microsoft.com/products/key-vault#layout-container-uida0cf).
 
 You need to upload your certificate to **Microsoft Entra ID**.
 
@@ -170,7 +170,7 @@ The OAuth 2.0 protocol recommends using an HTTPS connection whenever possible. M
 
 You'll also need to add your self-signed certificates to the *credential manager* / *key chain* of your **OS** to bypass the browser's security policy. You may still see a warning in your browser afterwards (e.g. Chrome).
 
-* For Windows users, follow the guide here: [How to: View certificates with the MMC snap-in](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in).
+* For Windows users, follow the guide here: [How to: View certificates with the MMC snap-in](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in).
 
 * For Linux and MacOS users, please consult your operating system documentation on how to install certificates.
 
