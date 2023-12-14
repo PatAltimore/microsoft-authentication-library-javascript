@@ -5,7 +5,7 @@ author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
 
-ms.date: 04/26/2021
+ms.date: 04/26/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -21,7 +21,7 @@ SNI (Subject Name/Issuer) authentication allows an app to authenticate using a p
 
 First party users should follow the instructions on the [internal AAD wiki](https://aadwiki.windows-int.net/index.php?title=Subject_Name_and_Issuer_Authentication) to set up their AAD environment to support SNI.
 
-## x5c claim
+## `x5c` claim
 
 You will need to supply the string from your `pem` encoded certificate to MSAL configuration object in the `clientCertificate.x5c` field in addition to providing both `clientCertificate.thumbprint` and `clientCertificate.privateKey`:
 
@@ -49,9 +49,9 @@ Secrets should never be hardcoded. The dotenv npm package can be used to store s
 
 Certificates can also be read-in from files via NodeJS's fs module. However, they should never be stored in the project's directory. Production apps should fetch certificates from [Azure KeyVault](https://azure.microsoft.com/products/key-vault), or other secure key vaults.
 
-Please see [certificates and secrets](https://learn.microsoft.com/azure/active-directory/develop/security-best-practices-for-app-registration#certificates-and-secrets) for more information.
+Please see [certificates and secrets](/entra/identity-platform/security-best-practices-for-app-registration#certificates-and-secrets) for more information.
 
-See the MSAL sample: [auth-code-with-certs](../../../samples/msal-node-samples/auth-code-with-certs)
+See the MSAL sample: [auth-code-with-certs](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-with-certs)
 
 The snippet below demonstrates how to initialize MSAL for Subject Name / Issuer (SNI) authentication:
 

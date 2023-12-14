@@ -5,7 +5,7 @@ author: EmLauber
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref, devx-track-js
-ms.date: 04/26/2021
+ms.date: 04/26/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
@@ -23,9 +23,7 @@ ms.topic: how-to
 
 ## Migrate applications from ADAL Node to MSAL Node
 
-For general remarks on differences between ADAL vs MSAL, as well as important dates and frequently asked questions, please refer to: [Migrate applications to the Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-migration)
-
-For specifics of migrating an app using ADAL Node to MSAL Node, including comparison between ADAL vs. MSAL public APIs, see the tutorial: [How to migrate a Node.js app from ADAL to MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-node-migration)
+For general remarks on differences between ADAL vs MSAL, as well as important dates and frequently asked questions, please refer to: [Migrate applications to the Microsoft Authentication Library (MSAL)](/entra/identity-platform/msal-migration)
 
 ## Update app registration settings
 
@@ -142,7 +140,7 @@ Most of the public methods in ADAL Node have equivalents in MSAL Node:
 
 | ADAL                                | MSAL                              | Notes                             |
 |-------------------------------------|-----------------------------------|-----------------------------------|
-| `acquireToken`                      | `acquireTokenSilent`              | Renamed and now expects an [account](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_common.html#accountinfo) object |
+| `acquireToken`                      | `acquireTokenSilent`              | Renamed and now expects an [account](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokensilent) object |
 | `acquireTokenWithAuthorizationCode` | `acquireTokenByCode`              |                                   |
 | `acquireTokenWithClientCredentials` | `acquireTokenByClientCredential` |                                   |
 | `acquireTokenWithRefreshToken`      | `acquireTokenByRefreshToken`      | Useful for migrating valid [refresh tokens](#remove-logic-around-refresh-tokens)              |

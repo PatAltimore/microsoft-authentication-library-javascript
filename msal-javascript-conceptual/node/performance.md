@@ -5,7 +5,7 @@ author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
 
-ms.date: 04/26/2021
+ms.date: 04/26/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -13,9 +13,12 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 #Customer intent: 
 ---
 
-# Performance
+# Performance in MSAL Node
 
-Please refer to [msal-common/performance](../../msal-common/docs/performance.md) first, which outlines the techniques your application can use to improve the performance of token acquisition using MSAL. Read below for measuring performance in your apps and pitfalls to avoid.
+## Prerequisites
+
+- Refer to [Performance in MSAL Browser](../browser/performance.md) which outlines the techniques your application can use to improve the performance of token acquisition using MSAL. 
+- [Node.js](https://nodejs.org)
 
 ## Measuring performance
 
@@ -24,11 +27,11 @@ Applications that want to measure the performance of authentication flows in MSA
 | Data | Meaning | Suggestions |
 |--------|---------|--------------------------|
 | `authType` | `acquireToken*` API used for the token request | Use for identifying usage. |
-| `correlationId` |  Correlation ID used for the token request. You can obtain this via the `correlationId` property in [AuthenticationResult](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_common.html#authenticationresult) |  Use for identifying usage. |
+| `correlationId` |  Correlation ID used for the token request. You can obtain this via the `correlationId` property in [AuthenticationResult](https://azuread.github.io/microsoft-authentication-library-for-js/ref/types/_azure_msal_node.AuthenticationResult.html) |  Use for identifying usage. |
 | `durationTotalInMs` | Total time spent in MSAL, including network calls and cache access | Alarm on overall high latency (> 1 second). Value depends on token source. From cache: one cache access. From network: two cache accesses plus two HTTP calls. |
 | `durationInCacheInMs` | Time spent loading or saving the token cache persistence (e.g. Redis). | Alarm on spikes. |
-| `durationInHttpInMs` | Time spent making HTTP calls to IdP (e.g. Azure AD). You can use a custom network client for more fine grained monitoring. See [Configuration](./configuration.md#system-config-options) and [custom network sample](../../../samples/msal-node-samples/custom-INetworkModule-and-network-tracing/) for more | Alarm on spikes. |
-| `tokenSource` | Source of the token (i.e. cache vs network). You can obtain this via the `fromCache` property in [AuthenticationResult](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_common.html#authenticationresult) | Tokens are retrieved from cache much faster (e.g. ~100 ms versus ~700 ms). Can be used to monitor and alarm cache hit ratio. Use together with `durationTotalInMs`. |
+| `durationInHttpInMs` | Time spent making HTTP calls to IdP (e.g. Azure AD). You can use a custom network client for more fine grained monitoring. See [Configuration](./configuration.md#system-config-options) and [custom network sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/custom-INetworkModule-and-network-tracing) for more | Alarm on spikes. |
+| `tokenSource` | Source of the token (i.e. cache vs network). You can obtain this via the `fromCache` property in [AuthenticationResult](https://azuread.github.io/microsoft-authentication-library-for-js/ref/types/_azure_msal_node.AuthenticationResult.html) | Tokens are retrieved from cache much faster (e.g. ~100 ms versus ~700 ms). Can be used to monitor and alarm cache hit ratio. Use together with `durationTotalInMs`. |
 
 For example:
 
@@ -112,9 +115,9 @@ async function getToken(tokenRequest: OnBehalfOfRequest): Promise<Authentication
 };
 ```
 
-See [(CCA) Web API using a custom distributed cache plugin](../../../samples/msal-node-samples/auth-code-distributed-cache/README.md) for more.
+See [(CCA) Web API using a custom distributed cache plugin](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-distributed-cache) for more.
 
-## More information
+## See also
 
 * [Token caching in MSAL Node](caching.md)
 * [MSAL Node configuration](configuration.md)

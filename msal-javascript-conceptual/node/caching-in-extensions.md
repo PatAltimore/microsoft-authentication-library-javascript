@@ -1,10 +1,10 @@
 ---
-title: "Microsoft Authentication Extensions for Node"
+title: Caching in Microsoft Authentication Extensions for Node
 description: The Microsoft Authentication Extensions for Node enables application developers to perform cross-platform token cache serialization and persistence. It gives extra support to the Microsoft Authentication Library for Node (MSAL Node).
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 02/04/2022
+ms.date: 10/04/2023
 ms.reviewer: j-mantu, samuelkubai, Dickson-Mwendia
 ms.service: active-directory
 ms.subservice: develop
@@ -12,7 +12,7 @@ ms.topic: conceptual
 #Customer intent: As an application developer, I want to learn how to use the Microsoft Authentication Extensions for Node to perform cross-platform token cache serialization and persistence.
 ---
 
-# Microsoft Authentication Extensions for Node
+# Caching in Microsoft Authentication Extensions for Node
 
 The Microsoft Authentication Extensions for Node enables developers to perform cross-platform token cache serialization and persistence to disk. It gives extra support to the Microsoft Authentication Library (MSAL) for Node.
 
@@ -91,9 +91,3 @@ The following table provides an explanation for all the arguments for the persis
 | accountName             | Specifies the account name to be used on Mac and/or Linux                                      | Mac and Linux          |
 | usePlaintextFileOnLinux | The flag to default to plain text on linux if LibSecret fails. Defaults to `false`            | Linux                  |
 
-## Next steps
-
-For more information about Microsoft Authentication Extensions for Node and MSAL Node, see:
-
-- [Microsoft Authentication Extensions for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/extensions/msal-node-extensions)
-- [Microsoft Authentication Library for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node)
