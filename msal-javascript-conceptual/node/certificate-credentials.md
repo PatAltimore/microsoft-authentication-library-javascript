@@ -42,7 +42,7 @@ See the MSAL sample: [auth-code-with-certs](https://github.com/AzureAD/microsoft
 
 ### Registering certificates
 
-If you do not have a certificate, you can create a self-signed certificate [using PowerShell](https://learn.microsoft.com/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2022-ps) or using [Azure KeyVault](https://azure.microsoft.com/products/key-vault#layout-container-uida0cf).
+If you do not have a certificate, you can create a self-signed certificate [using PowerShell](/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2022-ps) or using [Azure KeyVault](https://azure.microsoft.com/products/key-vault#layout-container-uida0cf).
 
 You need to upload your certificate to **Microsoft Entra ID**.
 
@@ -51,7 +51,7 @@ You need to upload your certificate to **Microsoft Entra ID**.
 3. Click on **Upload** certificate and select the certificate file to upload (e.g. *example.crt*).
 4. Click **Add**. Once the certificate is uploaded, the *thumbprint*, *start date*, and *expiration* values are displayed.
 
-For more information, see: [Register your certificate with Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials#register-your-certificate-with-microsoft-identity-platform)
+For more information, see: [Register your certificate with Microsoft identity platform](/entra/identity-platform/certificate-credentials#register-your-certificate-with-microsoft-identity-platform)
 
 ### Initializing MSAL Node with certificates
 
@@ -166,7 +166,7 @@ function convertPFX(pfx, passphrase = null) {
 
 ### (Optional) Creating an HTTPS server
 
-The OAuth 2.0 protocol recommends using an HTTPS connection whenever possible. Most cloud services like Azure App Service will provide HTTPS connection by default via proxy. If for testing purposes you would like to setup your own HTTPS server, see the [Node.js HTTPS guide](https://nodejs.org/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/).
+The OAuth 2.0 protocol recommends using an HTTPS connection whenever possible. Most cloud services like Azure App Service will provide HTTPS connection by default via proxy. If for testing purposes you would like to setup your own HTTPS server, see the [Node.js HTTPS guide](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in).
 
 You'll also need to add your self-signed certificates to the *credential manager* / *key chain* of your **OS** to bypass the browser's security policy. You may still see a warning in your browser afterwards (e.g. Chrome).
 
@@ -228,4 +228,4 @@ const cca = new msal.ConfidentialClientApplication(config);
 
 * [Microsoft identity platform application authentication certificate credentials](/entra/identity-platform/certificate-credentials)
 * [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
-* [Various SSL/TLS Certificate File Types/Extensions](https://docs.microsoft.com/archive/blogs/kaushal/various-ssltls-certificate-file-typesextensions)
+* [Various SSL/TLS Certificate File Types/Extensions](/archive/blogs/kaushal/various-ssltls-certificate-file-typesextensions)

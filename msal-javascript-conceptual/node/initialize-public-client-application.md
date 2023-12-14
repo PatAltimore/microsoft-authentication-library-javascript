@@ -1,6 +1,6 @@
 ---
 title: Initialize the public client application object in MSAL Node 
-description: Learn how to acquire tokens from the native token broker.
+description: Learn how to initialize the PublicClientApplication object in MSAL Node and how to configure the authority.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber

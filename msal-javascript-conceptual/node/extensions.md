@@ -1,6 +1,6 @@
 ---
 title: Microsoft Authentication Extensions for Node
-description: Learn how to effectively cache tokens in MSAL Node, and use client secrets securely,
+description: Learn how to use the Microsoft Authentication Extensions for Node to perform cross-platform token cache serialization and persistence.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber

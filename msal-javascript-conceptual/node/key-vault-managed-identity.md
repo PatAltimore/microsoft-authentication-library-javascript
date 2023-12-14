@@ -1,6 +1,6 @@
 ---
 title: Securing MSAL Node app credentials with Azure Key Vault and Azure Managed Identity
-description: Learn how to acquire tokens from the native token broker.
+description: Learn how to secure MSAL Node app credentials with Azure Key Vault and Azure Managed Identity.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
@@ -15,6 +15,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Securing MSAL Node app credentials with Azure Key Vault and Azure Managed Identity
 
+This article provides a guide on how to securely manage and access sensitive information, such as certificates, in a Node.js application using Azure Key Vault. You learn how to create a key vault, import certificates into it, and access these credentials using Azure SDKs. You learn how to convert certificate formats using OpenSSL and how to fetch certificates from the key vault in a Node.js application. 
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ Sensitive information should not be stored in source code. This section covers c
 
 ### Create a key vault and import certificates
 
-First, create a key vault. To do so, follow the guide: [Quickstart: Create a key vault using the Azure portal](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal#create-a-vault)
+First, create a key vault. To do so, follow the guide: [Quickstart: Create a key vault using the Azure portal](/azure/key-vault/general/quick-create-portal#create-a-vault)
 
 In addition to certificates, **Azure Key Vault** can also be used for storing secrets and other sensitive information such as database connection strings and etc.
 
@@ -68,15 +69,15 @@ For alternative ways of importing, see: [Tutorial: Import a certificate in Azure
 
 ### Get certificate from your vault in Node.js
 
-Using [Azure Key Vault JavaScript SDK](/javascript/api/overview/azure/keyvault-certificates-readme?view=azure-node-latest), we can fetch the certificate we've uploaded in the previous step. During development, Azure **Key Vault JavaScript SDK** grabs the required access token from the local environment using VS Code's context, via [@azure/identity](/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package. To do this, you'll need to be signed in to Azure.
+Using [Azure Key Vault JavaScript SDK](/javascript/api/overview/azure/keyvault-certificates-readme), we can fetch the certificate we've uploaded in the previous step. During development, Azure **Key Vault JavaScript SDK** grabs the required access token from the local environment using VS Code's context, via [@azure/identity](/javascript/api/overview/azure/identity-readme) package. To do this, you'll need to be signed in to Azure.
 
-First, [download and install](https://docs.microsoft.com/cli/azure/install-azure-cli) **Azure CLI**. This should add **Azure CLI** to system path. Re-launch VS Code and **Azure CLI** should be available in VS Code [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). Then, type the following to sign-in:
+First, download and install [Azure CLI](/cli/azure/install-azure-cli). This should add **Azure CLI** to system path. Re-launch VS Code and **Azure CLI** should be available in VS Code [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). Then, type the following to sign-in:
 
 ```console
 az login --tenant YOUR_TENANT_ID
 ```
 
-Once authenticated, [@azure/identity](/javascript/api/overview/azure/identity-readme?view=azure-node-latest) package can access the Azure Key Vault as shown below:
+Once authenticated, [@azure/identity](/javascript/api/overview/azure/identity-readme) package can access the Azure Key Vault as shown below:
 
 ```JavaScript
 
@@ -104,7 +105,7 @@ async function main() {
 main();
 ```
 
-For an implementation, see the code sample: [auth-code-key-vault](../../../samples/msal-node-samples/auth-code-key-vault).
+For an implementation, see the code sample: [auth-code-key-vault](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/auth-code-key-vault).
 
 ### Converting `PKCS12/PFX` to `PEM`
 
@@ -114,11 +115,11 @@ In most circumstances, Azure Key Vault can export certificates and private keys 
 
 While developing on local environment you can use **Azure Key Vault JavaScript SDK**, you would use **Azure Managed Identity** service to access your key vault in production and deployment.
 
-> Take a moment to get familiar with Managed Identity: [What are managed identities for Azure resources?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-a-system-assigned-managed-identity-works-with-an-azure-vm)
+> Take a moment to get familiar with Managed Identity: [What are managed identities for Azure resources?](/entra/identity/managed-identities-azure-resources/overview#how-a-system-assigned-managed-identity-works-with-an-azure-vm)
 
 ### Deployment to App Service
 
-For more information, visit: [How to use managed identities for App Service](https://docs.microsoft.com/azure/app-service/overview-managed-identity?context=%2Fazure%2Factive-directory%2Fmanaged-identities-azure-resources%2Fcontext%2Fmsi-context&tabs=dotnet)
+For more information, visit: [How to use managed identities for App Service](/azure/app-service/overview-managed-identity?tabs=portal%2Chttp)
 
 #### Step 1: Deploy your files
 
@@ -146,7 +147,7 @@ For more information, visit: [How to use managed identities for App Service](htt
 1. On App Service portal, select **Identity**.
 1. Within the **System assigned** tab, switch **Status** to **On**. Click **Save**.
 
-For more information, see [Add a system-assigned identity](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity)
+For more information, see [Add a system-assigned identity](/azure/app-service/overview-managed-identity?tabs=portal%2Cdotnet#add-a-system-assigned-identity)
 
 #### Grant access to Key Vault
 
@@ -159,7 +160,7 @@ Now that your app deployed to App Service has a managed identity, in this step y
 1. Click on **Select Principal**, add your account and pre-created **system-assigned** identity.
 1. Click on **OK** to add the new Access Policy, then click **Save** to save the Access Policy.
 
-For more information, see [Use Key Vault from App Service with Azure Managed Identity](https://docs.microsoft.com/samples/azure-samples/app-service-msi-keyvault-dotnet/keyvault-msi-appservice-sample/)
+For more information, see [Use Key Vault from App Service with Azure Managed Identity](/samples/azure-samples/app-service-msi-keyvault-dotnet/keyvault-msi-appservice-sample/)
 
 #### Add environment variables
 
@@ -176,7 +177,7 @@ Wait for a few minutes for your changes on **App Service** to take effect. You s
 
 ## See also
 
-* [Azure Key Vault Developer's Guide](https://docs.microsoft.com/azure/key-vault/general/developers-guide)
-* [What are managed identities for Azure resources?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
-* [Microsoft identity platform application authentication certificate credentials](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials)
-* [Various SSL/TLS Certificate File Types/Extensions](https://docs.microsoft.com/archive/blogs/kaushal/various-ssltls-certificate-file-typesextensions)
+* [Azure Key Vault Developer's Guide](/azure/key-vault/general/developers-guide)
+* [What are managed identities for Azure resources?](/entra/identity/managed-identities-azure-resources/overview)
+* [Microsoft identity platform application authentication certificate credentials](/entra/identity-platform/certificate-credentials)
+* [Various SSL/TLS Certificate File Types/Extensions](/archive/blogs/kaushal/various-ssltls-certificate-file-typesextensions)

@@ -1,6 +1,6 @@
 ---
 title: "Acquiring tokens in MSAL Node"
-description: Learn how to acquire tokens from the native token broker.
+description: Learn how to acquire tokens in MSAL Node using the different OAuth 2.0 flows.
 author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
@@ -248,4 +248,4 @@ Please look at the On Behalf Of flow [sample](https://github.com/AzureAD/microso
 
 ## Next Steps
 
-Proceed to understand the public APIs provided by `msal-node` for acquiring tokens [here](response.md)
+Proceed to understand the public APIs provided by `msal-node` for acquiring tokens [here](../browser/response.md)

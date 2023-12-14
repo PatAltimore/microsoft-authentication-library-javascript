@@ -80,7 +80,7 @@ If you want to work around this, please note:
 
 ### How do I implement self-service sign-up with MSAL Node?
 
-MSAL Node supports self-service sign-up in the auth code flow. Please see our docs [here](/javascript/api/@azure/msal-node/authorizationurlrequest) for supported prompt values in the request and their expected outcomes, and [here](http://aka.ms/s3u) for an overview of self-service sign-up and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
+MSAL Node supports self-service sign-up in the auth code flow. Please see our docs [here](/javascript/api/@azure/msal-node/authorizationurlrequest) for supported prompt values in the request and their expected outcomes, and [here](https://aka.ms/s3u) for an overview of self-service sign-up and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
 
 ### Why doesn't my app function correctly when it's running behind a proxy?
 
@@ -94,9 +94,9 @@ Developers can use a custom http(s) agent by providing a `customAgentOptions` ob
 
 ### How do I handle the password-reset user-flow?
 
-The [new password reset experience](https://docs.microsoft.com/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended) is now part of the sign-up or sign-in policy. When the user selects the **Forgot your password?** link, they are immediately sent to the Forgot Password experience.
+The [new password reset experience](/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended) is now part of the sign-up or sign-in policy. When the user selects the **Forgot your password?** link, they are immediately sent to the Forgot Password experience.
 
-Our recommendation is to move to the new password reset experience since it simplifies the app state and reduces error handling on the user-end. If for some reason you have to use the legacy password-reset user-flow, you'll have to handle the `AADB2C90118` error code returned from B2C service when a user selects the **Forgot your password?** link. To see how this is done, refer to the sample: [MSAL Node B2C web app sample (using auth code)](../../../samples/msal-node-samples/b2c-user-flows/README.md)
+Our recommendation is to move to the new password reset experience since it simplifies the app state and reduces error handling on the user-end. If for some reason you have to use the legacy password-reset user-flow, you'll have to handle the `AADB2C90118` error code returned from B2C service when a user selects the **Forgot your password?** link. To see how this is done, refer to the sample: [MSAL Node B2C web app sample (using auth code)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/b2c-user-flows)
 
 ## Compatibility
 
