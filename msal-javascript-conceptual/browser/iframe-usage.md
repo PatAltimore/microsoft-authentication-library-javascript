@@ -17,11 +17,11 @@ Additionally, when 3rd party cookies are disabled in **Chrome**, iframed MSAL ap
 
 ## Single sign-on
 
-You **can** achieve [single sign-on](https://docs.microsoft.com/azure/active-directory/develop/msal-js-sso) between iframed and parent apps with the [same-origin](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) **and** with [cross-origin](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy#cross-origin_script_api_access) **if** you pass an [account hint](./login-user.md#silent-login-with-ssosilent) from the parent app to the iframed app.
+You **can** achieve [single sign-on](/entra/identity-platform/msal-js-sso.md) between iframed and parent apps with the [same-origin](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) **and** with [cross-origin](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy#cross-origin_script_api_access) **if** you pass an [account hint](./login-user.md#silent-login-with-ssosilent) from the parent app to the iframed app.
 
 ### Apps with same-origin
 
-Iframed and parent apps with the same-origin may have access to the same MSAL.js cache instance and be able to sign-in without prompts, provided that both apps configure MSAL to use the [local storage](./caching.md#cache-storage) for caching. See for more: [Single sign-on with MSAL.js](https://docs.microsoft.com/azure/active-directory/develop/msal-js-sso)
+Iframed and parent apps with the same-origin may have access to the same MSAL.js cache instance and be able to sign-in without prompts, provided that both apps configure MSAL to use the [local storage](./caching.md#cache-storage) for caching. See for more: [Single sign-on with MSAL.js](/entra/identity-platform/msal-js-sso.md)
 
 ### Apps with cross-origin
 
@@ -133,9 +133,9 @@ You should catch and handle any errors if `ssoSilent()` fails. In particular:
 
 If you would like to minimize communication with IdP that requires user interaction, or if you are having issues with popups for any reason, there are some options you can consider:
 
-- [Grant admin consent](https://docs.microsoft.com/azure/active-directory/develop/v2-admin-consent). This ensures that there are no consent prompts for permissions required by your app when users sign-in for the first time.
+- [Grant admin consent](/entra/identity-platform/v2-admin-consent.md). This ensures that there are no consent prompts for permissions required by your app when users sign-in for the first time.
 
-- [Pre-authorize client apps](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#preauthorizedapplications-attribute). This ensures that there are no consent prompts for permissions required by your web API when it's called by your client apps.
+- [Pre-authorize client apps](/entra/identity-platform/reference-app-manifest#preauthorizedapplications-attribute.md). This ensures that there are no consent prompts for permissions required by your web API when it's called by your client apps.
 
 ## Single sign-out
 

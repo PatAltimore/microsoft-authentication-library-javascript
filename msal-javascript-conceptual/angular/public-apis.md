@@ -14,9 +14,9 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 Before you start here, make sure you understand how to [initialize the application object](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/initialization.md).
 
-The login APIs in MSAL retrieve an `authorization code` which can be exchanged for an [ID token](https://docs.microsoft.com/azure/active-directory/develop/id-tokens) for a signed in user, while consenting scopes for an additional resource, and an [access token](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) containing the user consented scopes to allow your app to securely call the API.
+The login APIs in MSAL retrieve an `authorization code` which can be exchanged for an [ID token](/entra/identity-platform/id-tokens.md) for a signed in user, while consenting scopes for an additional resource, and an [access token](/entra/identity-platform/access-tokens.md) containing the user consented scopes to allow your app to securely call the API.
 
-You can read more about ID tokens on our [Azure Docs pages](https://docs.microsoft.com/azure/active-directory/develop/id-tokens).
+You can read more about ID tokens on our [Azure Docs pages](/entra/identity-platform/id-tokens.md).
 
 ## Public APIs
 

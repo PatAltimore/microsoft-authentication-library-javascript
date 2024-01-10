@@ -9,7 +9,7 @@ Azure Active Directory v2.0 & Microsoft Identity Platform employs a *scope-centr
 - cannot be used for accessing resource **A** with scope `scp2`, and,
 - cannot be used for accessing resource **B** of any scope.
 
-The intended recipient of an **Access Token** is represented by the `aud` claim; in case the value for the `aud` claim does not match the resource [APP ID URI](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration), the token should be considered invalid. Likewise, the permissions that an **Access Token** grants is represented by the `scp` claim. See [Access Token claims](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims) for more information.
+The intended recipient of an **Access Token** is represented by the `aud` claim; in case the value for the `aud` claim does not match the resource [APP ID URI](/entra/identity-platform/scenario-protected-web-api-app-registration.md), the token should be considered invalid. Likewise, the permissions that an **Access Token** grants is represented by the `scp` claim. See [Access Token claims](/entra/identity-platform/access-tokens#payload-claims.md) for more information.
 
 ## Default Scopes
 
@@ -93,4 +93,4 @@ In the code snippet above, even though the user consents to both `User.Read` and
 
 > :information_source: **Consent Lifetime**
 >
-> In Azure AD, consent lives beyond the lifetime of the application. This means that, when you request an **Access Token** for a resource, all the scopes you have previously consented to for that resource will be returned, regardless of what scope was requested at the time. In other words, if you consent to `User.Read` and `Mail.Read` today and run a new instance of your application tomorrow requesting an **Access Token** for `User.Read` only, you will still receive a token issued for **both** `User.Read` and `Mail.Read`. For more information, refer to [Permissions and Consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#using-permissions).
+> In Azure AD, consent lives beyond the lifetime of the application. This means that, when you request an **Access Token** for a resource, all the scopes you have previously consented to for that resource will be returned, regardless of what scope was requested at the time. In other words, if you consent to `User.Read` and `Mail.Read` today and run a new instance of your application tomorrow requesting an **Access Token** for `User.Read` only, you will still receive a token issued for **both** `User.Read` and `Mail.Read`. For more information, refer to [Permissions and Consent](/entra/identity-platform/v2-permissions-and-consent#using-permissions.md).

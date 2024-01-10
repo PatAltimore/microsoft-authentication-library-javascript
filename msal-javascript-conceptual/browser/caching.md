@@ -76,4 +76,4 @@ To handle this scenario, you can configure MSAL to use `localStorage` as the cac
 
 ## More information
 
-- [Acquire and cache tokens using the Microsoft Authentication Library](https://docs.microsoft.com/azure/active-directory/develop/msal-acquire-cache-tokens)
+- [Acquire and cache tokens using the Microsoft Authentication Library](/entra/identity-platform/msal-acquire-cache-tokens.md)
