@@ -1,3 +1,15 @@
+---
+title: Initialize MSAL Browser
+description: Learn how to initialize MSAL in your JavaScript applications
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Initialization of MSAL
 
 Before you get started, please ensure you have completed all the [prerequisites](../README.md#prerequisites).

@@ -1,4 +1,16 @@
-# MSAL JS logging instructions
+---
+title: Enable logging in your applications
+description: Learn how to enable MSAL JS logging for your applications
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Enable logging in your applications
 
 These are steps needed to enable MSAL JS logging for your applications:
 
@@ -58,6 +70,3 @@ An example usage in a sample can be accessed [here](https://github.com/AzureAD/m
 3. Make sure you have the appropriate log level enabled in your browser console to see these logs, eg: "verbose" may need to be enabled for the browser to load these.
 
     ![browser console](./images/BrowserLogEnablement.png)
-
-
-

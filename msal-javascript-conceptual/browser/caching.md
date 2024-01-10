@@ -1,4 +1,16 @@
-# Caching in MSAL
+---
+title: Caching in MSAL.js
+description: Learn about caching tokens in MSAL.js 
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Caching in MSAL.js
 
 When MSAL acquires a token, it caches it for future usage. MSAL manages token lifetimes and refreshing for you. The `acquireTokenSilent()` API retrieves access tokens from the cache for a given account and renews them if needed.
 

@@ -1,3 +1,15 @@
+---
+title:  Resources and Scopes
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Resources and Scopes
 
 > :warning: Before you start here, make sure you understand how to [acquire and use an access token](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/acquire-token.md).

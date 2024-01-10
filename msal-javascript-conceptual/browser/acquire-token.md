@@ -1,3 +1,15 @@
+---
+title: Acquiring and using an access token
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Acquiring and using an access token
 
 > :information_source: Before you start here, make sure you understand how to [initialize the application object](./initialization.md). It is also crucial to understand the relationship between [access tokens and resources](./resources-and-scopes.md).

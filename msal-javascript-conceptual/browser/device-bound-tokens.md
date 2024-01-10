@@ -1,3 +1,15 @@
+---
+title:  Acquiring Device Bound Tokens using Web Account Manager (WAM) on Windows
+description: Learn how to acquire Device Bound Tokens using Web Account Manager (WAM) on Windows
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Acquiring Device Bound Tokens using Web Account Manager (WAM) on Windows
 
 MSAL.js supports acquiring tokens from the Web Account Manager (WAM) on Windows. These tokens are bound to the device they were acquired on and are not cached in the browser's localStorage or sessionStorage.

@@ -18,7 +18,7 @@ If you already have a session that exists with the authentication server, you ca
 
 If you already have the user's sign-in information, you can pass this into the API to improve performance and ensure that the authorization server will look for the correct account session. You can pass one of the following into the request object in order to successfully obtain a token silently.
 
-- `account` (which can be retrieved using on of the [account APIs](./accounts.md))
+- `account` (which can be retrieved using on of the account APIs)
 - `sid` (which can be retrieved from the `idTokenClaims` of an `account` object)
 - `login_hint` (which can be retrieved from the account object `username` property or the `upn` claim in the ID token)
 

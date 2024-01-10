@@ -1,3 +1,15 @@
+---
+title: Instance aware flow
+description: Learn how to use the instance aware flow
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Instance Aware flow
 
 When passing `instance_aware=true` on the `/authorize` call to retrieve the code, the STS will send back additional parameters to specify where the tokens should be retrieved from. 

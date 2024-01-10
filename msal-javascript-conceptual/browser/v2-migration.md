@@ -1,4 +1,16 @@
-# Migrating from MSAL 2.x to MSAL 3.x
+---
+title: Migrating from MSAL v2.x to MSAL v3.x
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Migrating from MSAL v2.x to MSAL v3.x
 
 If you are new to MSAL, you should start [here](initialization.md).
 

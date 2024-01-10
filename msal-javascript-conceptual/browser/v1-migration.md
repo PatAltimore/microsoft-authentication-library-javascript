@@ -1,4 +1,16 @@
-# Migrating from MSAL 1.x to MSAL 2.x
+---
+title: Migrating from MSAL v1.x to MSAL v2.x
+description: Learn how to migrate from MSAL v1.x to MSAL v2.x
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Migrating from MSAL v1.x to MSAL v2.x
 
 If you are new to MSAL, you should start [here](./initialization.md).
 

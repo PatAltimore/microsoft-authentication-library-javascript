@@ -1,3 +1,15 @@
+---
+title: Manage token lifetimes
+description: Learn how to manage token lifetimes
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Token Lifetimes, Expiration, and Renewal
 
 Before you start here, make sure you understand how to [login](./login-user.md) and [acquire tokens](./acquire-token.md).

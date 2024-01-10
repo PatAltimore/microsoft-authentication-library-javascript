@@ -1,4 +1,16 @@
-# Configuration Options
+---
+title: Authentication configuration options
+description: Learn about configuration options that can be used to customize the behavior of your authentication flows
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Authentication configuration options
 
 Before you start here, make sure you understand how to [initialize an app object](./initialization.md).
 

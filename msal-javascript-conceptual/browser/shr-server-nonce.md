@@ -1,3 +1,15 @@
+---
+title: SHR Server Nonce
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # SHR Server Nonce
 
 As an enhancement of Access Token Proof-of-Possesion, MSAL Browser provides a way to insert a server-generated signed timestamp (a.k.a **server nonce**) into a `Signed HTTP Request`, also known as a `PoP Token`. This server generated nonce can be added to any token request that uses the `POP` authentication scheme.

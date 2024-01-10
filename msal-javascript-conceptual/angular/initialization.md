@@ -204,6 +204,6 @@ ngOnDestroy(): void {
 }
 ```
 
-# Next Steps
+## Next Steps
 
-You are ready to use `@azure/msal-angular` [public APIs](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/public-apis.md)!
+- Learn how to to use [public APIs](public-apis.md) in MSAL Angular.

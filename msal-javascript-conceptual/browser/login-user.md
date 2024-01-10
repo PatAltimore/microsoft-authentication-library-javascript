@@ -1,4 +1,16 @@
-# Login User
+---
+title: Sign in users
+description: Learn how to sign in users
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# Sign in users
 
 Before you start here, make sure you understand how to [initialize the application object](./initialization.md).
 

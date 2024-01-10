@@ -1,3 +1,15 @@
+---
+title: Accounts in MSAL Browser
+description: Learn about accounts in MSAL Browser
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # Accounts in MSAL Browser
 
 > This is the platform-specific Accounts documentation for `@azure/msal-browser`. For the general documentation of the `AccountInfo` object structure, please visit the `@azure/msal-common` [Accounts document](../../msal-common/docs/Accounts.md).

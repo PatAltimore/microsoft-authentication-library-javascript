@@ -1,3 +1,15 @@
+---
+title: Signed Http Request
+description: Learn how to use signed Http requests
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Signed Http Request
 
 MSAL.js provides the `SignedHttpRequest` class as a convenience to assist in creating [signed http requests (SHRs)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-signed-http-request-03) for payloads (e.g. tokens) that are acquired out-of-band from MSAL.js. This enables applications to leverage the same encryption and caching MSAL.js uses for [access token proof-of-possession](./access-token-proof-of-possession.md) for their own payloads.

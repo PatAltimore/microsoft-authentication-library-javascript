@@ -1,3 +1,15 @@
+---
+title: Acquiring and using an access token
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Response
 
 MSAL will return an `AuthenticationResult.ts` object as a response to all acquire token APIs:

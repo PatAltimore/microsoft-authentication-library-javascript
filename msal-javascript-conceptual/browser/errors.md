@@ -1,27 +1,15 @@
+---
+title: Common errors in MSAL JS
+description: Learn the common errors in MSAL JS
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
 # Errors
-
----
-
-**[BrowserConfigurationAuthErrors](#Browserconfigurationautherrors)**
-
-1. [stubbed_public_client_application_called](#stubbed_public_client_application_called)
-
-**[BrowserAuthErrors](#browserautherrors)**
-
-1. [interaction_in_progress](#interaction_in_progress)
-1. [block_iframe_reload](#block_iframe_reload)
-1. [monitor_window_timeout](#monitor_window_timeout)
-1. [hash_empty_error](#hash_empty_error)
-1. [hash_does_not_contain_known_properties](#hash_does_not_contain_known_properties)
-1. [unable_to_acquire_token_from_native_platform](#unable_to_acquire_token_from_native_platform)
-1. [native_connection_not_established](#native_connection_not_established)
-1. [native_broker_called_before_initialize](#native_broker_called_before_initialize)
-
-**[Other](#other)**
-
-1. [Access to fetch at [url] has been blocked by CORS policy](#Access-to-fetch-at-[url]-has-been-blocked-by-CORS-policy)
-
----
 
 ## BrowserConfigurationAuthErrors
 

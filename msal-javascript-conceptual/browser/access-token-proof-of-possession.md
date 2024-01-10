@@ -1,4 +1,16 @@
-# Acquiring Access Tokens Protected with Proof-of-Possession
+---
+title: Acquiring access tokens protected with Proof-of-Possession
+description: Learn how to acquire access tokens protected with Proof-of-Possession
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
+# Acquiring access tokens protected with Proof-of-Possession
 
 In order to increase the protection of OAuth 2.0 access tokens stored in the browser against "token replay", MSAL provides an `Access Token Proof-of-Posession` authentication scheme. `Access Token Proof-of-Possession`, or `AT PoP`, is an authentication scheme that cryptographically binds the access tokens to the browser and client application from which they are requested, meaning they cannot be used from a different application or device.
 

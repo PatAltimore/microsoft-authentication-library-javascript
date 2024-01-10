@@ -1,4 +1,16 @@
-# CDN Usage for @azure/msal-browser
+---
+title: CDN Usage for MSAL Browser
+description: Learn about CDN Usage for @azure/msal-browser
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
+# CDN Usage for MSAL Browser
 
 In addition to npm, `msal` can be consumed from Microsoft-hosted CDNs.
 

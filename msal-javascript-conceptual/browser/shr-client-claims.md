@@ -1,3 +1,15 @@
+---
+title: Custom SHR Claims
+description: Learn how to acquire and use an access token
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Custom SHR Claims
 
 As an enhancement of Access Token Proof-of-Possesion, MSAL Browser provides a way to insert custom client claims into a `Signed HTTP Request`, also known as a `PoP Token`. These custom SHR claims can be added to any token request that uses the `POP` authentication scheme.

@@ -1,4 +1,15 @@
-# Intercepting or Overriding Window Navigation
+---
+title: Intercepting or overriding window navigation
+description: Learn how to intercept or override window navigation
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+# Intercepting or overriding window navigation
 
 By default `msal-browser` uses `window.location.assign` and `window.location.replace` to redirect your application to external urls, such as the sign-in or sign-out pages, and internal urls, other pages in your app after returning from an external redirect. There may be situations, however, where you would like to override the default behavior with your own. For example, frameworks like React and Angular provide different APIs to handle client-side navigation without reloading the entire SPA. `msal-browser` exposes both the `INavigationClient` interface as well as the `NavigationClient` default implementation for you to provide your own custom implementation.
 

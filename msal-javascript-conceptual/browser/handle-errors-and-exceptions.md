@@ -5,7 +5,7 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: devx-track-js
-ms.date: 11/26/2020
+ms.date: 11/26/2023
 ms.reviewer: saeeda, hahamil
 ms.service: active-directory
 ms.subservice: develop

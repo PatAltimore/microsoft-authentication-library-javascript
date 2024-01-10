@@ -1,3 +1,15 @@
+---
+title: SSH Certificates
+description: Learn how to acquire and use SSH Certificates
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Ephemeral SSH Certificates
 
 In addition to `Bearer` and `PoP` access tokens, MSAL Browser supports the acquisition of Ephemeral SSH certificates that allow users to access Azure Linux Virtual Machines remotely through the SSH protocol. This document outlines the recommended usage pattern of MSAL's `acquireToken` APIs when acquiring these SSH Certificates.

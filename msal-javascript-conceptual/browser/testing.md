@@ -1,3 +1,15 @@
+---
+title: Testing your application in a browser environment
+description: Learn how to test your application in a browser environment
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: reference
+ms.date: 01/10/2024
+ms.author: emilylauber
+ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
+---
+
 # Testing
 
 ## The loadExternalTokens() API

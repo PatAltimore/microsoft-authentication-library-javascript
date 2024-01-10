@@ -20,16 +20,26 @@
             href: browser/token-lifetimes.md
           - name: Sign out users
             href: browser/logout.md
+          - name: Acquire tokens using WAM
+            href: browser/device-bound-tokens.md
       - name: Advanced topics
         items: 
+          - name: Single sign-on in MSAL.js
+            href: browser/single-sign-on.md
+          - name: Prompt behavior with MSAL.js
+            href: browser/prompt-behavior.md
           - name: Logging in MSAL.js
             href: browser/logging.md
           - name: Handle errors and exceptions
+            href: browser/handle-errors-and-exceptions.md
+          - name: Common errors
             href: browser/errors.md
           - name: Acquiring SSH certificates
             href: browser/ssh-certificates.md
           - name: Use MSAL from Microsoft-hosted CDN
             href: browser/cdn-usage.md
+          - name: Overriding window navigation
+            href: browser/navigation.md
       - name: Migration guides
         items: 
           - name: Migrate apps from ADAL.js to MSAL.js
