@@ -9,7 +9,7 @@ The logout process for MSAL takes two steps.
 1. Clear the MSAL cache.
 2. Clear the session on the identity server.
 
-The `PublicClientApplication` object exposes 2 APIs that perform these actions.
+The `PublicClientApplication` object exposes two APIs that perform these actions.
 
 ```javascript
 msalInstance.logoutRedirect();

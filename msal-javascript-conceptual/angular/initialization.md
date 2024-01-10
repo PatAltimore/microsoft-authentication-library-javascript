@@ -11,15 +11,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 ---
 # Initializing MSAL Angular
 
-Before using `@azure/msal-angular`, [register an application in Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) to get your `clientId`.
-
-In this document:
-- [Initialization of MSAL](#initialization-of-msal-angular)
-    - [Include and initialize the MSAL module in your app module](#include-and-initialize-the-msal-module-in-your-app-module)
-    - [Secure the routes in your application](#secure-the-routes-in-your-application)
-    - [Get tokens for Web API calls](#get-tokens-for-web-api-calls)
-    - [Subscribe to events](#subscribe-to-events)
-- [Next Steps](#next-steps)
+Before using `@azure/msal-angular`, you must first [register your application in Azure AD](/entra/identity-platform/quickstart-register-app) to get your client ID, a unique identifier for your application, also known as application ID. 
 
 ## Include and initialize the MSAL module in your app module
 

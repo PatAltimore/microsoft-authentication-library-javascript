@@ -35,10 +35,10 @@
           - name: Migrate apps from ADAL.js to MSAL.js
             href: browser/migrate-adal-js-to-msal-js.md
           - name: Migrate SPA from implicit to auth code flow
-            href: browser/logout.md
-          - name: Migrate from MSAL 1.x to MSAL 2.x
+            href: browser/migrate-spa-implicit-to-auth-code.md
+          - name: Migrate from MSAL v1.x to MSAL v2.x
             href: browser/v1-migration.md
-          - name: Migrate from MSAL 3.x to MSAL 3.x
+          - name: Migrate from MSAL v2.x to MSAL v3.x
             href: browser/v2-migration.md           
   - name: MSAL Angular
     items:
