@@ -1,29 +1,16 @@
+---
+title: Get started with MSAL React
+description: Get started with MSAL React. Learn how to initialize MSAL React, determine whether a user is authenticated, protect components, sign a user in and acquire an access token.
+author: EmLauber
+manager: CelesteDG
+
+ms.topic: conceptual
+ms.date: 11/29/2023
+ms.author: emilylauber
+ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
+---
+
 # FAQ
-
-***
-**[Compatibility](#compatibility)**
-
-1. [What browsers are supported?](#what-browsers-are-supported)
-1. [What versions of React are supported?](#what-versions-of-React-are-supported)
-1. [Does @azure/msal-react support Server Side Rendering (SSR) or static site generation?](#does-azuremsal-react-support-Server-Side-Rendering-SSR-or-static-site-generation)
-1. [Does @azure/msal-react support class components?](#does-azuremsal-react-support-class-components)
-1. [Can @azure/msal-react be used with Microsoft Graph JavaScript SDK?](#can-azuremsal-react-be-used-with-microsoft-graph-javascript-sdk)
-
-**[Authentication](#authentication)**
-
-1. [How do I handle the redirect flow in a react app?](#how-do-i-handle-the-redirect-flow-in-a-react-app)
-1. [What can I do outside of @azure/msal-react context?](#what-can-i-do-outside-of-azuremsal-react-context)
-1. [How do I implement self-service sign-up?](#how-do-i-implement-self-service-sign-up)
-
-**[B2C](#B2C)**
-
-1. [How do I handle the forgot password flow in a react app?](#how-do-i-handle-the-forgot-password-flow-in-a-react-app)
-
-**[Errors](#errors)**
-
-**[What if my question has not been answered?](#what-if-my-question-has-not-been-answered)**
-
-***
 
 ## Compatibility
 

@@ -12,7 +12,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Initialization of MSAL
 
-Before you get started, please ensure you have completed all the [prerequisites](../README.md#prerequisites).
+Before initializing MSAL Browser, start by [registering your application in the Azure portal](/entra/identity-platform/quickstart-register-app.md) to obtain obtain the application (client) ID.
 
 ## Initializing the PublicClientApplication object
 
@@ -90,8 +90,6 @@ const msalConfig = {
 - Authority metadata (since `v2.4.0`):
   - When set to `OIDC`, the library will not include `/v2.0/` in the authority path when fetching authority metadata.
   - When set to `AAD` (the default value), the library will include `/v2.0/` in the authority path when fetching authority metadata.
-
-For more information on authority, please refer to: [Authority in MSAL](../../msal-common/docs/authority.md).
 
 ## (Optional) Configure Redirect URI
 

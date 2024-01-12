@@ -12,9 +12,9 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Migrating from MSAL v2.x to MSAL v3.x
 
-If you are new to MSAL, you should start [here](initialization.md).
+If you are new to MSAL, you should start [here](./initialization.md).
 
-If you are coming from [MSAL v1.x](../../msal-core/), you should check [this guide](v1-migration.md) first to migrate to [MSAL v2.x](../../msal-browser/) and then follow next steps.
+If you are coming from [MSAL v1.x](../../msal-core/), you should check [this guide](./v1-migration.md) first to migrate to [MSAL v2.x](../../msal-browser/) and then follow next steps.
 
 If you are coming from [MSAL v2.x](../../msal-browser/), you can follow this guide to update your code to use [MSAL v3.x](../../msal-browser/).
 
