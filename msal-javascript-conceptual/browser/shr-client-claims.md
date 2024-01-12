@@ -1,6 +1,6 @@
 ---
-title: Custom SHR Claims
-description: Learn how to acquire and use an access token
+title: Custom Signed HTTP Request Claims
+description: Learn how to use Signed HTTP Request claims
 author: EmLauber
 manager: CelesteDG
 
@@ -19,8 +19,6 @@ Given that the payload of a `Signed HTTP Request` has a specific format, rather 
 Given that MSAL does not cache `Signed HTTP Requests` (the access token secret is cached and the SHR payload is built and signed just-in-time whenever `acquireTokenSilent` is called), custom client claims will **not** be cached either. This means that the claims must also be passed into every `acquireTokenSilent` call in order for them to be added to the resulting `SignedHTTPRequest`.
 
 Once the `Signed HTTP Request` is sent to the resource server as a `PoP Token`, the resource server is responsible for validating the signed payload as well as extracting and parsing the `client_claims`.
-
-
 
 ## Usage
 

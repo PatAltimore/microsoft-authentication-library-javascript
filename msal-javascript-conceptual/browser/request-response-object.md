@@ -1,6 +1,6 @@
 ---
 title: Request and Response Objects
-description: Learn how to acquire and use an access token
+description: Learn about the configuration options you can use to customize authentication flows
 author: EmLauber
 manager: CelesteDG
 
@@ -11,8 +11,6 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 ---
 
 # Request and Response Objects
-
-First, please read about how to [initialize the `PublicClientApplication` object](./initialization.md), [login](./login-user.md) and [acquire tokens](./acquire-token.md).
 
 The MSAL Browser library has a set of configuration options that can be used to customize the behavior of your authentication flows. Some of these options can be set in the [constructor of the `PublicClientApplication` object](./configuration.md), and most of them can be set on a per-request basis. The table below details the configuration objects that can be passed to the login and acquireToken APIs, and the objects returned representing the response.
 

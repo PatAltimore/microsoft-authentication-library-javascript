@@ -1,6 +1,6 @@
 ---
 title: SHR Server Nonce
-description: Learn how to acquire and use an access token
+description: Learn about the SHR Server Nonce
 author: EmLauber
 manager: CelesteDG
 

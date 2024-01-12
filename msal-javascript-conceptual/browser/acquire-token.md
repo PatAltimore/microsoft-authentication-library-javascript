@@ -12,7 +12,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Acquiring and using an access token
 
-> :information_source: Before you start here, make sure you understand how to [initialize the application object](./initialization.md). It is also crucial to understand the relationship between [access tokens and resources](./resources-and-scopes.md).
+Before you acquire an access token, make sure you understand how to [initialize the application object](./initialization.md). It's also crucial to understand the relationship between [access tokens and resources](./resources-and-scopes.md).
 
 In MSAL, you can get access tokens for the APIs your app needs to call using the `acquireToken*` methods provided by the library. The `acquireToken*` methods abstract away the 2 steps involved in acquiring tokens with the [OAuth 2.0 authorization code flow](/entra/identity-platform/v2-oauth2-auth-code-flow.md):
 
