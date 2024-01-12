@@ -123,4 +123,3 @@ You can only request access tokens for one resource at a time (see [resources an
 - [Caching in MSAL](./caching.md)
 - [Handling errors](./errors.md)
 - [Working with B2C](./working-with-b2c.md)
-- [Throttling](../../msal-common/docs/Throttling.md)
