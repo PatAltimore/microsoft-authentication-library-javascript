@@ -158,12 +158,12 @@ msalInstance.handleRedirectPromise().then((tokenResponse) => {
 });
 ```
 
-This will also allow you to retrieve tokens on page reload. See the [onPageLoad sample](../../../samples/msal-browser-samples/VanillaJSTestApp2.0/app/onPageLoad/) for more information on usage.
+This will also allow you to retrieve tokens on page reload. See the [onPageLoad sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0/app/onPageLoad/) for more information on usage.
 
 It is not recommended to use both interaction types in a single application.
 
 **Note:** `handleRedirectPromise` will optionally accept a hash value to be processed, defaulting to the current value of `window.location.hash`. This parameter only needs to be provided in scenarios where the current value of `window.location.hash` does not contain the redirect response that needs to be processed. **For almost all scenarios, applications should not need to provide this parameter explicitly.**
 
-# Next Steps
+## Next Steps
 
 You are ready to perform a [login](./login-user.md)!

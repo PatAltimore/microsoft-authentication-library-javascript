@@ -16,7 +16,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 MSAL Browser starting version 2.17.0 has added the `loadExternalTokens()` API, which allows the loading of id tokens and access tokens to the MSAL cache, which can then be fetched using `acquireTokenSilent()`. 
 
-**Note: This is an advanced feature that is intended for testing purposes in the browser environment only. Loading tokens to your application's cache may cause your app to break. Additionally, we recommend `loadExternalTokens()` API to be used with unit and integration tests. For E2E testing, please refer to our [TestingSample](../../../samples/msal-browser-samples/TestingSample) instead.**
+**Note: This is an advanced feature that is intended for testing purposes in the browser environment only. Loading tokens to your application's cache may cause your app to break. Additionally, we recommend `loadExternalTokens()` API to be used with unit and integration tests. For E2E testing, please refer to our [TestingSample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/TestingSample) instead.**
 
 The `loadExternalTokens()` API can be accessed by calling `getTokenCache()` on MSAL Browser's `PublicClientApplication` instance. 
 

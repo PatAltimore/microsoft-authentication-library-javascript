@@ -99,4 +99,4 @@ const { accessToken } = await myMSALObj.acquireTokenSilent(silentSshTokenRequest
 
 ## Code samples
 
-* [JavaScript SPA acquiring SSH Certificates](../../../samples/msal-browser-samples/VanillaJSTestApp2.0/app/ssh)
+* [JavaScript SPA acquiring SSH Certificates](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0/app/ssh)

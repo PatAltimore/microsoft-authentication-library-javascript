@@ -160,7 +160,7 @@ This indicates that the server could not determine which account to sign into, a
 
 ## RedirectUri Considerations
 
-When using popup and silent APIs we recommend setting the `redirectUri` to a blank page or a page that does not implement MSAL. This will help prevent potential issues as well as improve performance. If your application is only using popup and silent APIs you can set this on the `PublicClientApplication` config. If your application also needs to support redirect APIs you can set the `redirectUri` on a per request basis. For more information, see the [React Router](../../../samples/msal-react-samples/react-router-sample) sample:
+When using popup and silent APIs we recommend setting the `redirectUri` to a blank page or a page that does not implement MSAL. This will help prevent potential issues as well as improve performance. If your application is only using popup and silent APIs you can set this on the `PublicClientApplication` config. If your application also needs to support redirect APIs you can set the `redirectUri` on a per request basis. For more information, see the [React Router](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/react-router-sample) sample:
 
 Note: This does not apply for `loginRedirect` or `acquireTokenRedirect`. When using those APIs please see the directions on handling redirects [here](./initialization.md#redirect-apis)
 
@@ -170,6 +170,6 @@ msalInstance.loginPopup({
 });
 ```
 
-# Next Steps
+## Next Steps
 
 Learn how to [acquire and use an access token](./acquire-token.md)!
