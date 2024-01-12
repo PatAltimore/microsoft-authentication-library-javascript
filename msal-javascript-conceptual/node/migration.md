@@ -5,7 +5,7 @@ author: EmLauber
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref, devx-track-js
-ms.date: 04/26/2023
+ms.date: 11/28/2023
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to

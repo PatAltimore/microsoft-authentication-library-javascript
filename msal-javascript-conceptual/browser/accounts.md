@@ -12,11 +12,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 # Accounts in MSAL Browser
 
-> This is the platform-specific Accounts documentation for `@azure/msal-browser`. For the general documentation of the `AccountInfo` object structure, please visit the `@azure/msal-common` [Accounts document](../../msal-common/docs/Accounts.md).
-
-## Usage
-
-The `@azure/msal-browser` library provides the following APIs to access cached accounts:
+This is the platform-specific Accounts documentation for the `@azure/msal-browser` library, which provides the following APIs to access cached accounts:
 
 -   `getAllAccounts()`: returns all the accounts currently in the cache. Supports an optional filter to return a specific set of accounts. An application must choose an account to acquire tokens silently.
 -   `getAccount()`: returns the first cached account that matches the filter passed in. The order in which accounts are read from the cache is arbitrary and there is no guarantee that the first account in the filtered list will be the same for any two calls of `getAccount`. As explained below, increasing the number of filter attributes will provide more exact matches.
@@ -171,8 +167,8 @@ Note: As of version 2.16.0 the active account is stored in the cache location co
 
 ## Notes
 
--   The current msal-browser default [sample](../../../samples/msal-browser-samples/VanillaJSTestApp2.0) has a working single account scenario.
--   If you have a multiple accounts scenario, please modify the [sample](../../../samples/msal-browser-samples/VanillaJSTestApp2.0/app/default/auth.js) (in `handleResponse()`) to list all cached accounts and choose a specific account.
+-   The current msal-browser default [sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0/) has a working single account scenario.
+-   If you have a multiple accounts scenario, please modify the [sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0/app/default/auth.js) (in `handleResponse()`) to list all cached accounts and choose a specific account.
 -   If an application wants to retrieve an account based on the `username`, it needs to save the `username` (from the response of a `login` API for a specific user) prior to using `getAccountByUsername()` API.
 -   `getAllAccounts()` will return multiple accounts if you have made several interactive token requests and the user has selected different accounts in two or more of those interactions. You may need to pass `prompt: "select_account"` or `prompt: "login"` to the interactive acquireToken or login API in order for AAD to display the account selection screen after the first interaction.
 -   The account APIs return local account state and do not necessarily reflect server state. They return accounts that have previously signed into this app using MSAL.js and the server session may or may not still be active.

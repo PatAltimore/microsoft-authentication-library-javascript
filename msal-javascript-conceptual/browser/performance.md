@@ -1,6 +1,6 @@
 ---
-title: Acquiring and using an access token
-description: Learn how to acquire and use an access token
+title: Measuring performance in MSAL.js 
+description: Learn more about telemetry and performance of token acquisition in MSAL.js
 author: EmLauber
 manager: CelesteDG
 

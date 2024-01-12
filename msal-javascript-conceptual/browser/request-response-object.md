@@ -1,5 +1,5 @@
 ---
-title: ARequest and Response Objects
+title: Request and Response Objects
 description: Learn how to acquire and use an access token
 author: EmLauber
 manager: CelesteDG

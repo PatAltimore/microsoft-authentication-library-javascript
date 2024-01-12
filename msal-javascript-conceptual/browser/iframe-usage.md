@@ -1,6 +1,6 @@
 ---
-title: Acquiring and using an access token
-description: Learn how to acquire and use an access token
+title: Using MSAL in iframed apps
+description: Learn how to use MSAL in iframed apps
 author: EmLauber
 manager: CelesteDG
 
