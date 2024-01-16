@@ -10,11 +10,7 @@ ms.author: emilylauber
 ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 ---
 
-# Performance
-
-Please refer to [msal-common/performance](../../msal-common/docs/performance.md) first, which outlines the techniques your application can use to improve the performance of token acquisition using MSAL. Read below for measuring performance in your apps.
-
-## Measuring performance
+# Measuring performance
 
 Applications that want to measure the performance of authentication flows in MSAL.js can do so manually, or consume the performance measures taken by the library itself.
 Consuming performance measurements requires setting performance client in [telemetry configuration options](./configuration.md#telemetry-config-options) and adding performance callback.
@@ -44,8 +40,6 @@ const msalInstance = new PublicClientApplication({
 });
 msalInstance.initialize();
 ```
-
-**Note**: You can pass your own performance telemetry client that implements [IPerformanceClient](../../msal-common/src/telemetry/performance/IPerformanceClient.ts) to customize telemetry management.
 
 ### Add performance callback
 
@@ -91,7 +85,7 @@ const event: PerformanceEvent = {
 }
 ```
 
-The complete details for `PerformanceEvents` objects can be found [here](../../msal-common/src/telemetry/performance/PerformanceEvent.ts). Below is a list of some notable properties:
+The complete details for `PerformanceEvents` objects can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/src/telemetry/performance/PerformanceClient.ts). Below is a list of some notable properties:
 
 | **Property**                       | Type      | Description                                                            |
 | ---------------------------------- | --------- | ---------------------------------------------------------------------- |

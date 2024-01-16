@@ -21,9 +21,8 @@ ms.topic: how-to
 
 ## Prerequisites
 
-- You must set the **Platform** / **Reply URL Type** to **Single-page application** on App Registration portal (if you have other platforms added in your app registration, such as **Web**, you need to make sure the redirect URIs don't overlap. See: [Redirect URI restrictions](./reply-url.md))
-- You must provide [polyfills](./msal-js-use-ie-browser.md) for ES6 features that MSAL.js relies on (for example, promises) in order to run your apps on **Internet Explorer**
-- Migrate your Microsoft Entra apps to [v2 endpoint](v2-overview.md) if you haven't already
+- You must set the **Platform** / **Reply URL Type** to **Single-page application** on App Registration portal (if you have other platforms added in your app registration, such as **Web**, you need to make sure the redirect URIs don't overlap. See: [Redirect URI restrictions](/entra/identity-platform/reply-url))
+- You must provide [polyfills](./use-ie-browser.md) for ES6 features that MSAL.js relies on (for example, promises) in order to run your apps on **Internet Explorer**
 
 ## Install and import MSAL
 
@@ -226,13 +225,13 @@ const getAccessToken = async() => {
 
 ## Cache and retrieve tokens
 
-Like ADAL.js, MSAL.js caches tokens and other authentication artifacts in browser storage, using the [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API). You're recommended to use `sessionStorage` option (see: [configuration](#configure-msal)) because it's more secure in storing tokens that are acquired by your users, but `localStorage` will give you [Single Sign On](./msal-js-sso.md) across tabs and user sessions.
+Like ADAL.js, MSAL.js caches tokens and other authentication artifacts in browser storage, using the [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API). You're recommended to use `sessionStorage` option (see: [configuration](#configure-msal)) because it's more secure in storing tokens that are acquired by your users, but `localStorage` will give you [Single Sign On](./single-sign-on.md) across tabs and user sessions.
 
 Importantly, you aren't supposed to access the cache directly. Instead, you should use an appropriate MSAL.js API for retrieving authentication artifacts like access tokens or user accounts.
 
 ## Renew tokens with refresh tokens
 
-ADAL.js uses the [OAuth 2.0 implicit flow](./v2-oauth2-implicit-grant-flow.md), which doesn't return refresh tokens for security reasons (refresh tokens have longer lifetime than access tokens and are therefore more dangerous in the hands of malicious actors). Hence, ADAL.js performs token renewal using a hidden IFrame so that the user isn't repeatedly prompted to authenticate.
+ADAL.js uses the [OAuth 2.0 implicit flow](/entra/identity-platform//v2-oauth2-implicit-grant-flow), which doesn't return refresh tokens for security reasons (refresh tokens have longer lifetime than access tokens and are therefore more dangerous in the hands of malicious actors). Hence, ADAL.js performs token renewal using a hidden IFrame so that the user isn't repeatedly prompted to authenticate.
 
 With the auth code flow with PKCE support, apps using MSAL.js 2.x obtain refresh tokens along with ID and access tokens, which can be used to renew them. The usage of refresh tokens is abstracted away, and the developers aren't supposed to build logic around them. Instead, MSAL manages token renewal using refresh tokens by itself. Your previous token cache with ADAL.js won't be transferable to MSAL.js, as the token cache schema has changed and incompatible with the schema used in ADAL.js.
 
@@ -240,7 +239,7 @@ With the auth code flow with PKCE support, apps using MSAL.js 2.x obtain refresh
 
 When using MSAL.js, the most common type of error you might face is the `interaction_in_progress` error. This error is thrown when an interactive API (`loginPopup`, `loginRedirect`, `acquireTokenPopup`, `acquireTokenRedirect`) is invoked while another interactive API is still in progress. The `login*` and `acquireToken*` APIs are *async* so you'll need to ensure that the resulting promises have resolved before invoking another one.
 
-Another common error is `interaction_required`. This error is often resolved by initiating an interactive token acquisition prompt. For instance, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA). In that case, handling `interaction_required` error by triggering `acquireTokenPopup` or `acquireTokenRedirect` will prompt the user for MFA, allowing them to fullfil it.
+Another common error is `interaction_required`. This error is often resolved by initiating an interactive token acquisition prompt. For instance, the web API you're trying to access might have a [Conditional Access](/entra/identity/conditional-access/overview) policy in place, requiring the user to perform [multifactor authentication](/entra/identity/authentication/concept-mfa-howitworks) (MFA). In that case, handling `interaction_required` error by triggering `acquireTokenPopup` or `acquireTokenRedirect` will prompt the user for MFA, allowing them to fullfil it.
 
 Yet another common error you might face is `consent_required`, which occurs when permissions required for obtaining an access token for a protected resource aren't consented by the user. As in `interaction_required`, the solution for `consent_required` error is often initiating an interactive token acquisition prompt, using either `acquireTokenPopup` or `acquireTokenRedirect`.
 

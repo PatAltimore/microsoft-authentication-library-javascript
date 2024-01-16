@@ -14,9 +14,9 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 If you are new to MSAL, you should start [here](./initialization.md).
 
-If you are coming from [MSAL v1.x](../../msal-core/), you should check [this guide](./v1-migration.md) first to migrate to [MSAL v2.x](../../msal-browser/) and then follow next steps.
+If you are coming from MSAL v1.x, you should check [this guide](./v1-migration.md) first to migrate to MSAL v2.x and then follow next steps.
 
-If you are coming from [MSAL v2.x](../../msal-browser/), you can follow this guide to update your code to use [MSAL v3.x](../../msal-browser/).
+If you are coming from MSAL v2.x, you can follow this guide to update your code to use MSAL v3.x.
 
 ## Breaking changes
 
@@ -90,7 +90,7 @@ const msalInstance = new msal.PublicClientApplication(msalConfig);
 await msalInstance.initialize();
 ```
 
-All other APIs are backward compatible with [MSAL v2.x](../../msal-browser/). It is recommended to take a look at the [default sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0) to see a working example of MSAL v3.0.
+All other APIs are backward compatible with MSAL v2.x. It is recommended to take a look at the [default sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-browser-samples/VanillaJSTestApp2.0) to see a working example of MSAL v3.0.
 
 ### Crypto
 
