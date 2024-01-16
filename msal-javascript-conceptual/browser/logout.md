@@ -207,5 +207,3 @@ Dig into more advanced topics, such as:
 
 - [Caching](./caching.md)
 - [Advanced Configuration Options](./configuration.md)
-
-...and [more](../README.md#advanced-topics)!

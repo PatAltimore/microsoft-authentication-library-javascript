@@ -44,7 +44,7 @@ try {
 }
 ```
 
-Or you can send a set of [scopes](./request-response-object.md#scopes) to pre-consent to:
+Or you can send a set of [scopes](./resources-and-scopes.md) to pre-consent to:
 - Popup
 ```javascript
 var loginRequest = {
