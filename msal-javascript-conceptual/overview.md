@@ -39,7 +39,7 @@ The [`lib`](https://github.com/AzureAD/microsoft-authentication-library-for-js/t
 
 There are a number of different packages meant for different platforms. You can see the relationship between packages and different authentication flows they implement in the package structure below.
 
-![Package Structure](PackageStructure.png)
+![Package Structure](./media/PackageStructure.png)
 
 ## Samples
 

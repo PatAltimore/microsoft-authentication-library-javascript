@@ -246,6 +246,3 @@ Please look at the On Behalf Of flow [sample](https://github.com/AzureAD/microso
 * [WebAPI](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/on-behalf-of/web-api/index.js) sample code
 * [WebApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/on-behalf-of/web-app/index.js) sample code
 
-## Next Steps
-
-Proceed to understand the public APIs provided by `msal-node` for acquiring tokens [here](../browser/response.md)

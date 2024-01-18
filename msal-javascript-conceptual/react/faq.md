@@ -84,13 +84,14 @@ This means the following APIs are off-limits outside the context of `MsalProvide
 **Note:** If you do choose to use any other `@azure/msal-browser` API outside of the react context you should still use the same `PublicClientApplication` instance you pass into `MsalProvider`.
 
 ## How do I implement self-service sign-up?
-MSAL React supports self-service sign-up in the auth code flow. Please see our docs [here](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_browser.html#popuprequest) for supported prompt values in the request and their expected outcomes, and [here](http://aka.ms/s3u) for an overview of self-service sign-up and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
+
+MSAL React supports self-service sign-up in the auth code flow. Please see our docs [here](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_browser.html#popuprequest) for supported prompt values in the request and their expected outcomes, and an overview of [self-service sign-up](/entra/external-id/self-service-sign-up-overview) and configuration changes that need to be made to your Azure tenant. Please note that that self-service sign-up is not available in B2C and test environments.
 
 ## B2C
 
 ### How do I handle the forgot password flow in a react app?
 
-The [new password reset experience](https://docs.microsoft.com/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended) is now part of the sign-up or sign-in policy. When the user selects the **Forgot your password?** link, they are immediately sent to the Forgot Password experience. You don't need a separate policy for password reset anymore.
+The [new password reset experience](/azure/active-directory-b2c/add-password-reset-policy?pivots=b2c-user-flow#self-service-password-reset-recommended) is now part of the sign-up or sign-in policy. When the user selects the **Forgot your password?** link, they are immediately sent to the Forgot Password experience. You don't need a separate policy for password reset anymore.
 
 Our recommendation is to move to the new password reset experience since it simplifies the app state and reduces error handling on the user-end. If for some reason you have to use the legacy forgot password flow, you'll have to handle the `AADB2C90118` error response returned from B2C service when a user selects the **Forgot your password?** link, and call login again with your forgot password policy.
 

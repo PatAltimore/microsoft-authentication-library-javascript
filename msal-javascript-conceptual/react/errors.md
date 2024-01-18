@@ -74,7 +74,7 @@ This error is thrown when an interactive API (`loginPopup`, `loginRedirect`, `ac
 
 In `@azure/msal-react` there are 2 scenarios when this can happen:
 
-1. Your application is calling one of the APIs outside of the context where you do not have access to the `inProgress` state. For more about context see the [FAQ](./faq.md#what-can-i-do-outside-of-msal-react-context)
+1. Your application is calling one of the APIs outside of the context where you do not have access to the `inProgress` state. For more about context see the [MSAL React FAQ](./faq.md)
 1. Your application is calling one of the APIs without first checking if interaction is already in progress elsewhere.
 
 The following snippet throws the error when another component has already invoked an interactive API that is in progress:

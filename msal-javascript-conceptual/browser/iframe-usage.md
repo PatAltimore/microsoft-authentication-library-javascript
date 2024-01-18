@@ -19,7 +19,7 @@ By default, MSAL prevents full-frame redirects to **Azure AD** authentication en
 - Similarly, you'll have to use the [logoutPopup()](./logout.md#logoutpopup) API for sign-outs (:warning: if your app is using a version of msal-browser older than v2.13, make sure to upgrade and replace the `logout()` API, as it will attempt a full-frame redirect to Azure AD).
 - When using [popup APIs](./initialization.md#popup-apis), you need to take into account any [sandboxing](https://html.spec.whatwg.org/multipage/origin.html#sandboxing) restrictions imposed by the parent app. In particular, the parent app needs to set the `allow-popups` flag when the iframe is sandboxed.
 
-**Azure AD B2C** offers an [embedded sign-in experience](https://docs.microsoft.com/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](./configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. Note that enabling this option for apps on **Azure AD** is not recommended, due to the above restriction.
+**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](./configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. Note that enabling this option for apps on **Azure AD** is not recommended, due to the above restriction.
 
 ## Browser restrictions
 

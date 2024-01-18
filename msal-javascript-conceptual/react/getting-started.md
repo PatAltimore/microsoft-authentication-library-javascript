@@ -261,7 +261,7 @@ export default YourWrappedComponent = withMsal(LoginButton);
 
 ## Acquiring an access token
 
-We recommend that your app calls the `acquireTokenSilent` API on your `PublicClientApplication` object each time you need an access token to access an API. This can be done similar to the ways laid out in the previous section: [Call login APIs provided by `@azure/msal-browser`](#call-login-apis-provided-by-@azure/msal-browser)
+We recommend that your app calls the `acquireTokenSilent` API on your `PublicClientApplication` object each time you need an access token to access an API. T
 
 ```javascript
 import React, { useState, useEffect } from "react"

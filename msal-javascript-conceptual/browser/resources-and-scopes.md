@@ -12,7 +12,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Resources and scopes
 
-Azure Active Directory v2.0 & Microsoft Identity Platform employs a *scope-centric* model to access resources. Here, a *resource* refers to any application that can be a recipient of an **Access Token** (such as [MS Graph API](https://docs.microsoft.com/graph/overview) or your own web API), and a *scope* (*aka* "permission") refers to any aspect of a resource that an **Access Token** grants rights.
+Azure Active Directory v2.0 & Microsoft Identity Platform employs a *scope-centric* model to access resources. Here, a *resource* refers to any application that can be a recipient of an **Access Token** (such as [MS Graph API](/graph/overview) or your own web API), and a *scope* (*aka* "permission") refers to any aspect of a resource that an **Access Token** grants rights.
 
 **Access Token** requests in **MSAL.js** are meant to be *per-resource-per-scope(s)*. This means that an **Access Token** requested for resource **A** with scope `scp1`:
 

@@ -20,7 +20,11 @@ Go to the Azure AD portal for your tenant and review the App Registrations. You 
 
 ## 2. Add the msal-browser package to your project
 
-See the [installation section of the README](../README.md#installation).
+Using npm, use the following:
+
+```javascript
+npm install @azure/msal-browser
+```
 
 ## 3. Update your code
 
