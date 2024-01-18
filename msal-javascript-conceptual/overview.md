@@ -5,12 +5,10 @@ services: active-directory
 author: Dickson-Mwendia
 manager: CelesteDG
 
-ms.service: active-directory
-ms.subservice: develop
 ms.topic: reference
-ms.workload: identity
-ms.date: 01/10/2023
+ms.date: 11/29/2023
 ms.author: dmwendia
+ms.reviewer: emilylauber
 ---
 # Microsoft Authentication Library for JavaScript (MSAL.js)
 
@@ -41,7 +39,7 @@ The [`lib`](https://github.com/AzureAD/microsoft-authentication-library-for-js/t
 
 There are a number of different packages meant for different platforms. You can see the relationship between packages and different authentication flows they implement in the package structure below.
 
-![Package Structure](PackageStructure.png)
+![Package Structure](./media/PackageStructure.png)
 
 ## Samples
 
@@ -64,5 +62,3 @@ All of our libraries follow [semantic versioning](https://semver.org). We recomm
 ## Security reporting
 
 If you find a security issue with our libraries or services [please report it to the Microsoft Security Response Center (MSRC)](https://aka.ms/report-security-issue) with as much detail as possible. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Please do not post security issues to GitHub Issues or any other public site. We will contact you shortly upon receiving the information. If you'd like to get notifications of when security incidents occur, [subscribe to security advisory alerts](https://msrc-blog.microsoft.com/2022/08/09/security-update-guide-notification-system-news-create-your-profile-now/).
-
-
