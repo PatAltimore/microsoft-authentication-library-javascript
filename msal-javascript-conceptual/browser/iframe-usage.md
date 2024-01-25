@@ -12,18 +12,18 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Using MSAL in iframed apps
 
-By default, MSAL prevents full-frame redirects to **Azure AD** authentication endpoint when an app is rendered inside an iframe, which means you cannot use [redirect APIs](./initialization.md#redirect-apis) for user interaction with the IdP:
+By default, MSAL prevents full-frame redirects to **Microsoft Entra ID** authentication endpoint when an app is rendered inside an iframe, which means you cannot use [redirect APIs](./initialization.md#redirect-apis) for user interaction with the IdP:
 
-- This restriction is imposed since **Azure AD** will refuse to render any prompt requiring user interaction (e.g. **credential entry**, **consent**, **logout** etc.) in an iframe by throwing the `X-FRAME OPTIONS SET TO DENY` [error](https://html.spec.whatwg.org/multipage/browsing-the-web.html#the-x-frame-options-header), a measure taken to prevent [clickjacking attacks](https://owasp.org/www-community/attacks/Clickjacking).
+- This restriction is imposed since **Microsoft Entra ID** will refuse to render any prompt requiring user interaction (e.g. **credential entry**, **consent**, **logout** etc.) in an iframe by throwing the `X-FRAME OPTIONS SET TO DENY` [error](https://html.spec.whatwg.org/multipage/browsing-the-web.html#the-x-frame-options-header), a measure taken to prevent [clickjacking attacks](https://owasp.org/www-community/attacks/Clickjacking).
 - Instead, you'll have to rely on MSAL's [popup APIs](./initialization.md#popup-apis) if user interaction is required, and/or silent APIs (`ssoSilent()`, `acquireTokenSilent()`) if user interaction can be avoided.
-- Similarly, you'll have to use the [logoutPopup()](./logout.md#logoutpopup) API for sign-outs (:warning: if your app is using a version of msal-browser older than v2.13, make sure to upgrade and replace the `logout()` API, as it will attempt a full-frame redirect to Azure AD).
+- Similarly, you'll have to use the [logoutPopup()](./logout.md#logoutpopup) API for sign-outs (:warning: if your app is using a version of `msal-browser` older than v2.13, make sure to upgrade and replace the `logout()` API, as it will attempt a full-frame redirect to Microsoft Entra ID).
 - When using [popup APIs](./initialization.md#popup-apis), you need to take into account any [sandboxing](https://html.spec.whatwg.org/multipage/origin.html#sandboxing) restrictions imposed by the parent app. In particular, the parent app needs to set the `allow-popups` flag when the iframe is sandboxed.
 
-**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](./configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. Note that enabling this option for apps on **Azure AD** is not recommended, due to the above restriction.
+**Azure AD B2C** offers an [embedded sign-in experience](/azure/active-directory-b2c/embedded-login), which allows rendering a custom login UI in an iframe. Since MSAL prevents redirect in iframes by default, you'll need to set the [allowRedirectInIframe](./configuration.md#system-config-options) configuration option to **true** in order to make use of this feature. Note that enabling this option for apps on **Microsoft Entra ID** is not recommended, due to the above restriction.
 
 ## Browser restrictions
 
-Because Azure AD session cookies within an iframe are considered [3rd party cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies#third-party_cookies), certain browsers (for example **Safari** or **Chrome** in *incognito* mode) either block or clear these cookies by default. This will affect the **single sign-on** experience for iframed apps as they will not have access to IdP's session cookies (see: [Single sign-on](#single-sign-on)).
+Because Microsoft Entra session cookies within an iframe are considered [3rd party cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies#third-party_cookies), certain browsers (for example **Safari** or **Chrome** in *incognito* mode) either block or clear these cookies by default. This will affect the **single sign-on** experience for iframed apps as they will not have access to IdP's session cookies (see: [Single sign-on](#single-sign-on)).
 
 Additionally, when 3rd party cookies are disabled in **Chrome**, iframed MSAL apps will not have access to local or session storage. MSAL will fallback to in-memory storage in this case.
 

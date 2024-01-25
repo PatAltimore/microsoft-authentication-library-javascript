@@ -24,13 +24,13 @@ React versions 16.8.0+, 17 and 18 are supported.
 
 ### Does `@azure/msal-react` support Server Side Rendering (SSR) or static site generation?
 
-Yes! However, authentication cannot be done server side and you should avoid invoking msal APIs server side. `@azure/msal-react` abstracts some of this logic away from you but if you are building custom authentication logic please ensure all APIs are invoked when rendered in the browser. You can take a look at our [Next.js sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/nextjs-sample) and [Gatsby sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/gatsby-sample) for examples.
+Yes! However, authentication cannot be done server side and you should avoid invoking MSAL APIs server side. `@azure/msal-react` abstracts some of this logic away from you but if you are building custom authentication logic please ensure all APIs are invoked when rendered in the browser. You can take a look at our [Next.js sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/nextjs-sample) and [Gatsby sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-react-samples/gatsby-sample) for examples.
 
 ### Does `@azure/msal-react` support class components?
 
-Yes, `@azure/msal-react` supports both function and class components. Hooks, however, cannot be used in class components so you will need to consume the msal context and use the APIs provided by `@azure/msal-browser` to build equivalent logic. More information about using `@azure/msal-react` in class components can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/class-components.md).
+Yes, `@azure/msal-react` supports both function and class components. Hooks, however, cannot be used in class components so you will need to consume the MSAL context and use the APIs provided by `@azure/msal-browser` to build equivalent logic. More information about using `@azure/msal-react` in class components can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/class-components.md).
 
-## Can @azure/msal-react be used with Microsoft Graph JavaScript SDK?
+## Can `@azure/msal-react` be used with Microsoft Graph JavaScript SDK?
 
 Yes, `@azure/msal-react` can be used as a custom authentication provider for the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). For an implementation, please refer to the sample: [React SPA calling Graph API](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/2-Authorization-I/1-call-graph).
 
@@ -38,7 +38,7 @@ Yes, `@azure/msal-react` can be used as a custom authentication provider for the
 
 ### How do I handle the redirect flow in a react app?
 
-If you've used `@azure/msal-browser` or `msal` v1 in the past, you may be used to calling `handleRedirectCallback` or `handleRedirectPromise` on page load to handle the response of a redirect. In `@azure/msal-react` this is done under the hood and you do not need to call `handleRedirectPromise`on your own. After calling `loginRedirect` or `acquireTokenRedirect` you'll be redirected to the AAD sign in page and after entering your credentials you'll be redirected back to your app which should now show that a user is signed in. Since this is a new, clean instance of your application the actual response object cannot be returned to the original `loginRedirect` API call. Instead there are a few ways you can get what you need:
+If you've used `@azure/msal-browser` or `msal` v1 in the past, you may be used to calling `handleRedirectCallback` or `handleRedirectPromise` on page load to handle the response of a redirect. In `@azure/msal-react` this is done under the hood and you do not need to call `handleRedirectPromise`on your own. After calling `loginRedirect` or `acquireTokenRedirect` you'll be redirected to the Microsoft Entra sign-in page and after entering your credentials you'll be redirected back to your app which should now show that a user is signed in. Since this is a new, clean instance of your application the actual response object cannot be returned to the original `loginRedirect` API call. Instead there are a few ways you can get what you need:
 
 If you just need an id or access token we recommend calling the `acquireTokenSilent` API right before you need the token. Be sure to check that a user is signed in and interaction isn't in progress before you attempt to retrieve the token. If the previous redirect operation was successful `acquireTokenSilent` will return the tokens from the cache.
 
@@ -69,7 +69,7 @@ If you need direct access to the response object or error returned by a redirect
 
 ### What can I do outside of `@azure/msal-react` context?
 
-The short answer is that all components in your app that need access to msal APIs should be rendered underneath an `MsalProvider` component ensuring your components have access to the msal context. However, there may be scenarios where it makes more sense to have a utility function outside your component tree to handle acquiring access tokens or determine whether or not a user is signed in. This is fine to do as long as you are not calling APIs that may **change** the user's logged in state or trigger interaction.
+The short answer is that all components in your app that need access to MSAL APIs should be rendered underneath an `MsalProvider` component ensuring your components have access to the MSAL context. However, there may be scenarios where it makes more sense to have a utility function outside your component tree to handle acquiring access tokens or determine whether or not a user is signed in. This is fine to do as long as you are not calling APIs that may **change** the user's logged in state or trigger interaction.
 
 This means the following APIs are off-limits outside the context of `MsalProvider`:
 

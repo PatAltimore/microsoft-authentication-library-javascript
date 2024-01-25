@@ -49,7 +49,7 @@ Follow the tutorial on how to:
 With B2C:
 
 - Users **can** authenticate with their social identities.
-- Users **can** be authorized to access **B2C protected** resources (but not AAD protected resources).
+- Users **can** be authorized to access **B2C protected** resources (but not Microsoft Entra protected resources).
 - Users **cannot** obtain tokens for Microsoft APIs (e.g. MS Graph API) using [delegated permissions](#b2c-and-delegated-permissions).
 - Applications **can** obtain tokens for Microsoft APIs using [application permissions](#b2c-and-application-permissions) (user management scenarios).
 
@@ -80,21 +80,23 @@ const tokenRequest = {
 }
 ```
 
-## AAD vs B2C Endpoints
+<a name='aad-vs-b2c-endpoints'></a>
 
-A major difference between **Azure AD** (*AAD* for short) vs. **B2C** tenants are with respect to their **endpoints**.
+## Microsoft Entra vs B2C Endpoints
 
-An **AAD** tenant:
+A major difference between **Microsoft Entra ID** (*Microsoft Entra ID* for short) vs. **B2C** tenants are with respect to their **endpoints**.
 
-- Contains only AAD endpoints (`login.microsoftonline.com/*`).
+An **Microsoft Entra ID** tenant:
+
+- Contains only Microsoft Entra endpoints (`login.microsoftonline.com/*`).
 - Exposes a **single** token endpoint (`login.microsoftonline.com/.../token`).
-- AAD endpoints allow you to obtain tokens for:
-  - Your applications protected by AAD.
+- Microsoft Entra endpoints allow you to obtain tokens for:
+  - Your applications protected by Microsoft Entra ID.
   - Microsoft APIs, such as **MS Graph API**.
 
 A **B2C** tenant:
 
-- Contains AAD and B2C endpoints (`login.microsoftonline.com/*` and `<your-domain>.b2clogin.com/*`).
+- Contains Microsoft Entra ID and B2C endpoints (`login.microsoftonline.com/*` and `<your-domain>.b2clogin.com/*`).
 - Exposes **separate** token endpoints for each (`login.microsoftonline.com/.../token`, `<your-domain>.b2clogin.com/.../token`).
 - B2C endpoints allow you to obtain tokens for:
   - Your applications protected by B2C.
@@ -103,15 +105,17 @@ A **B2C** tenant:
 
 **Delegated permissions** specify *scope-based access* using *interactive* authorization from the signed-in user. These permissions are presented to the resource (*e.g.* your web API, MS Graph API etc.) at run-time as `scp` claims in the client's **Access Token**.
 
-A user's B2C authentication cannot be used to authorize to AAD protected apps, or **Microsoft APIs** (which are also protected by AAD). As such, when you use **MSAL.js**, you cannot use the `<your-tenant>.b2clogin.com/.../token` endpoint to obtain a token for **MS Graph API**.
+A user's B2C authentication cannot be used to authorize to Microsoft Entra protected apps, or **Microsoft APIs** (which are also protected by Microsoft Entra ID). As such, when you use **MSAL.js**, you cannot use the `<your-tenant>.b2clogin.com/.../token` endpoint to obtain a token for **MS Graph API**.
 
 ### OpenID Connect Permissions
 
 The exception to the rule above comes from a special set of scopes known as **OpenID Connect** (OIDC) permissions, which includes `openid` and `profile`. Another special permission is the `offline_access`, which gives your app access to a resources on behalf of the user for an extended time (using a **Refresh Token**). MSAL.js will supply `openid`, `profile` and `offline_access` by default during `loginPopup()` and `loginRedirect()` requests.
 
-### AAD Authentication against a B2C Tenant
+<a name='aad-authentication-against-a-b2c-tenant'></a>
 
-When you use `login.microsoftonline.com` endpoint without providing any `policyID` parameters against a B2C tenant, you hit the **AAD endpoints *of the* B2C tenant**. Only in this case you can get tokens for **MS Graph API** resources, using the signed-in user's context.
+### Microsoft Entra authentication against a B2C Tenant
+
+When you use `login.microsoftonline.com` endpoint without providing any `policyID` parameters against a B2C tenant, you hit the **Microsoft Entra endpoints *of the* B2C tenant**. Only in this case you can get tokens for **MS Graph API** resources, using the signed-in user's context.
 
 ## B2C and Application Permissions
 
@@ -133,8 +137,8 @@ During application registration, you are prompted to select an **audience**. The
 
 | Audience Type    | Description                                                       | Authentication Type |
 |------------------|-------------------------------------------------------------------|---------------------|
-| #1               | Accounts in this organizational directory only (single tenant)    | AAD Authentication  |
-| #2               | Accounts in any organizational directory (multi-tenant).          | AAD Authentication  |
+| #1               | Accounts in this organizational directory only (single tenant)    | Microsoft Entra authentication  |
+| #2               | Accounts in any organizational directory (multi-tenant).          | Microsoft Entra authentication  |
 | #3               | Accounts in any organizational directory or any identity provider | B2C Authentication  |
 
 ### Acquiring an access token for your own API

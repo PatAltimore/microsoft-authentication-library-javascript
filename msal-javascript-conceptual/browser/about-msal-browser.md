@@ -13,7 +13,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Using MSAL Browser in your JavaScript applications
 
-The MSAL library for JavaScript enables client-side JavaScript applications to authenticate users using [Azure AD](/entra/identity-platform/vv2-overview.md) work and school accounts (AAD), Microsoft personal accounts (MSA) and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through [Azure AD B2C](/azure/active-directory-b2c/active-directory-b2c-overview.md#identity-providers) service. It also enables your app to get tokens to access [Microsoft Cloud](https://www.microsoft.com/enterprise) services such as [Microsoft Graph](https://graph.microsoft.io).
+The MSAL library for JavaScript enables client-side JavaScript applications to authenticate users using [Microsoft Entra ID](/entra/identity-platform/vv2-overview.md) work and school accounts, Microsoft personal accounts (MSA) and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through [Azure AD B2C](/azure/active-directory-b2c/active-directory-b2c-overview.md#identity-providers) service. It also enables your app to get tokens to access [Microsoft Cloud](https://www.microsoft.com/enterprise) services such as [Microsoft Graph](https://graph.microsoft.io).
 
 The `@azure/msal-browser` package uses the [`@azure/msal-common` package](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-common) as a dependency to enable authentication in JavaScript Single-Page Applications without backend servers. This version of the library uses the OAuth 2.0 Authorization Code Flow with PKCE and does NOT support the implicit flow.
 
@@ -21,7 +21,7 @@ The `@azure/msal-browser` package uses the [`@azure/msal-common` package](https:
 
 -   `@azure/msal-browser` is meant to be used in [Single-Page Application scenarios](/entra/identity-platform/vscenario-spa-overview.md).
 
--   Before using `@azure/msal-browser` you will need to [register a Single Page Application in Azure AD](/entra/identity-platform/scenario-spa-app-registration.md) to get a valid `clientId` for configuration, and to register the routes that your app will accept redirect traffic on.
+-   Before using `@azure/msal-browser` you will need to [register a Single Page Application in Microsoft Entra ID](/entra/identity-platform/scenario-spa-app-registration.md) to get a valid `clientId` for configuration, and to register the routes that your app will accept redirect traffic on.
 
 ## Installation
 
@@ -78,5 +78,5 @@ npm run test:coverage
 
 If you are using a framework such as Angular or React you may be interested in using one of our wrapper libraries:
 
--   Angular: [@azure/msal-angular v2](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)
--   React: [@azure/msal-react](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)
+-   Angular: [`@azure/msal-angular` v2](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular)
+-   React: [`@azure/msal-react`](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)

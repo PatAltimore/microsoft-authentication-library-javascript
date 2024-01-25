@@ -16,7 +16,7 @@ Before you acquire an access token, make sure you understand how to [initialize 
 
 In MSAL, you can get access tokens for the APIs your app needs to call using the `acquireToken*` methods provided by the library. The `acquireToken*` methods abstract away the 2 steps involved in acquiring tokens with the [OAuth 2.0 authorization code flow](/entra/identity-platform/v2-oauth2-auth-code-flow.md):
 
-1. make a request to Azure AD to obtain an `authorization code`
+1. make a request to Microsoft Entra ID to obtain an `authorization code`
 1. exchange that code for an [access token](/entra/identity-platform/access-tokens.md) containing the user consented scopes
 
 ## Acquiring an Access Token
