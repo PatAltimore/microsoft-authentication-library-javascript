@@ -160,7 +160,7 @@ There are a few different input parameters you can provide to the `useMsalAuthen
 - `login` - function which can be used to retry a failed login. The `result` and `error` properties will be updated.
 - `acquireToken` - function which can be used to get a new access token before calling a protected API. The `result` and `error` properties will be updated.
 
-Passing the "Silent" interaction type will call `ssoSilent` which attempts to open a hidden iframe and reuse an existing session with AAD. This will not work in browsers that block 3rd party cookies such as Safari. Additionally, the request object is required when using the "Silent" type. If you already have the user's sign-in information, you can pass either the `loginHint` or `sid` optional parameters to sign-in a specific account. Note: there are [additional considerations](../browser/login-user.md#silent-login-with-ssosilent) - when using `ssoSilent` without providing any information about the user's session.
+Passing the "Silent" interaction type will call `ssoSilent` which attempts to open a hidden iframe and reuse an existing session with Microsoft Entra ID. This will not work in browsers that block 3rd party cookies such as Safari. Additionally, the request object is required when using the "Silent" type. If you already have the user's sign-in information, you can pass either the `loginHint` or `sid` optional parameters to sign-in a specific account. Note: there are [additional considerations](../browser/login-user.md#silent-login-with-ssosilent) - when using `ssoSilent` without providing any information about the user's session.
 
 ### `ssoSilent` example
 

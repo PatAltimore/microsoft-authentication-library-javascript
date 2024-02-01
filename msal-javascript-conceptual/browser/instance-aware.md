@@ -49,7 +49,7 @@ The STS will return two graph host names: `cloud_graph_host_name` and `msgraph_h
 
 ### Using the graph hosts from the response
 
-You can do this for either the AAD graph host or the MS Graph Host.
+You can do this for either the Azure AD Graph host or the MS Graph Host.
 
 ```javascript
 function getGraphMeEndpoint(msGraphHost) {

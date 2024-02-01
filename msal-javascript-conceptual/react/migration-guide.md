@@ -10,9 +10,9 @@ ms.author: emilylauber
 ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 ---
 
-# Migration Guide from MSAL v1 to @azure/msal-react and @azure/msal-browser
+# Migration Guide from MSAL v1 to `@azure/msal-react` and `@azure/msal-browser`
 
-This article provides an overview on migrating from MSAL v1 to `@azure/msal-react` and `@azure/msal-browser`. We recommend migration for improved performance and better security with the authorization code flow with PKCE and conditional access. Additionally, there's better single page application support. 
+This article provides an overview on migrating from MSAL v1 to `@azure/msal-react` and `@azure/msal-browser`. We recommend migration for improved performance and better security with the authorization code flow with PKCE and Conditional Access. Additionally, there's better single page application support. 
 
 ## Prerequisites
 
@@ -34,9 +34,9 @@ npm uninstall msal
 npm install @azure/msal-react @azure/msal-browser
 ```
 
-## Upgrading from react-aad-msal
+## Upgrading from `react-aad-msal`
 
-If your app currently uses [React AAD MSAL](https://www.npmjs.com/package/react-aad-msal) for authentication and you are looking to migrate to `@azure/msal-react` this section will outline the differences between the two libraries and some of the changes you need to make. React AAD MSAL is a 3rd party library and MSAL React was built from the ground up there may be some edge cases that are not covered or not supported by MSAL React. 
+If your app currently uses [React Microsoft Entra MSAL](https://www.npmjs.com/package/react-aad-msal) for authentication and you are looking to migrate to `@azure/msal-react` this section will outline the differences between the two libraries and some of the changes you need to make. React Microsoft Entra MSAL is a 3rd party library and MSAL React was built from the ground up there may be some edge cases that are not covered or not supported by MSAL React.
 
 The following are features supported in `react-aad-msal` which are not supported in `@azure/msal-react`:
 
@@ -47,7 +47,7 @@ For other cases possible with `react-aad-msal` but no lonter possible with `@azu
 
 ### Initialization
 
-In `react-aad-msal` you initialize your msal instance by creating an `MsalAuthProvider` object which is later passed down to the `AzureAD` component.
+In `react-aad-msal` you initialize your MSAL instance by creating an `MsalAuthProvider` object which is later passed down to the `AzureAD` component.
 
 ```javascript
 import { MsalAuthProvider } from "react-aad-msal";
@@ -55,7 +55,7 @@ import { MsalAuthProvider } from "react-aad-msal";
 const authProvider = new MsalAuthProvider(config, authenticationParameters, options);
 ```
 
-In `@azure/msal-react` you initialize your msal instance using `PublicClientApplication` exported from `@azure/msal-browser` which is then passed down to the `MsalProvider` component exported from `@azure/msal-react`. The config options are largely similar between `msal` and `@azure/msal-browser`, however you can refer to the [Configuration type](/javascript/api/@azure/msal-browser/configuration) for the most up to date config options.
+In `@azure/msal-react` you initialize your MSAL instance using `PublicClientApplication` exported from `@azure/msal-browser` which is then passed down to the `MsalProvider` component exported from `@azure/msal-react`. The config options are largely similar between `msal` and `@azure/msal-browser`, however you can refer to the [Configuration type](/javascript/api/@azure/msal-browser/configuration) for the most up to date config options.
 
 The `authenticationParameters` and `options` parameters used in `react-aad-msal` are not used in `@azure/msal-react`, though similar functionality can be achieved on individual components. This will be explained later on in this document.
 

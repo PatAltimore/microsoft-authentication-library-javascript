@@ -18,7 +18,7 @@ By default `msal-browser` uses `window.location.assign` and `window.location.rep
 The interface contains 2 methods:
 
 - `navigateInternal` - Called when redirecting between pages in your app e.g. redirecting from the `redirectUri` back to the page that initiated the login
-- `navigateExternal` - Called when redirecting to urls external to your app e.g. AAD Sign-in prompt
+- `navigateExternal` - Called when redirecting to urls external to your app, such as Microsoft Entra sign-in prompt
 
 You can choose to provide custom implementations of both by implementing `INavigationClient`:
 
@@ -59,7 +59,7 @@ Both functions are async and should return a promise that resolves to boolean `t
 
 Return `true` if:
 
-- The function will cause the page to fully redirect to another page, such as going to the AAD sign-in page or reassigning the window object
+- The function will cause the page to fully redirect to another page, such as going to the Microsoft Entra sign-in page or reassigning the window object
 - The function will directly or indirectly cause `PublicClientApplication` to reinitialize or `handleRedirectPromise` to run again
 
 Return `false` if:

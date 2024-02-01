@@ -133,7 +133,7 @@ For more information, visit: [How to use managed identities for App Service](/az
 
 ### Step 2: Update your app's Redirect URI
 
-1. Navigate to [Azure portal](https://portal.azure.com) and select the **Azure AD** service.
+1. Navigate to [Azure portal](https://portal.azure.com) and select the **Microsoft Entra ID** service.
 1. Select the **App Registrations** blade on the left, then find and select the web app that you have registered.
 1. Navigate to the **Authentication** blade. There, in **Redirect URI** section, enter the following redirect URI: `https://msal-node-webapp1.azurewebsites.net/redirect`.
 1. Select **Save** to save your changes.
@@ -169,7 +169,7 @@ Finally, you need to add environment variables to the App Service where you depl
 1. In the [Azure portal](https://portal.azure.com), search for and select **App Service**, and then select your app.
 1. Select **Configuration** blade on the left, then select **New Application Settings**.
 1. Add the following variables (name-value):
-    1. **REDIRECT_URI**: the redirect URI you've registered on Azure AD, e.g. `https://msal-node-webapp1.azurewebsites.net/redirect`
+    1. **REDIRECT_URI**: the redirect URI you've registered on Microsoft Entra ID, e.g. `https://msal-node-webapp1.azurewebsites.net/redirect`
     1. **KEY_VAULT_NAME**: the name of the key vault you've created, e.g. `node-test-vault`
     1. **CERTIFICATE_NAME**: the name of the certificate you specified when importing it to key vault, e.g. `ExampleCert`
 

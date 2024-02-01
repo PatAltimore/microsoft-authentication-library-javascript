@@ -12,7 +12,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 # Resources and scopes
 
-Azure Active Directory v2.0 & Microsoft Identity Platform employs a *scope-centric* model to access resources. Here, a *resource* refers to any application that can be a recipient of an **Access Token** (such as [MS Graph API](/graph/overview) or your own web API), and a *scope* (*aka* "permission") refers to any aspect of a resource that an **Access Token** grants rights.
+Microsoft identity platform employs a *scope-centric* model to access resources. Here, a *resource* refers to any application that can be a recipient of an **Access Token** (such as [MS Graph API](/graph/overview) or your own web API), and a *scope* (*aka* "permission") refers to any aspect of a resource that an **Access Token** grants rights.
 
 **Access Token** requests in **MSAL.js** are meant to be *per-resource-per-scope(s)*. This means that an **Access Token** requested for resource **A** with scope `scp1`:
 
@@ -58,7 +58,7 @@ In case you *erroneously* pass multiple resources in your token request, the tok
 
 ## Dynamic scopes and incremental consent
 
-In **Azure AD**, the scopes (*permissions*) set directly on the application registration are called **static scopes**. Other scopes that are only defined within the code are called **dynamic scopes**. This has implications on the **login** (i.e. *loginPopup*, *loginRedirect*) and **acquireToken** (i.e. *acquireTokenPopup*, *acquireTokenRedirect*, *acquireTokenSilent*) methods of **MSAL.js**. Consider:
+In **Microsoft Entra ID**, the scopes (*permissions*) set directly on the application registration are called **static scopes**. Other scopes that are only defined within the code are called **dynamic scopes**. This has implications on the **login** (i.e. *loginPopup*, *loginRedirect*) and **acquireToken** (i.e. *acquireTokenPopup*, *acquireTokenRedirect*, *acquireTokenSilent*) methods of **MSAL.js**. Consider:
 
  ```javascript
   const loginRequest = {
@@ -103,4 +103,4 @@ In the code snippet above, even though the user consents to both `User.Read` and
 
 ## Consent lifetime
 
-In Azure AD, consent lives beyond the lifetime of the application. This means that, when you request an **Access Token** for a resource, all the scopes you have previously consented to for that resource will be returned, regardless of what scope was requested at the time. In other words, if you consent to `User.Read` and `Mail.Read` today and run a new instance of your application tomorrow requesting an **Access Token** for `User.Read` only, you will still receive a token issued for **both** `User.Read` and `Mail.Read`. For more information, refer to [Permissions and Consent](/entra/identity-platform/v2-permissions-and-consent#using-permissions.md).
+In Microsoft Entra ID, consent lives beyond the lifetime of the application. This means that, when you request an **Access Token** for a resource, all the scopes you have previously consented to for that resource will be returned, regardless of what scope was requested at the time. In other words, if you consent to `User.Read` and `Mail.Read` today and run a new instance of your application tomorrow requesting an **Access Token** for `User.Read` only, you will still receive a token issued for **both** `User.Read` and `Mail.Read`. For more information, refer to [Permissions and Consent](/entra/identity-platform/v2-permissions-and-consent#using-permissions.md).

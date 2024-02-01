@@ -19,7 +19,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 
 SNI (Subject Name/Issuer) authentication allows an app to authenticate using a public certificate from a predetermined trusted CA to support complex certificate rollover scenarios. It uses the [X5C header parameter](https://tools.ietf.org/html/rfc7515#section-4.1.6) to provide the certificate to the server.
 
-First party users should follow the instructions on the [internal AAD wiki](https://aadwiki.windows-int.net/index.php?title=Subject_Name_and_Issuer_Authentication) to set up their AAD environment to support SNI.
+First party users should follow the instructions on the [internal Microsoft Entra wiki](https://aadwiki.windows-int.net/index.php?title=Subject_Name_and_Issuer_Authentication) to set up their Microsoft Entra environment to support SNI.
 
 ## `x5c` claim
 

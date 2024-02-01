@@ -14,7 +14,7 @@ ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 
 MSAL.js provides the `SignedHttpRequest` class as a convenience to assist in creating [signed http requests (SHRs)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-signed-http-request-03) for payloads (e.g. tokens) that are acquired out-of-band from MSAL.js. This enables applications to leverage the same encryption and caching MSAL.js uses for [access token proof-of-possession](./access-token-proof-of-possession.md) for their own payloads.
 
-Note: The `SignedHttpRequest` class is intended for advanced use cases where the built-in access token proof-of-possession functionality cannot be used. Example of these use cases included AAD/MSA access tokens acquired-out-band from MSAL.js, and workload access tokens.
+Note: The `SignedHttpRequest` class is intended for advanced use cases where the built-in access token proof-of-possession functionality cannot be used. Example of these use cases included Microsoft Entra ID or MSA access tokens acquired-out-band from MSAL.js, and workload access tokens.
 
 ## Requirements
 
@@ -25,9 +25,9 @@ To use the `SignedHttpRequest` API, an application must:
 3. The resource server for which the SHR is intended must understand how to decode and validate the SHR and inner payload.
 
 
-### AAD Parameters
+### Microsoft Entra Parameters
 
-For tokens issued by AAD/MSA, applications will need to include additional query parameters in their token requests:
+For tokens issued by Microsoft Entra ID or MSA, applications will need to include additional query parameters in their token requests:
 
 - `req_cnf` : Base64 encoded string including the public key thumbprint.
 - `token_type`: Set to `pop` to indicate this is a proof-of-possession flow.

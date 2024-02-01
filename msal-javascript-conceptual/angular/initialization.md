@@ -11,7 +11,7 @@ ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 ---
 # Initializing MSAL Angular
 
-Before using `@azure/msal-angular`, you must first [register your application in Azure AD](/entra/identity-platform/quickstart-register-app) to get your client ID, a unique identifier for your application, also known as application ID. 
+Before using `@azure/msal-angular`, you must first [register your application in Microsoft Entra ID](/entra/identity-platform/quickstart-register-app) to get your client ID, a unique identifier for your application, also known as application ID. 
 
 ## Include and initialize the MSAL module in your app module
 
