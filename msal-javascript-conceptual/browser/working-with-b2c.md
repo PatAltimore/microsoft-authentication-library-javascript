@@ -84,7 +84,7 @@ const tokenRequest = {
 
 ## Microsoft Entra vs B2C Endpoints
 
-A major difference between **Microsoft Entra ID** (*Microsoft Entra ID* for short) vs. **B2C** tenants are with respect to their **endpoints**.
+A major difference between **Microsoft Entra ID**  and **Azure AD B2C** tenants is their **endpoints**.
 
 An **Microsoft Entra ID** tenant:
 
@@ -96,7 +96,7 @@ An **Microsoft Entra ID** tenant:
 
 A **B2C** tenant:
 
-- Contains Microsoft Entra ID and B2C endpoints (`login.microsoftonline.com/*` and `<your-domain>.b2clogin.com/*`).
+- Contains Microsoft Entra ID and Azure AD B2C endpoints (`login.microsoftonline.com/*` and `<your-domain>.b2clogin.com/*`).
 - Exposes **separate** token endpoints for each (`login.microsoftonline.com/.../token`, `<your-domain>.b2clogin.com/.../token`).
 - B2C endpoints allow you to obtain tokens for:
   - Your applications protected by B2C.
