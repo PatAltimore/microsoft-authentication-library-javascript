@@ -4,7 +4,9 @@ description: Frequently asked questions on MSAL React
 author: EmLauber
 manager: CelesteDG
 
-ms.topic: conceptual
+ms.service: msal
+ms.subservice: msal-react
+ms.topic: faq
 ms.date: 11/29/2023
 ms.author: emilylauber
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus

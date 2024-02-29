@@ -4,7 +4,9 @@ description: Learn how to acquire tokens silently using the `ssoSilent()` API
 author: Dickson-Mwendia
 manager: CelesteDG
 
-ms.topic: reference
+ms.service: msal
+ms.subservice: msal-angular
+ms.topic: conceptual
 ms.date: 11/29/2023
 ms.author: emilylauber
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus

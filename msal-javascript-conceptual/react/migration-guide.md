@@ -4,6 +4,8 @@ description: Learn how to migrate from msal.js v1 to MSAL React and MSAL Browser
 author: EmLauber
 manager: CelesteDG
 
+ms.service: msal
+ms.subservice: msal-react
 ms.topic: how-to
 ms.date: 11/29/2023
 ms.author: emilylauber

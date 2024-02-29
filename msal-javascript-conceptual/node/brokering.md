@@ -5,9 +5,9 @@ author: EmLauber
 manager: CelesteDG
 ms.author: emilylauber
 
+ms.service: msal
+ms.subservice: msal-node
 ms.date: 10/26/2023
-ms.service: active-directory
-ms.subservice: develop
 ms.topic: conceptual
 ms.reviewer: dmwendia,cwerner, owenrichards, kengaderdus
 #Customer intent: As a developer, I want to learn how to acquire tokens from the native token broker.

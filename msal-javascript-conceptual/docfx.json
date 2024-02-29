@@ -40,6 +40,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "brand": "entra",
       "uhfHeaderId": "MSDocsHeader-Entra",
       "breadcrumb_path": "/entra/msal/javascript/breadcrumb/toc.json",
       "extendBreadcrumb": true,
@@ -62,8 +63,8 @@
         "*/**.md": "dmwendia"
       },
       "ms.service": {
-        "*.md": "active-directory",
-        "*/**.md": "active-directory"
+        "*.md": "msal",
+        "*/**.md": "msal"
       },
       "titleSuffix": {
         "*.md": "Microsoft Authentication Library for JavaScript",

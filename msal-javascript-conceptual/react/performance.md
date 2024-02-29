@@ -4,6 +4,8 @@ description: Learn how to configure @azure/msal-react to use your router's navig
 author: EmLauber
 manager: CelesteDG
 
+ms.service: msal
+ms.subservice: msal-react
 ms.topic: conceptual
 ms.date: 11/29/2023
 ms.author: emilylauber

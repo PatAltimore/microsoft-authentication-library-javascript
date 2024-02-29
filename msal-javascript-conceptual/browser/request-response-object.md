@@ -4,6 +4,8 @@ description: Learn about the configuration options you can use to customize auth
 author: EmLauber
 manager: CelesteDG
 
+ms.service: msal
+ms.subservice: msal-js
 ms.topic: reference
 ms.date: 01/10/2024
 ms.author: emilylauber
