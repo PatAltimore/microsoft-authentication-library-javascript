@@ -1,9 +1,11 @@
 - name: Microsoft Authentication Library for JavaScript Overview
   href: index.md
-  - name: MSAL Browser
+- name: MSAL Browser
   items:
     - name: Getting started
       items: 
+        - name: Install MSAL for browser-based apps
+          href: browser/about-msal-browser.md
         - name: Initialize applications
           href: browser/initialization.md
         - name: Configure your application
