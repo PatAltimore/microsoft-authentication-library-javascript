@@ -7,8 +7,8 @@ ms.author: dmwendia
 ms.custom: devx-track-js
 ms.date: 12/21/2023
 ms.reviewer: saeeda, jmprieur
-ms.service: active-directory
-ms.subservice: develop
+ms.service: msal
+ms.subservice: msal-js
 ms.topic: conceptual
 #Customer intent:
 ---

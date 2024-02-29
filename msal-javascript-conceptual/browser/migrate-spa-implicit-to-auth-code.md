@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-js
 ms.date: 07/17/2020
-ms.service: active-directory
-ms.subservice: develop
+ms.service: msal
+ms.subservice: msal-js
 ms.topic: how-to
 #Customer intent:
 ---

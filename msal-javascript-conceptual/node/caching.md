@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: emilylauber
 
 ms.date: 11/28/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: msal
+ms.subservice: msal-node
 ms.topic: conceptual
 ms.reviewer: dmwendia, cwerner, owenrichards, kengaderdus
 #Customer intent: 

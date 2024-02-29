@@ -4,6 +4,8 @@ description: Learn how to handle use MSAL React with class components. covering 
 author: EmLauber
 manager: CelesteDG
 
+ms.service: msal
+ms.subservice: msal-react
 ms.topic: conceptual
 ms.date: 11/29/2023
 ms.author: emilylauber

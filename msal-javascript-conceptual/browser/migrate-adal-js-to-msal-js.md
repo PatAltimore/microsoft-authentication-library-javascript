@@ -4,10 +4,9 @@ description: How to update your existing JavaScript application to use the Micro
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: has-adal-ref, devx-track-js
-ms.date: 01/10/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.date: 01/10/2024
+ms.service: msal
+ms.subservice: msal-js
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to change the code in my JavaScript application from using ADAL.js as its authentication library to MSAL.js.
 ---

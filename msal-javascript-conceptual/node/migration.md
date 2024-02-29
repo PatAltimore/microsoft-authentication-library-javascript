@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref, devx-track-js
 ms.date: 11/28/2023
-ms.service: active-directory
-ms.subservice: develop
+ms.service: msal
+ms.subservice: msal-node
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to change the code in my Node.js application from using ADAL as its authentication library to MSAL.
 ---
